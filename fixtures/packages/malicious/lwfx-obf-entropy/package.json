@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-obf-entropy",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): large high-entropy blob decoded and evaluated",
+  "main": "index.js"
+}

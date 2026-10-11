@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-ok-cli-spawn",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign): runtime helper that opens a URL with the system browser (not at install time)",
+  "main": "index.js"
+}

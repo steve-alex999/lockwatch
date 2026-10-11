@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-vm-run",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): runs remote-looking code in a vm context at install time",
+  "scripts": { "postinstall": "node x.js" }
+}

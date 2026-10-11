@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-cp-minified",
+  "version": "1.0.0",
+  "description": "FIXTURE (tricky variant): minified install code",
+  "scripts": { "install": "node i.js" }
+}

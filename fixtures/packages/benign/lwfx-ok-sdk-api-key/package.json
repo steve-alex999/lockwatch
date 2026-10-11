@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-ok-sdk-api-key",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign, known false-positive class): API client that reads its own API key from the environment",
+  "main": "index.js"
+}

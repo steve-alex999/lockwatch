@@ -1,0 +1,7 @@
+{
+  "name": "lwfx-ok-esbuild-like",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign, known false-positive class): postinstall checks for a platform binary and downloads it from the npm registry if missing, like esbuild",
+  "scripts": { "postinstall": "node install.js" },
+  "optionalDependencies": { "lwfx-ok-platform-binary": "1.0.0" }
+}

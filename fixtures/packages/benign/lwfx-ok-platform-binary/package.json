@@ -1,0 +1,8 @@
+{
+  "name": "lwfx-ok-platform-binary",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign): platform-specific package that ships a prebuilt executable",
+  "os": ["linux"],
+  "cpu": ["x64"],
+  "bin": { "lwfx-tool": "bin/lwfx-tool" }
+}

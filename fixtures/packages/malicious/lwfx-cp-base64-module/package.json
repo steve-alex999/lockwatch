@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-cp-base64-module",
+  "version": "1.0.0",
+  "description": "FIXTURE (tricky variant): module name decoded from base64",
+  "scripts": { "postinstall": "node setup.js" }
+}

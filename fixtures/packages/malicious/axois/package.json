@@ -1,0 +1,6 @@
+{
+  "name": "axois",
+  "version": "1.0.0",
+  "description": "FIXTURE (typosquat): name imitates axios",
+  "main": "index.js"
+}

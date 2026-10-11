@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-cp-exec",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): install.js runs a shell command",
+  "scripts": { "postinstall": "node install.js" }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-net-fetch-domain",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): install-time beacon with fetch()",
+  "scripts": { "install": "node beacon.js" }
+}

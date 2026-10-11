@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-ok-http-client",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign): HTTP client used at runtime, not during install",
+  "main": "index.js"
+}

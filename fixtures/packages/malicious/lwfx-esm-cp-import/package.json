@@ -1,0 +1,7 @@
+{
+  "name": "lwfx-esm-cp-import",
+  "version": "1.0.0",
+  "description": "FIXTURE (tricky variant): ES module import of child_process",
+  "type": "module",
+  "scripts": { "postinstall": "node setup.mjs" }
+}

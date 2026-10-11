@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-obf-0x",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): javascript-obfuscator style identifiers",
+  "main": "index.js"
+}

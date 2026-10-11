@@ -1,0 +1,6 @@
+{
+  "name": "lodahs",
+  "version": "1.0.0",
+  "description": "FIXTURE (typosquat): name imitates lodash",
+  "main": "index.js"
+}

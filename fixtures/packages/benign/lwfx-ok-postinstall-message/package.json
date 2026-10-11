@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-ok-postinstall-message",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign): postinstall prints a thank-you message, like several popular packages",
+  "scripts": { "postinstall": "node scripts/thanks.js" }
+}

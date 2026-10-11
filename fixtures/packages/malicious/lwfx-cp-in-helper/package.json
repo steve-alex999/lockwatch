@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-cp-in-helper",
+  "version": "1.0.0",
+  "description": "FIXTURE (tricky variant): the install file looks clean; the helper it requires runs commands",
+  "scripts": { "postinstall": "node install.js" }
+}

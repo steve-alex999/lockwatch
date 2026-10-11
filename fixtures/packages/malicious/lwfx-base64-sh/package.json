@@ -1,0 +1,8 @@
+{
+  "name": "lwfx-base64-sh",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): base64-decoded command piped to sh (decodes to echo lockwatch-fixture)",
+  "scripts": {
+    "postinstall": "echo ZWNobyBsb2Nrd2F0Y2gtZml4dHVyZQ== | base64 -d | sh"
+  }
+}

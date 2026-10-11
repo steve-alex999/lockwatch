@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-ok-base64-asset",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign, known false-positive class): embeds a font as a base64 data URL",
+  "main": "font.js"
+}

@@ -1,0 +1,1 @@
+{ "comment": "The fixture builder writes a wrong integrity for this package into the lockfiles.", "tamper": true }

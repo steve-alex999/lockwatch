@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-eval-payload",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): evaluates a base64 payload when required",
+  "main": "index.js"
+}

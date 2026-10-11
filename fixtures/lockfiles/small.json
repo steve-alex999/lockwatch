@@ -1,0 +1,32 @@
+{
+  "lockfileVersion": 3,
+  "name": "lockwatch-fixtures-small",
+  "packages": {
+    "": {
+      "dependencies": {
+        "lwfx-net-ip": "1.0.0",
+        "lwfx-ok-env-config": "1.0.0",
+        "lwfx-ok-http-client": "1.0.0"
+      },
+      "name": "lockwatch-fixtures-small",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-ip": {
+      "integrity": "sha512-oChu4c3G7HsjS1V3aCYg5et3yH+NqUpPPWQS8ct7ApqbDAGZArAkcJrxJSEzRHC39JqBU7ByQLm77S54WkNwwg==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-ip/-/lwfx-net-ip-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-env-config": {
+      "integrity": "sha512-9BgO0X4TBHOqGeLpKknCYJy97GR3SAff7O7vAoWzRiWwd7LvVzOs3Yu7c3lC6jW70s7PEUHIQo5u/2bW9l5p+w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-env-config/-/lwfx-ok-env-config-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-http-client": {
+      "integrity": "sha512-R4aQDl9cS50co0M4/GPH2tOwQ3O3arJ/LIbLmyfKg/X2xDN0OIe9npI43dSlIZupCk6uWC1WB7KM7aNoJ9ZZ3g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-http-client/-/lwfx-ok-http-client-1.0.0.tgz",
+      "version": "1.0.0"
+    }
+  },
+  "requires": true,
+  "version": "1.0.0"
+}

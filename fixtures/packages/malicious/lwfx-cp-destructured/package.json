@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-cp-destructured",
+  "version": "1.0.0",
+  "description": "FIXTURE (tricky variant): destructured and renamed spawn from node:child_process",
+  "scripts": { "preinstall": "node lib/pre.js" }
+}

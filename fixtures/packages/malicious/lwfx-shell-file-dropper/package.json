@@ -1,0 +1,8 @@
+{
+  "name": "lwfx-shell-file-dropper",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): the install script runs a shell file that pipes curl to bash",
+  "scripts": {
+    "postinstall": "sh scripts/setup.sh"
+  }
+}

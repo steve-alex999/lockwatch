@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-obf-hex-escapes",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): code hidden in hex escape sequences",
+  "main": "index.js"
+}
