@@ -15,7 +15,9 @@ pub mod lw001_install_script;
 pub mod lw002_remote_exec;
 pub mod lw003_child_process;
 pub mod lw004_network;
+pub mod lw005_credentials;
 pub mod lw006_dynamic_code;
+pub mod lw007_obfuscation;
 
 /// How bad a finding is. Declared from least to most severe, so the derived
 /// `Ord` lets us write `severity >= Severity::Medium`.
@@ -116,7 +118,9 @@ pub static RULES: &[&dyn Rule] = &[
     &lw002_remote_exec::InstallScriptRemoteExec,
     &lw003_child_process::InstallChildProcess,
     &lw004_network::InstallNetworkAccess,
+    &lw005_credentials::CredentialAccess,
     &lw006_dynamic_code::DynamicCodeExecution,
+    &lw007_obfuscation::Obfuscation,
 ];
 
 /// At most this many findings of one rule are kept per file, and per
