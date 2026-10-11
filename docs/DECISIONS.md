@@ -16,10 +16,11 @@ Action, say) can use the library without the CLI.
 **D3. Extra crates that the spec did not list (please review).** The spec says
 to ask before adding dependencies. These were needed and are flagged here for
 Stephen's review:
-- `oxc_allocator`, `oxc_span`, `oxc_ast_visit`: companion crates of
-  `oxc_parser`/`oxc_ast` from the same project. The parser API needs the arena
-  allocator and `SourceType`, and the `Visit` trait now lives in
-  `oxc_ast_visit`. Without them `oxc_parser` cannot be used.
+- `oxc_allocator`, `oxc_span`, `oxc_ast_visit`, `oxc_syntax`: companion
+  crates of `oxc_parser`/`oxc_ast` from the same project. The parser API needs
+  the arena allocator and `SourceType`, the `Visit` trait now lives in
+  `oxc_ast_visit`, and `visit_function` takes `oxc_syntax::scope::ScopeFlags`.
+  Without them `oxc_parser` cannot be used.
 - `sha1`: the spec requires verifying `sha1-` integrity strings, and `sha2`
   only implements SHA-2. `sha1` is the RustCrypto sibling of `sha2`.
 - `tracing-subscriber`: `tracing` only emits events; a subscriber is needed to
@@ -102,3 +103,114 @@ limit (10,000) counts every entry, including directories and symlinks.
 **D15. Unsafe entries are skipped with a warning, not fatal.** Absolute
 paths, `..`, symlinks, hardlinks and device files are never created. The rest
 of the package is still analysed.
+
+## Analysis and rules
+
+**D16. Analyse each file once into "facts".** Options: let each rule walk the
+syntax tree, or extract facts once. Chose facts (`JsFacts`): oxc's tree lives
+in a single-threaded arena, the facts are plain data that rules can share
+across threads, and each rule becomes a short filter.
+
+**D17. Two passes, one flat scope.** The first pass records what names mean
+(aliases of `require`, `const cp = require('child_process')`, string
+constants), the second pass detects. No per-function scopes or data flow:
+simple to explain, catches the common evasions, misses determined ones. A
+name declared in the file (`function fetch(){}`) shadows the global of the
+same name.
+
+**D18. Parse failures fall back to regexes.** `.js` is tried as an ES module,
+then CommonJS (top-level `return`), then with JSX. If all fail, regexes
+produce the same facts with `parsed: false`.
+
+**D19. "Install-time code" = files run by `preinstall`/`install`/
+`postinstall`/`prepare`, plus local files they require (one level), plus
+inline `node -e` code.** `npm run <x>` inside a hook is followed one level.
+LW003 and LW004 only look at install-time code, as the spec says.
+
+**D20. LW005 checks every JavaScript file, not just install-time code.**
+Credential stealers also run when a package is `require`d. It is `high`
+everywhere and `critical` only when the same install-time file also has
+LW004 network access. `JSON.stringify(process.env)` counts as reading every
+secret. Credential-file paths only count when the file also calls
+`readFile`/`readFileSync`/`createReadStream`.
+
+**D21. Network modules include common HTTP clients.** Besides `http`,
+`https`, `net`, `dns`, `dgram` (spec) we treat `tls`, `http2`, `axios`,
+`node-fetch`, `got`, `request`, `undici`, `needle` and `superagent` as
+network access, because malware uses them too.
+
+**D22. LW007 details.** Escape ratio only for files of 200 bytes or more (a
+tiny file with one escape is not obfuscated). `_0x` identifiers need at least
+10 occurrences and 2 per KB.
+
+**D23. LW008 details.** Names under 5 characters get no edit-distance check
+(too many short names are one edit apart by chance); 5 to 9 characters allow
+distance 1, 10 or more allow 2. Separator/scope confusion compares names with
+`-_.@/` removed.
+
+**D24. Scoring counts each rule once.** The spec says "sum of severity
+weights". Summing every finding would let a bundle with 40 `eval`s score 100.
+Chose: each rule adds the weight of its worst finding, so the score reflects
+how many different risky behaviours a package shows.
+
+**D25. Finding limits.** At most 5 findings per rule per file and 25 per rule
+per package; a package warning says how many were left out. Keeps reports of
+large bundles readable.
+
+**D26. "Flagged" means risk level medium or above (score >= 30).** Used for
+the package-level detection and false-positive rates in the evaluation.
+
+## Reports and CLI
+
+**D27. The report lists every scanned package**, including those with no
+findings (score 0), so a consumer can see what was covered. The table only
+shows packages with findings. Each package has a `warnings` list (limits hit,
+metadata unavailable); each skipped entry has `error: true|false`.
+
+**D28. Exit codes.** 1 if any finding is at or above `--fail-on` (default
+`high`); otherwise 2 if a package could not be scanned because of an error
+(download failure, offline cache miss), so a flaky network cannot silently
+pass a CI gate; otherwise 0. Fatal errors (bad lockfile) also exit 2. `info`
+never triggers `--fail-on low`.
+
+**D29. `--out` writes the selected format to a file instead of stdout.**
+
+**D30. `--now` flag.** Time-based rules (LW009) depend on "now". `--now
+<RFC 3339>` makes fixture scans, snapshots and the evaluation reproducible;
+it also sets `scanned_at`.
+
+**D31. Default cache directory** is `$LOCKWATCH_CACHE_DIR`, else
+`$XDG_CACHE_HOME/lockwatch`, else `~/.cache/lockwatch`.
+
+**D32. Analysis threads get 16 MB stacks.** Parsing and walking deeply nested
+attacker-written JavaScript recurses deeply; a dedicated rayon pool with big
+stacks avoids stack overflows (the default is 2 MB).
+
+## Data
+
+**D33. Popular list source.** The npm downloads API (`api.npmjs.org`) was
+blocked by the build environment's network policy. `scripts/build_popular.ts`
+tries it first and falls back to the registry search API's
+`downloads.weekly`, which reports the same weekly figure; the file header
+records which source was used. The search API does not return deprecated
+packages, so 18 seed names (including `request`, `aws-sdk`, `node-sass`) are
+missing from the 2026-10-11 snapshot; this is listed in the file header and
+in RULES.md. Re-running the script where `api.npmjs.org` is reachable fixes
+it.
+
+**D34. Fixtures are built, not hand-made tarballs.** Readable sources live in
+`fixtures/packages`; an example program packs them deterministically and
+writes the offline cache and lockfiles, which are committed. Fake binaries
+are generated from `_generate.json` so no executable is stored in git.
+
+## Node API
+
+**D35. Node 22, not 20.** The spec says "LTS 20+" and mentions
+`node:20-slim`. Node 20 reached end-of-life in April 2026, and
+`better-sqlite3` 13 requires Node 22. Chose Node 22 (current LTS) everywhere
+(Docker, CI, `engines`).
+
+**D36. vitest 5.** vitest 3.x/4.1.10 and older have published advisories
+(path traversal in `@vitest/mocker`, prototype pollution in `tinypool`), and
+npm 10 hit a resolver bug installing vitest 4.1.11. vitest 5.0.3 installs
+cleanly with `npm audit` reporting 0 vulnerabilities.

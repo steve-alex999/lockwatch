@@ -143,3 +143,243 @@ access to the private items of the module it sits in.
 
 **Why:** tests sit next to the code they check and can test private helpers
 such as `name_from_path`.
+
+## `async`/`await` and the tokio runtime
+
+**What:** an `async fn` returns a *future*: a value describing work that can
+pause while it waits (for a network reply, a timer) and let other work run on
+the same thread. `.await` waits for a future. Futures do nothing until a
+runtime drives them; tokio is that runtime. `#[tokio::main]` creates one and
+runs `main` on it; `#[tokio::test]` does the same for a test.
+
+**Where:** `RegistryClient::get` and `ensure_tarball` in
+`crates/lockwatch-core/src/registry.rs`; `scan_packages` in `src/scan.rs`;
+`main` in `crates/lockwatch-cli/src/main.rs`.
+
+**Why:** downloads spend almost all their time waiting on the network. With
+async, hundreds of downloads can be in flight on a few threads.
+
+## Bounded concurrency with `futures::stream`
+
+**What:** `stream::iter(items).map(|x| async { ... }).buffer_unordered(n)`
+turns a list into futures and runs at most `n` of them at a time, yielding
+results as they complete. `tokio::join!(a, b)` runs two futures concurrently
+and waits for both.
+
+**Where:** `scan_packages` in `crates/lockwatch-core/src/scan.rs`.
+
+**Why:** `--concurrency 16` means "at most 16 requests at once", so the
+scanner is fast without hammering the registry.
+
+## `Arc` (shared ownership across tasks and threads)
+
+**What:** `Arc<T>` is a reference-counted pointer that is safe to share
+between threads. `Arc::clone(&x)` makes another pointer to the same value
+(cheap, no deep copy); the value is freed when the last `Arc` is dropped.
+
+**Where:** `scan_packages` wraps the `RegistryClient` in an `Arc` so every
+download future can hold it; `MockRegistry` in `src/test_support.rs` shares
+a `Mutex<HashMap>` of hit counters the same way.
+
+**Why:** each future needs access to the client, and the borrow checker will
+not let a plain reference outlive the function that created it.
+
+## CPU work off the async runtime: `spawn_blocking` and rayon
+
+**What:** rayon's `par_iter()` splits a collection across all CPU cores (a
+work-stealing thread pool). `tokio::task::spawn_blocking` runs a closure on a
+separate thread so long computations do not stall tokio's async threads.
+
+**Where:** `scan_packages` (packages analysed with `into_par_iter`, inside
+`spawn_blocking`, on a pool built with 16 MB stacks), `PackageContext::build`
+in `src/context.rs` (files analysed in parallel), `run_rules` in
+`src/rules/mod.rs` (rules run in parallel).
+
+**Why:** unpacking and parsing JavaScript is CPU-bound; rayon uses every
+core with almost no code.
+
+## `Send` and `Sync`
+
+**What:** marker traits. `Send` = a value may be moved to another thread;
+`Sync` = a reference may be shared between threads. The compiler checks them
+automatically.
+
+**Where:** `pub trait Rule: Send + Sync` in `src/rules/mod.rs`; the file
+reader passed to `PackageContext::build` is `&(dyn Fn(&str) -> Option<Vec<u8>>
++ Sync)`.
+
+**Why:** rules and the file reader are used from several rayon threads at
+once. oxc's syntax tree is *not* `Sync` (it lives in a single-threaded arena),
+which is why each file's facts are extracted into plain structs first.
+
+## Closures
+
+**What:** anonymous functions that can capture variables from where they are
+written: `|path: &str| written.contains(path)`. `move` closures take
+ownership of what they capture.
+
+**Where:** the `read` closure in `PackageContext::from_extraction`
+(`src/context.rs`); `hit` helpers in `src/analysis/fallback.rs`; the
+`async move` blocks in `scan_packages`.
+
+**Why:** small pieces of behaviour (how to read a file, how to build a
+finding) can be passed around without defining a named type.
+
+## Iterators and adapters
+
+**What:** `.iter()` produces items lazily; adapters like `map`, `filter`,
+`filter_map`, `flat_map`, `chain`, `take` build a pipeline; `collect()` runs
+it into a `Vec`, `HashMap`, `String`, even `Option<Vec<_>>` (which becomes
+`None` if any item is `None`).
+
+**Where:** everywhere; good examples are `decode_hex` in
+`src/analysis/js.rs` (collecting into `Option<Vec<u8>>`) and
+`install_sources` in `src/context.rs` (`files.chain(inline)`).
+
+**Why:** clear, allocation-light data processing without index bookkeeping.
+
+## `let ... else` and `match` guards
+
+**What:** `let Some(x) = expr else { return ...; };` binds `x` or leaves the
+function early. In `match`, `Some(at) if at > 0 => ...` only takes the arm
+when the guard is true.
+
+**Where:** `NpmLockfileParser::parse` (`let Some(version) = ... else`),
+`split_spec` in `src/scan.rs` (guards), most rules' `check` functions.
+
+**Why:** keeps the main path un-nested: handle the "nothing to do" case
+first, then work with the value.
+
+## Visitors over a syntax tree, and arena lifetimes (`'a`)
+
+**What:** oxc parses JavaScript into an AST allocated in an `Allocator`
+(arena). Every AST node borrows from the arena and the source text, which is
+what the lifetime parameter in `Program<'a>` or `CallExpression<'a>` says:
+"this node cannot outlive the arena". The `Visit<'a>` trait has one method
+per node type; overriding `visit_call_expression` and calling
+`walk::walk_call_expression` keeps the traversal going into children.
+
+**Where:** `impl<'a> Visit<'a> for Collector<'_>` in
+`crates/lockwatch-core/src/analysis/js.rs`.
+
+**Why:** we only care about a few node kinds (calls, imports, member
+expressions, string literals); the visitor visits all the others for free.
+
+## Static evaluation and recursion limits
+
+**What:** `Collector::static_value` computes what an expression evaluates to
+when that is knowable without running it (`'child_' + 'process'`,
+`['a','b'].join('')`, `Buffer.from('...', 'base64').toString()`). It is a
+recursive function with a `depth` counter.
+
+**Where:** `static_value` and `static_call` in `src/analysis/js.rs`.
+
+**Why:** attackers split strings to hide `require('child_process')`. The
+depth limit makes sure a deeply nested expression cannot cause a stack
+overflow.
+
+## `static`, `OnceLock` and `const fn`
+
+**What:** a `static` lives for the whole program. `OnceLock<T>` is a cell that
+is filled once, on first use, safely across threads. A `const fn` can run at
+compile time, which is required to initialise a `static`.
+
+**Where:** `LazyRegex` in `src/analysis/text.rs` (regexes compiled once);
+`popular_packages()` in `src/rules/lw008_typosquat.rs` (list parsed once);
+`pub static RULES: &[&dyn Rule]` in `src/rules/mod.rs`.
+
+**Why:** compiling a regex or parsing the popular list for every file would
+be wasteful; doing it lazily also avoids work for commands that never need
+it.
+
+## Trait objects in a static list
+
+**What:** `&dyn Rule` is a reference to "some type implementing `Rule`".
+Because every rule is a unit struct (no fields), `&InstallScriptPresent` is a
+constant and can live in a `static` slice.
+
+**Where:** `RULES` in `src/rules/mod.rs`; used by `run_rules` and by the
+`rules` command in the CLI.
+
+**Why:** adding a rule = one new file plus one line in `RULES`.
+
+## Default trait methods
+
+**What:** a trait can provide a method body that implementors get for free.
+
+**Where:** `Rule::finding` in `src/rules/mod.rs` builds a `Finding` with the
+rule's ID and default severity and truncates the evidence to 200 characters.
+
+**Why:** the 200-character limit is enforced in one place for all 12 rules.
+
+## `include_str!`, `env!` and `concat!`
+
+**What:** macros evaluated at compile time. `include_str!("../../data/popular.txt")`
+embeds a file's text in the binary; `env!("CARGO_PKG_VERSION")` reads a
+variable Cargo sets while compiling.
+
+**Where:** `POPULAR_TXT` in `src/rules/lw008_typosquat.rs`; the user agent in
+`RegistryClient::new`; `TOOL_VERSION` in `src/report.rs`;
+`env!("CARGO_BIN_EXE_lockwatch")` in the CLI tests.
+
+**Why:** the binary is self-contained (no data files to install), and the
+version string can never drift from `Cargo.toml`.
+
+## `impl Trait` in argument and return position
+
+**What:** `fn new(root: impl Into<PathBuf>)` accepts any type convertible to
+`PathBuf`. A return type of `impl Iterator<Item = Match<'h>> + use<'s, 'h>`
+says "some iterator type", and the `use<..>` part lists which lifetimes the
+hidden type may borrow from.
+
+**Where:** `Cache::new` in `src/cache.rs`; `LazyRegex::find_iter` in
+`src/analysis/text.rs`.
+
+**Why:** flexible APIs without writing out long generic types.
+
+## Integer conversions without surprises
+
+**What:** `u32::try_from(x)` fails instead of silently truncating;
+`saturating_add`, `saturating_sub` and `saturating_pow` stop at the type's
+limit instead of overflowing.
+
+**Where:** `LineIndex::line_of` in `src/analysis/text.rs`, the size budget in
+`extract_tarball`, the retry delay in `RegistryClient::get`.
+
+**Why:** values derived from attacker-controlled archives must not overflow.
+
+## clap derive
+
+**What:** `#[derive(Parser)]` on a struct generates a command-line parser;
+doc comments become `--help` text; `#[command(subcommand)]`,
+`#[command(flatten)]` and `#[arg(long, value_enum, default_value_t = ...)]`
+describe the interface.
+
+**Where:** `Cli`, `Command` and `ScanArgs` in
+`crates/lockwatch-cli/src/main.rs`.
+
+**Why:** argument parsing, validation and help text with no hand-written
+parsing code.
+
+## Process exit codes (`ExitCode`)
+
+**What:** `fn main() -> ExitCode` returns the process status; `ExitCode::from(2)`
+reports an error to the shell or CI.
+
+**Where:** `finish` and `main` in `crates/lockwatch-cli/src/main.rs`.
+
+**Why:** the spec defines 0/1/2 so CI pipelines can gate on findings.
+
+## Integration tests and snapshot tests
+
+**What:** files in a crate's `tests/` directory are compiled as separate
+programs that use the crate from outside. `insta::assert_json_snapshot!`
+saves a value's JSON to a `.snap` file on first run and fails if it later
+changes; redactions replace unstable fields (`duration_ms`).
+
+**Where:** `crates/lockwatch-cli/tests/fixtures.rs`,
+`crates/lockwatch-cli/tests/no_exec.rs`, snapshots in
+`crates/lockwatch-cli/tests/snapshots/`.
+
+**Why:** they test the real binary end to end, and any change to the report
+shows up as a reviewable diff.
