@@ -6,10 +6,12 @@
 
 pub mod analysis;
 pub mod cache;
+pub mod context;
 pub mod error;
 pub mod extract;
 pub mod integrity;
 pub mod lockfile;
+pub mod manifest;
 pub mod registry;
 pub mod time;
 
