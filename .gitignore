@@ -7,4 +7,4 @@ api/coverage/
 *.db
 *.db-journal
 .env
-eval/work/
+eval/work*/

@@ -188,6 +188,7 @@ fn build_one(dir: &Path, cache: &Cache) -> Result<Fixture, BoxError> {
                 publisher: Some(publisher.clone()),
                 tarball: is_current.then(|| registry_url(&name, &version)),
                 integrity: is_current.then(|| lock_integrity.clone()),
+                ..VersionInfo::default()
             },
         );
         packument.time.insert(v.clone(), time.clone());

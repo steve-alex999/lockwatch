@@ -71,8 +71,17 @@ pub struct Packument {
 
 #[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct VersionInfo {
-    /// npm user who published this version (`_npmUser.name`).
+    /// npm user who published this version (`_npmUser.name`). For npm
+    /// trusted publishing (OIDC from CI) this is the CI identity, for
+    /// example "GitHub Actions".
     pub publisher: Option<String>,
+    /// Published through npm trusted publishing (`_npmUser.trustedPublisher`).
+    #[serde(default)]
+    pub trusted_publisher: bool,
+    /// For trusted publishing: the npm user who approved the release
+    /// (`_npmUser.approver.name`), if recorded.
+    #[serde(default)]
+    pub approver: Option<String>,
     pub tarball: Option<String>,
     pub integrity: Option<String>,
 }
@@ -320,14 +329,23 @@ pub fn parse_packument(name: &str, bytes: &[u8]) -> Result<Packument> {
         .versions
         .into_iter()
         .map(|(version, v)| {
-            let publisher = v.npm_user.and_then(|user| match user {
-                serde_json::Value::Object(map) => {
-                    map.get("name").and_then(|n| n.as_str()).map(str::to_string)
-                }
+            let (publisher, trusted_publisher, approver) = match v.npm_user {
+                Some(serde_json::Value::Object(map)) => (
+                    map.get("name").and_then(|n| n.as_str()).map(str::to_string),
+                    map.get("trustedPublisher").is_some_and(|t| !t.is_null()),
+                    map.get("approver")
+                        .and_then(|a| a.get("name"))
+                        .and_then(|n| n.as_str())
+                        .map(str::to_string),
+                ),
                 // "name <email>" -> "name"
-                serde_json::Value::String(s) => s.split(" <").next().map(|n| n.trim().to_string()),
-                _ => None,
-            });
+                Some(serde_json::Value::String(s)) => (
+                    s.split(" <").next().map(|n| n.trim().to_string()),
+                    false,
+                    None,
+                ),
+                _ => (None, false, None),
+            };
             let (tarball, integrity) = match v.dist {
                 Some(dist) => {
                     let integrity = dist
@@ -339,6 +357,8 @@ pub fn parse_packument(name: &str, bytes: &[u8]) -> Result<Packument> {
             };
             let info = VersionInfo {
                 publisher,
+                trusted_publisher,
+                approver,
                 tarball,
                 integrity,
             };
@@ -472,6 +492,8 @@ mod tests {
           "versions": {
             "1.0.0": { "_npmUser": {"name": "alice", "email": "a@x"},
                        "dist": {"tarball": "t1", "integrity": "sha512-x"} },
+            "2.0.0": { "_npmUser": {"name": "GitHub Actions", "trustedPublisher": {"id": "github"},
+                                    "approver": {"name": "alice"}} },
             "0.1.0": { "_npmUser": "bob <bob@x>",
                        "dist": {"shasum": "a9993e364706816aba3e25717850c26c9cd0d89d"} }
           },
@@ -484,6 +506,9 @@ mod tests {
         let p = c.packument("a", &["1.0.0".into()]).await.expect("metadata");
         assert_eq!(p.versions["1.0.0"].publisher.as_deref(), Some("alice"));
         assert_eq!(p.versions["0.1.0"].publisher.as_deref(), Some("bob"));
+        assert!(p.versions["2.0.0"].trusted_publisher);
+        assert_eq!(p.versions["2.0.0"].approver.as_deref(), Some("alice"));
+        assert!(!p.versions["1.0.0"].trusted_publisher);
         assert!(p.versions["0.1.0"]
             .integrity
             .as_deref()

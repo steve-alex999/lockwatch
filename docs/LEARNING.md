@@ -383,3 +383,106 @@ changes; redactions replace unstable fields (`duration_ms`).
 
 **Why:** they test the real binary end to end, and any change to the report
 shows up as a reviewable diff.
+
+---
+
+# Node.js and TypeScript (the API in `api/`)
+
+## ES modules and TypeScript with erasable syntax
+
+**What:** `"type": "module"` in `package.json` makes `.js` files ES modules
+(`import`/`export`). The TypeScript sources only use syntax whose types can be
+deleted to get JavaScript (`erasableSyntaxOnly`: no `enum`, no constructor
+parameter properties), so Node 22 can run them directly
+(`node --experimental-strip-types src/server.ts`) and `tsc` compiles them for
+production (`rewriteRelativeImportExtensions` turns `./app.ts` into
+`./app.js`).
+
+**Where:** `api/package.json`, `api/tsconfig.json`, imports such as
+`import { buildApp } from "./app.ts"` in `api/src/server.ts`;
+`scripts/build_popular.ts` and `eval/summarize.ts` run without a build step.
+
+**Why:** one source of truth, no bundler, and scripts that run with plain
+`node`.
+
+## `async`/`await` and Promises in Node
+
+**What:** a `Promise` is a value that will be available later; `await` pauses
+the function until it settles. `new Promise((resolve, reject) => ...)` wraps
+callback-style APIs (child process events) in a promise.
+
+**Where:** `runLockwatch` in `api/src/runner.ts` wraps `spawn`'s `close` and
+`error` events; route handlers in `api/src/app.ts` are `async`.
+
+**Why:** the server keeps handling other requests while a scan runs.
+
+## `child_process.spawn` without a shell
+
+**What:** `spawn(file, [arg1, arg2], { shell: false })` starts a program with
+an exact argument list. With a shell (`exec("lockwatch scan " + name)`), a
+name like `x; rm -rf ~` would be interpreted as two commands.
+
+**Where:** `runLockwatch` in `api/src/runner.ts`; the test "passes arguments
+without a shell" in `api/test/runner.test.ts` proves `$(...)` arrives
+verbatim.
+
+**Why:** the spec forbids shells and string concatenation; untrusted input
+never reaches a command interpreter. The timeout uses `child.kill("SIGKILL")`.
+
+## Fastify plugins, hooks and `inject`
+
+**What:** Fastify features are added with `app.register(plugin, options)`
+(rate limiting, multipart uploads). Hooks such as `onClose` run at lifecycle
+points. `app.inject({ method, url, payload })` calls a route in-process
+without opening a port.
+
+**Where:** `buildApp` in `api/src/app.ts`; every test in
+`api/test/app.test.ts` uses `inject`.
+
+**Why:** building the app in a function (instead of at import time) lets
+tests create isolated instances with their own configuration.
+
+## zod: validation and types from one schema
+
+**What:** a zod schema validates unknown data at runtime (`safeParse` returns
+success or a list of issues), and `z.infer<typeof Schema>` gives the matching
+TypeScript type at compile time.
+
+**Where:** `api/src/schemas.ts` (`LockfileSchema`, `ReportSchema`),
+`api/src/config.ts` (environment variables with defaults).
+
+**Why:** HTTP bodies and the Rust binary's output are untrusted; one schema
+gives both the check and the type, so they cannot drift apart.
+
+## better-sqlite3 and prepared statements
+
+**What:** an embedded SQLite database with a synchronous API.
+`db.prepare(sql).run(params)` binds values separately from the SQL text.
+
+**Where:** `JobStore` in `api/src/store.ts`.
+
+**Why:** no database server to run; bound parameters make SQL injection
+impossible; WAL mode lets reads happen during writes.
+
+## Private class fields (`#field`)
+
+**What:** fields starting with `#` cannot be read from outside the class
+(enforced by JavaScript itself, not just by TypeScript).
+
+**Where:** `ScanQueue` in `api/src/queue.ts`, `JobStore` and `Scanner`.
+
+**Why:** the queue's counters can only change through `run()`, which keeps
+its invariant (never more than `concurrency` tasks) intact.
+
+## Vitest and test doubles
+
+**What:** vitest runs `*.test.ts` files with `describe`/`it`/`expect`.
+Instead of mocking `child_process`, the tests point the API at small fake
+binaries (`api/test/fake-bin/*.mjs`) that sleep, print garbage or print a
+valid report.
+
+**Where:** `api/test/`.
+
+**Why:** the real spawning, timeout and parsing code runs unchanged in tests;
+only the program at the other end is fake. `describe.skipIf` skips the
+integration tests when the Rust binary has not been built (CI requires it).

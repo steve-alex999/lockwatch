@@ -214,3 +214,35 @@ are generated from `_generate.json` so no executable is stored in git.
 (path traversal in `@vitest/mocker`, prototype pollution in `tinypool`), and
 npm 10 hit a resolver bug installing vitest 4.1.11. vitest 5.0.3 installs
 cleanly with `npm audit` reporting 0 vulnerabilities.
+
+## Tuning after the baseline evaluation
+
+The first full run of `eval/run_eval.sh` used the rules exactly as specified.
+Its results are kept in `eval/results/baseline/`. Baseline: 2 of 500 top
+packages flagged at medium or above (esbuild, pnpm); 164 of 500 had at least
+one finding of any severity; synthetic malicious fixtures flagged 26/43, with
+every fixture triggering its expected rules.
+
+**T1. LW010 understands npm trusted publishing.** In the baseline, 19 of the
+33 LW010 findings on the top 500 were versions published by "GitHub
+Actions": the package moved to npm trusted publishing (OIDC from CI), which
+records the CI identity as the publisher. The registry also records
+`_npmUser.trustedPublisher` and usually `_npmUser.approver` (the maintainer
+who approved the release). Change: for trusted-published versions LW010
+compares the approver with earlier publishers; with no approver recorded, the
+move to trusted publishing is reported as `info` instead of `medium`. A new
+human approver is still `medium`. Tests cover all four cases.
+
+**Considered and not done:**
+- Lowering LW004 when the only hard-coded host is the npm registry (would
+  have cleared esbuild): attackers can host a second stage on npm too, so
+  this would be an evasion path.
+- Allow-listing package managers or build tools (pnpm, esbuild): not a rule,
+  just a list of names, and a compromised version of those packages is
+  exactly what the scanner should catch.
+- Making `data/popular.txt` the npm top downloads (would remove the two LW008
+  hits on `call-bound` and `object.assign`): it would make the false-positive
+  test on the top 500 circular. Both are `medium` findings that leave the
+  packages at level `low`.
+- Detecting minified files by content for LW007's long-line check: the spec
+  defines the check by file name, and LW007 alone never reaches `medium`.
