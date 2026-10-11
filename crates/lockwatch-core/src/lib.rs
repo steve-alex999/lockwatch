@@ -13,6 +13,7 @@ pub mod integrity;
 pub mod lockfile;
 pub mod manifest;
 pub mod registry;
+pub mod rules;
 pub mod time;
 
 #[cfg(test)]
