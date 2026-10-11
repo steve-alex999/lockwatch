@@ -32,3 +32,5 @@ tracing.workspace = true
 
 [dev-dependencies]
 insta.workspace = true
+# Tests also need a TCP listener for the mock registry server.
+tokio = { workspace = true, features = ["net", "io-util"] }

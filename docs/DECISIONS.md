@@ -49,3 +49,33 @@ checked.
 folders, `file:` and git dependencies, and `inBundle` entries. Bundled
 dependencies are inside their parent's tarball, so their files are analysed as
 part of the parent.
+
+## Fetching and caching
+
+**D7. Allow-list of tarball hosts (SSRF protection).** Options: fetch any
+`resolved` URL, or only registry URLs. The API runs the CLI on lockfiles
+uploaded by strangers, and a `resolved` URL such as
+`http://169.254.169.254/...` would make the server request internal
+addresses. Chose: only `https` URLs on `registry.npmjs.org`,
+`registry.yarnpkg.com`, or the configured `--registry` origin. Other URLs are
+listed as skipped with the reason.
+
+**D8. Cache key = integrity hash in hex.** SRI uses base64, which contains
+`/`, so the key is `sha512-<hex>`. Entries with no integrity are keyed by a
+SHA-256 of the URL. A tarball is only written to the cache after it passed
+verification, and it is verified again every time it is read, so a corrupted
+or tampered cache file is reported as LW012 instead of being trusted.
+
+**D9. Metadata cache without expiry.** Options: a time-to-live, or "refetch
+when the cached document does not know this version". Chose the second: the
+fields the rules use (publish time and publisher of past versions) never
+change, and a new version always triggers a refetch. Only the needed fields
+are cached; full documents for popular packages are tens of megabytes.
+
+**D10. Retries.** Up to 3 retries with exponential backoff (0.5 s, 1 s, 2 s) on
+network errors, HTTP 429 and 5xx. A 404 is not retried. Responses are read in
+chunks with a size limit (100 MB per tarball, 200 MB per metadata document),
+so a hostile server cannot make the scanner buffer unlimited data.
+
+**D11. No date library.** RFC 3339 formatting and parsing are about 60 lines
+in `time.rs`, with tests (round trip of every 13th day from 1960 to 2100).
