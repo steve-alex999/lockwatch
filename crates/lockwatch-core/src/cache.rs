@@ -120,7 +120,9 @@ fn write_atomic(path: &Path, data: &[u8]) -> Result<()> {
         use std::os::unix::fs::PermissionsExt;
         builder.permissions(fs::Permissions::from_mode(0o644));
     }
-    let mut tmp = builder.tempfile_in(dir).map_err(|e| CoreError::io(dir, e))?;
+    let mut tmp = builder
+        .tempfile_in(dir)
+        .map_err(|e| CoreError::io(dir, e))?;
     tmp.write_all(data).map_err(|e| CoreError::io(path, e))?;
     tmp.persist(path)
         .map_err(|e| CoreError::io(path, e.error))?;
