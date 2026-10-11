@@ -1,0 +1,58 @@
+package,label,expected_rules,fired_rules,risk_score,risk_level,flagged_medium_or_above
+lwfx-env-dump,malicious,LW001 LW004 LW005,LW001 LW004 LW005,100,critical,yes
+lwfx-ssh-key-reader,malicious,LW001 LW004 LW005,LW001 LW004 LW005,100,critical,yes
+lwfx-steal-env-token,malicious,LW001 LW004 LW005,LW001 LW004 LW005,100,critical,yes
+lwfx-steal-npmrc,malicious,LW001 LW004 LW005,LW001 LW004 LW005,100,critical,yes
+lwfx-node-e-https,malicious,LW001 LW002 LW004,LW001 LW002 LW004,63,high,yes
+lwfx-tampered,malicious,LW012,LW012,60,high,yes
+lwfx-base64-sh,malicious,LW001 LW002,LW001 LW002,33,medium,yes
+lwfx-cp-aliased-require,malicious,LW001 LW003,LW001 LW003,33,medium,yes
+lwfx-cp-base64-module,malicious,LW001 LW003,LW001 LW003,33,medium,yes
+lwfx-cp-destructured,malicious,LW001 LW003,LW001 LW003,33,medium,yes
+lwfx-cp-exec,malicious,LW001 LW003,LW001 LW003,33,medium,yes
+lwfx-cp-in-helper,malicious,LW001 LW003,LW001 LW003,33,medium,yes
+lwfx-cp-minified,malicious,LW001 LW003,LW001 LW003,33,medium,yes
+lwfx-curl-pipe-sh,malicious,LW001 LW002,LW001 LW002,33,medium,yes
+lwfx-esm-cp-import,malicious,LW001 LW003,LW001 LW003,33,medium,yes
+lwfx-iwr-iex,malicious,LW001 LW002,LW001 LW002,33,medium,yes
+lwfx-net-dns-tunnel,malicious,LW001 LW004,LW001 LW004,33,medium,yes
+lwfx-net-fetch-domain,malicious,LW001 LW004,LW001 LW004,33,medium,yes
+lwfx-net-ip,malicious,LW001 LW004,LW001 LW004,33,medium,yes
+lwfx-net-raw-socket,malicious,LW001 LW004,LW001 LW004,33,medium,yes
+lwfx-npm-run-indirect,malicious,LW001 LW002,LW001 LW002,33,medium,yes
+lwfx-powershell-enc,malicious,LW001 LW002,LW001 LW002,33,medium,yes
+lwfx-regex-fallback,malicious,LW001 LW003,LW001 LW003,33,medium,yes
+lwfx-shell-file-dropper,malicious,LW001 LW002,LW001 LW002,33,medium,yes
+lwfx-wget-chmod-run,malicious,LW001 LW002,LW001 LW002,33,medium,yes
+lwfx-runtime-aws-reader,malicious,LW005,LW005,30,medium,yes
+lwfx-obf-entropy,malicious,LW006 LW007,LW006 LW007,24,low,no
+lwfx-vm-run,malicious,LW001 LW006,LW001 LW006,15,low,no
+axois,malicious,LW008,LW008,12,low,no
+cross_env,malicious,LW008,LW008,12,low,no
+expresss,malicious,LW008,LW008,12,low,no
+lodahs,malicious,LW008,LW008,12,low,no
+lwfx-computed-require,malicious,LW006,LW006,12,low,no
+lwfx-eval-payload,malicious,LW006,LW006,12,low,no
+lwfx-new-function,malicious,LW006,LW006,12,low,no
+lwfx-new-maintainer,malicious,LW010,LW010,12,low,no
+lwfx-obf-0x,malicious,LW007,LW007,12,low,no
+lwfx-obf-hex-escapes,malicious,LW007,LW007,12,low,no
+lwfx-obf-long-line,malicious,LW007,LW007,12,low,no
+lwfx-dll-dropper,malicious,LW011,LW011,3,none,no
+lwfx-fresh-release,malicious,LW009,LW009,3,none,no
+lwfx-hidden-elf,malicious,LW011,LW011,3,none,no
+lwfx-macho-addon,malicious,LW011,LW011,3,none,no
+lwfx-ok-esbuild-like,benign,LW001,LW001 LW003 LW004,63,high,yes
+lwfx-ok-sdk-api-key,benign,,LW005,30,medium,yes
+lwfx-ok-base64-asset,benign,,LW007,12,low,no
+lwfx-ok-template-engine,benign,,LW006,12,low,no
+lwfx-ok-postinstall-message,benign,LW001,LW001,3,none,no
+lwfx-ok-prepare-tsc,benign,LW001,LW001,3,none,no
+lwfx-ok-cli-spawn,benign,,,0,none,no
+lwfx-ok-docs-npmrc,benign,,,0,none,no
+lwfx-ok-env-config,benign,,,0,none,no
+lwfx-ok-http-client,benign,,,0,none,no
+lwfx-ok-minified,benign,,,0,none,no
+lwfx-ok-node-gyp,benign,LW001,LW001,0,none,no
+lwfx-ok-platform-binary,benign,,,0,none,no
+lwfx-ok-prebuild,benign,LW001,LW001,0,none,no

@@ -35,7 +35,8 @@ async function getJson(url: string): Promise<unknown> {
     const res = await fetch(url, { signal: AbortSignal.timeout(20_000) });
     if (res.ok) return res.json();
     const retryable = res.status === 429 || res.status >= 500;
-    if (!retryable || attempt >= 6) throw new Error(`HTTP ${res.status} for ${url}`);
+    if (!retryable || attempt >= 6)
+      throw new Error(`HTTP ${res.status} for ${url}`);
     const retryAfter = Number(res.headers.get("retry-after"));
     await sleep(retryAfter > 0 ? retryAfter * 1000 : 2000 * 2 ** attempt);
   }
@@ -75,7 +76,8 @@ async function fromSearchApi(names: string[]): Promise<Counts> {
     try {
       const body = (await getJson(url)) as SearchResult;
       const hit = body.objects.find((o) => o.package.name === name);
-      if (hit?.downloads?.weekly !== undefined) counts.set(name, hit.downloads.weekly);
+      if (hit?.downloads?.weekly !== undefined)
+        counts.set(name, hit.downloads.weekly);
     } catch (err) {
       // For example one-letter names, which the search API rejects (HTTP 400).
       console.error(`skipping ${name}: ${(err as Error).message}`);
@@ -96,18 +98,24 @@ async function main(): Promise<void> {
     ),
   ];
 
-  let source = "npm downloads API, https://api.npmjs.org/downloads/point/last-week";
+  let source =
+    "npm downloads API, https://api.npmjs.org/downloads/point/last-week";
   let counts: Counts;
   try {
     counts = await fromDownloadsApi(names);
   } catch (err) {
-    console.error(`downloads API unavailable (${(err as Error).message}); using search API`);
-    source = "npm registry search API, downloads.weekly, https://registry.npmjs.org/-/v1/search";
+    console.error(
+      `downloads API unavailable (${(err as Error).message}); using search API`,
+    );
+    source =
+      "npm registry search API, downloads.weekly, https://registry.npmjs.org/-/v1/search";
     counts = await fromSearchApi(names);
   }
 
   const missing = names.filter((n) => !counts.has(n));
-  const rows = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  const rows = [...counts.entries()].sort(
+    (a, b) => b[1] - a[1] || a[0].localeCompare(b[0]),
+  );
   const today = new Date().toISOString().slice(0, 10);
   const header = [
     "# lockwatch popular package list (used by rule LW008)",
