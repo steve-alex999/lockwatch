@@ -206,11 +206,11 @@ impl RegistryClient {
         Ok(FetchedTarball::Cached(path))
     }
 
-    /// Registry metadata for `name`, from the cache if it already knows about
-    /// `version`, otherwise from the registry (and then cached).
-    pub async fn packument(&self, name: &str, version: &str) -> Result<Packument> {
+    /// Registry metadata for `name`, from the cache if it already knows all
+    /// of `versions`, otherwise from the registry (and then cached).
+    pub async fn packument(&self, name: &str, versions: &[String]) -> Result<Packument> {
         if let Some(cached) = self.cache.read_packument(name)? {
-            if cached.versions.contains_key(version) {
+            if versions.iter().all(|v| cached.versions.contains_key(v)) {
                 return Ok(cached);
             }
         }
@@ -447,7 +447,7 @@ mod tests {
             .await
             .expect_err("miss");
         assert!(matches!(err, CoreError::OfflineCacheMiss(_)));
-        let err = c.packument("a", "1.0.0").await.expect_err("miss");
+        let err = c.packument("a", &["1.0.0".into()]).await.expect_err("miss");
         assert!(matches!(err, CoreError::OfflineCacheMiss(_)));
         assert_eq!(server.total_hits(), 0);
     }
@@ -481,7 +481,7 @@ mod tests {
         let server = MockRegistry::start(vec![("/a", 200, doc.to_vec())]).await;
         let dir = tempfile::tempdir().expect("tempdir");
         let c = client(dir.path(), &server.url, false);
-        let p = c.packument("a", "1.0.0").await.expect("metadata");
+        let p = c.packument("a", &["1.0.0".into()]).await.expect("metadata");
         assert_eq!(p.versions["1.0.0"].publisher.as_deref(), Some("alice"));
         assert_eq!(p.versions["0.1.0"].publisher.as_deref(), Some("bob"));
         assert!(p.versions["0.1.0"]
@@ -490,7 +490,7 @@ mod tests {
             .is_some_and(|i| i.starts_with("sha1-")));
         assert!(!p.time.contains_key("unpublished"));
         // Cached now: no second request.
-        c.packument("a", "1.0.0").await.expect("metadata");
+        c.packument("a", &["1.0.0".into()]).await.expect("metadata");
         assert_eq!(server.hits("/a"), 1);
     }
 }
