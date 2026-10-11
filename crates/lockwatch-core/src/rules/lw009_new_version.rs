@@ -68,6 +68,7 @@ mod tests {
     use super::*;
     use crate::registry::Packument;
     use crate::rules::test_helpers::ctx_with_metadata;
+    use crate::rules::Finding;
     use crate::time::parse_rfc3339;
 
     fn meta(published: &str) -> Packument {
@@ -83,17 +84,26 @@ mod tests {
         parse_rfc3339("2026-10-20T00:00:00Z").unwrap_or_default()
     }
 
+    fn check_at(published: &str) -> Vec<Finding> {
+        VeryNewVersion.check(&ctx_with_metadata("p", &[], Some(meta(published)), now()))
+    }
+
     #[test]
-    fn flags_versions_hours_or_days_old() {
-        for (published, expect) in [
-            ("2026-10-19T18:00:00Z", "6 hours"),
-            ("2026-10-15T00:00:00Z", "5 days"),
-        ] {
-            let c = ctx_with_metadata("p", &[], Some(meta(published)), now());
-            let f = VeryNewVersion.check(&c);
-            assert_eq!(f.len(), 1);
-            assert!(f[0].explanation.contains(expect), "{}", f[0].explanation);
-        }
+    fn flags_a_version_published_hours_ago() {
+        let f = check_at("2026-10-19T18:00:00Z");
+        assert_eq!(f.len(), 1);
+        assert_eq!(f[0].severity, Severity::Low);
+        assert!(f[0].explanation.contains("6 hours"), "{}", f[0].explanation);
+    }
+
+    #[test]
+    fn flags_a_version_published_days_ago() {
+        let f = check_at("2026-10-15T00:00:00Z");
+        assert_eq!(f.len(), 1);
+        assert!(f[0].explanation.contains("5 days"), "{}", f[0].explanation);
+        assert!(check_at("2026-10-19T00:00:00Z")[0]
+            .explanation
+            .contains("1 day "));
     }
 
     #[test]

@@ -54,6 +54,17 @@ impl Rule for InstallScriptPresent {
                     );
                     f.severity = Severity::Info;
                     f
+                } else if script.hook == "prepare" {
+                    // npm runs `prepare` for git and local installs, not
+                    // for tarballs from the registry; say so.
+                    self.finding(
+                        ctx,
+                        Some("package.json"),
+                        line,
+                        &evidence,
+                        "The package has a prepare script, which npm runs when it is installed                          from git or a local folder (not from a registry tarball)."
+                            .to_string(),
+                    )
                 } else {
                     self.finding(
                         ctx,

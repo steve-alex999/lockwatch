@@ -246,3 +246,34 @@ human approver is still `medium`. Tests cover all four cases.
   packages at level `low`.
 - Detecting minified files by content for LW007's long-line check: the spec
   defines the check by file name, and LW007 alone never reaches `medium`.
+
+**T2. LW001 explanation for `prepare`.** The evaluation showed many LW001
+findings come from `prepare` scripts, which npm runs for git and local
+installs but not for registry tarballs. The spec keeps `prepare` at `low`, so
+only the explanation changed. Made after the final evaluation run; it changes
+no result.
+
+## Evaluation
+
+**D37. Top-500 source.** The npm downloads API was unreachable and the
+registry search API cannot sort by downloads, so the ranking comes from the
+`topDownload` list of the `npm-high-impact` package (sorted by weekly
+downloads by its author; version 1.13.0, published 2026-06-08). The script
+reads that file as text and never executes it. Versions are each package's
+`latest` on 2026-10-11.
+
+**D38. Per-package timing uses one `scan-package` process per package**, run
+one after another, so the times are not affected by concurrency and include
+process start-up. Cold = nothing cached for that package; warm = the same
+cache again. The whole-lockfile time uses the default concurrency (16).
+
+**D39. Benchmark lockfile.** A real project lockfile of about 400 packages,
+created with `npm install --package-lock-only --ignore-scripts express jest
+typescript prettier` (metadata only: no tarballs downloaded, no scripts run).
+It has 401 entries, 395 unique packages.
+
+**D40. Real malicious samples not used.** The optional dataset (for example
+DataDog's malicious-software-packages) would need a "scan a local tarball"
+command, and the spec's safety rules for handling live malware. Skipped for
+v1 and stated in the README; it is the most valuable next step for an honest
+detection rate.
