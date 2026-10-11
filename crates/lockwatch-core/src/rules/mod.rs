@@ -18,6 +18,7 @@ pub mod lw004_network;
 pub mod lw005_credentials;
 pub mod lw006_dynamic_code;
 pub mod lw007_obfuscation;
+pub mod lw008_typosquat;
 
 /// How bad a finding is. Declared from least to most severe, so the derived
 /// `Ord` lets us write `severity >= Severity::Medium`.
@@ -121,6 +122,7 @@ pub static RULES: &[&dyn Rule] = &[
     &lw005_credentials::CredentialAccess,
     &lw006_dynamic_code::DynamicCodeExecution,
     &lw007_obfuscation::Obfuscation,
+    &lw008_typosquat::PossibleTyposquat,
 ];
 
 /// At most this many findings of one rule are kept per file, and per
