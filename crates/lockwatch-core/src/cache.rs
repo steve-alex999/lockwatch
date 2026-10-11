@@ -111,7 +111,16 @@ fn write_atomic(path: &Path, data: &[u8]) -> Result<()> {
         .parent()
         .ok_or_else(|| CoreError::io(path, std::io::Error::other("path has no parent")))?;
     fs::create_dir_all(dir).map_err(|e| CoreError::io(dir, e))?;
-    let mut tmp = tempfile::NamedTempFile::new_in(dir).map_err(|e| CoreError::io(dir, e))?;
+    let mut builder = tempfile::Builder::new();
+    // Temporary files are private (0600) by default. Cached tarballs and
+    // metadata are public data; make them readable like normal files so a
+    // cache can be shared or mounted into a container.
+    #[cfg(unix)]
+    {
+        use std::os::unix::fs::PermissionsExt;
+        builder.permissions(fs::Permissions::from_mode(0o644));
+    }
+    let mut tmp = builder.tempfile_in(dir).map_err(|e| CoreError::io(dir, e))?;
     tmp.write_all(data).map_err(|e| CoreError::io(path, e))?;
     tmp.persist(path)
         .map_err(|e| CoreError::io(path, e.error))?;
@@ -151,6 +160,18 @@ mod tests {
 
         fs::write(cache.packument_path("@scope/pkg"), "{not json").expect("write");
         assert_eq!(cache.read_packument("@scope/pkg").expect("read"), None);
+    }
+
+    #[cfg(unix)]
+    #[test]
+    fn cached_files_are_world_readable() {
+        use std::os::unix::fs::PermissionsExt;
+        let dir = tempfile::tempdir().expect("tempdir");
+        let path = Cache::new(dir.path())
+            .write_tarball("k", b"x")
+            .expect("write");
+        let mode = fs::metadata(path).expect("stat").permissions().mode();
+        assert_eq!(mode & 0o777, 0o644);
     }
 
     #[test]
