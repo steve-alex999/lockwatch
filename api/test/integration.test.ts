@@ -19,6 +19,10 @@ const candidates = [
   join(repoRoot, "target/debug/lockwatch"),
 ].filter((p): p is string => Boolean(p));
 const bin = candidates.find((p) => existsSync(p));
+// CI sets REQUIRE_LOCKWATCH_BIN=1 so a missing binary fails instead of skipping.
+if (!bin && process.env.REQUIRE_LOCKWATCH_BIN === "1") {
+  throw new Error(`lockwatch binary not found (looked in: ${candidates.join(", ")})`);
+}
 const fixture = (name: string) => readFileSync(join(repoRoot, "fixtures/lockfiles", name), "utf8");
 
 describe.skipIf(!bin)("API + real lockwatch binary (offline fixtures)", () => {
