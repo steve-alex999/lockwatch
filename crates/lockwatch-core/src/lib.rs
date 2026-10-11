@@ -6,6 +6,7 @@
 
 pub mod cache;
 pub mod error;
+pub mod extract;
 pub mod integrity;
 pub mod lockfile;
 pub mod registry;

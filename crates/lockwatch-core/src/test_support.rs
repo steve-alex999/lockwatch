@@ -95,3 +95,19 @@ impl MockRegistry {
         self.hits.lock().expect("lock").values().sum()
     }
 }
+
+/// Build a gzip-compressed tarball from `(path, contents)` pairs.
+pub fn build_tgz(entries: &[(&str, &[u8])]) -> Vec<u8> {
+    use flate2::write::GzEncoder;
+    use flate2::Compression;
+    let mut builder = tar::Builder::new(GzEncoder::new(Vec::new(), Compression::fast()));
+    for (path, data) in entries {
+        let mut header = tar::Header::new_gnu();
+        header.set_size(data.len() as u64);
+        header.set_mode(0o644);
+        builder
+            .append_data(&mut header, path, *data)
+            .expect("append");
+    }
+    builder.into_inner().expect("tar").finish().expect("gzip")
+}

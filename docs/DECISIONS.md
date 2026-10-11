@@ -79,3 +79,26 @@ so a hostile server cannot make the scanner buffer unlimited data.
 
 **D11. No date library.** RFC 3339 formatting and parsing are about 60 lines
 in `time.rs`, with tests (round trip of every 13th day from 1960 to 2100).
+
+## Extraction
+
+**D12. Extract to a temporary directory, then read files back.** Options:
+unpack straight into memory, or onto disk as the spec says. Chose disk (a
+`tempfile::TempDir`, deleted automatically when dropped). Extraction is then a
+separate, testable security boundary: the traversal tests check the
+filesystem directly.
+
+**D13. Hitting a limit stops extraction but keeps the package.** Options: skip
+the whole package, or analyse what was extracted so far. Skipping would let
+an attacker pad a package past 50 MB to avoid every rule. Chose: stop
+unpacking (so a decompression bomb costs at most 50 MB), analyse the files
+already extracted, and add a warning to the package in the report.
+
+**D14. The size budget is charged before a file is read.** The tar format
+forces us to decompress data even to skip it, so the 50 MB budget counts
+every entry's declared size, including files we do not write. The entry
+limit (10,000) counts every entry, including directories and symlinks.
+
+**D15. Unsafe entries are skipped with a warning, not fatal.** Absolute
+paths, `..`, symlinks, hardlinks and device files are never created. The rest
+of the package is still analysed.
