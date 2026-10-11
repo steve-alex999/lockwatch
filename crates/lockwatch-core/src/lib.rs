@@ -4,6 +4,7 @@
 //! safe extract -> run rules -> score and report. The library never executes
 //! code from the packages it scans; it only downloads, unpacks and reads files.
 
+pub mod analysis;
 pub mod cache;
 pub mod error;
 pub mod extract;
