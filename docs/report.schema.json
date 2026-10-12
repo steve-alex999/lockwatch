@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/steve-alex999/lookwatch/docs/report.schema.json",
+  "$id": "https://github.com/steve-alex999/lockwatch/docs/report.schema.json",
   "title": "lockwatch report",
   "description": "Output of `lockwatch scan --format json` and `lockwatch scan-package --format json`. Uses only these keywords, which the test-suite validator supports: type, properties, required, additionalProperties, items, enum, const, minimum, maximum, maxLength, $ref, $defs.",
   "type": "object",

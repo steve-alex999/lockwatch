@@ -114,7 +114,7 @@ impl RegistryClient {
             .user_agent(concat!(
                 "lockwatch/",
                 env!("CARGO_PKG_VERSION"),
-                " (+https://github.com/steve-alex999/lookwatch)"
+                " (+https://github.com/steve-alex999/lockwatch)"
             ))
             .timeout(opts.timeout)
             .connect_timeout(Duration::from_secs(15))

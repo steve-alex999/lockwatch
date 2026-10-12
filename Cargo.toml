@@ -6,7 +6,7 @@ members = ["crates/lockwatch-core", "crates/lockwatch-cli"]
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-repository = "https://github.com/steve-alex999/lookwatch"
+repository = "https://github.com/steve-alex999/lockwatch"
 rust-version = "1.97"
 
 # Versions are pinned here once and shared by both crates
