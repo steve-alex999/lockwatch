@@ -21,7 +21,9 @@ use crate::extract::{extract_tarball, read_root_file, ExtractLimits};
 use crate::integrity::Integrity;
 use crate::lockfile::{parse_lockfile, LockedPackage, SkippedEntry};
 use crate::manifest::Manifest;
-use crate::registry::{FetchedTarball, Packument, RegistryClient, RegistryOptions};
+use crate::registry::{
+    parse_packument, FetchedTarball, Packument, RegistryClient, RegistryOptions,
+};
 use crate::report::{
     PackageReport, Report, SeverityCounts, SkippedPackage, Summary, TOOL_NAME, TOOL_VERSION,
 };
@@ -106,6 +108,9 @@ pub struct LocalTarball {
     /// Fetch registry metadata for the name (rules LW009 and LW010). Off by
     /// default: a local tarball may not be on the registry at all.
     pub fetch_metadata: bool,
+    /// A saved registry metadata document (the JSON served at
+    /// `https://registry.npmjs.org/<name>`) to use instead of fetching one.
+    pub packument_json: Option<Vec<u8>>,
     /// Shown as `lockfile` in the report (the file name, or "stdin").
     pub label: String,
 }
@@ -145,7 +150,9 @@ pub async fn scan_tarball(
         integrity: local.integrity,
     };
 
-    let metadata = if local.fetch_metadata {
+    let metadata = if let Some(json) = &local.packument_json {
+        Some(parse_packument(&pkg.name, json).map_err(|e| e.to_string()))
+    } else if local.fetch_metadata {
         let client = RegistryClient::new(Cache::new(&opts.cache_dir), opts.registry.clone())?;
         Some(
             client
@@ -508,9 +515,26 @@ mod tests {
             label: "x".into(),
             ..LocalTarball::default()
         };
-        let report = scan_tarball(tgz, local, &opts).await.expect("scan");
+        let report = scan_tarball(tgz.clone(), local, &opts).await.expect("scan");
         assert_eq!(report.packages[0].name, "renamed");
         assert_eq!(report.packages[0].findings[0].rule_id, "LW012");
+
+        // A saved registry document feeds the metadata rules (LW010 here).
+        let doc = br#"{"versions": {
+              "1.0.0": {"_npmUser": {"name": "alice"}},
+              "2.0.0": {"_npmUser": {"name": "mallory"}}},
+            "time": {"1.0.0": "2020-01-01T00:00:00Z", "2.0.0": "2020-02-01T00:00:00Z"}}"#;
+        let local = LocalTarball {
+            packument_json: Some(doc.to_vec()),
+            ..LocalTarball::default()
+        };
+        let report = scan_tarball(tgz.clone(), local, &opts).await.expect("scan");
+        let ids: Vec<&str> = report.packages[0]
+            .findings
+            .iter()
+            .map(|f| f.rule_id.as_str())
+            .collect();
+        assert_eq!(ids, ["LW001", "LW003", "LW010"]);
 
         // Not a tarball: reported as skipped with an error.
         let report = scan_tarball(b"junk".to_vec(), LocalTarball::default(), &opts)

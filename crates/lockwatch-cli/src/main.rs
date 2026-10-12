@@ -62,8 +62,11 @@ enum Command {
         #[arg(long)]
         integrity: Option<String>,
         /// Fetch registry metadata for LW009/LW010 (off by default)
-        #[arg(long)]
+        #[arg(long, conflicts_with = "packument")]
         metadata: bool,
+        /// Use this saved registry metadata JSON for LW009/LW010 instead
+        #[arg(long)]
+        packument: Option<PathBuf>,
         #[command(flatten)]
         opts: ScanArgs,
     },
@@ -261,14 +264,23 @@ async fn run(cli: Cli) -> Result<ExitCode> {
             package_version,
             integrity,
             metadata,
+            packument,
             opts,
         } => {
             let (bytes, label) = read_tarball(&tarball)?;
+            let packument_json = match &packument {
+                Some(path) => Some(
+                    std::fs::read(path)
+                        .with_context(|| format!("cannot read {}", path.display()))?,
+                ),
+                None => None,
+            };
             let local = LocalTarball {
                 name,
                 version: package_version,
                 integrity,
                 fetch_metadata: metadata,
+                packument_json,
                 label,
             };
             let report = scan_tarball(bytes, local, &opts.to_options()?)
