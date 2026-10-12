@@ -486,3 +486,42 @@ valid report.
 **Why:** the real spawning, timeout and parsing code runs unchanged in tests;
 only the program at the other end is fake. `describe.skipIf` skips the
 integration tests when the Rust binary has not been built (CI requires it).
+
+---
+
+# Added for the real-malware evaluation
+
+## Reading from stdin with a size limit (`Read::take`)
+
+**What:** `reader.take(n)` wraps any reader so it returns end-of-file after
+`n` bytes. `std::io::stdin().lock()` gives a locked, buffered handle to
+standard input.
+
+**Where:** `read_tarball` in `crates/lockwatch-cli/src/main.rs` reads at most
+100 MB + 1 byte, then refuses anything over 100 MB.
+
+**Why:** `scan-tarball -` accepts piped input from anywhere; without a limit,
+a huge stream would be read into memory.
+
+## Function pointers (`fn(&Manifest) -> Option<&str>`)
+
+**What:** a named function can be passed around like a value. Its type,
+`fn(&Manifest) -> Option<&str>`, names the signature.
+
+**Where:** `scan_tarball` in `crates/lockwatch-core/src/scan.rs` passes
+`Manifest::name` and `Manifest::version` to one small closure,
+`from_manifest`, instead of repeating the lookup code twice.
+
+**Why:** the same "read a field from package.json, if present" logic serves
+both fields.
+
+## Sharing code between two paths (refactoring into helpers)
+
+**What:** the lockfile pipeline and `scan-tarball` both need "verify, unpack,
+run the rules, score". That logic now lives in `analyse_bytes`, with
+`build_report` and `on_analysis_pool` as shared helpers.
+
+**Where:** `crates/lockwatch-core/src/scan.rs`.
+
+**Why:** a fix to how packages are analysed now applies to both commands at
+once.
