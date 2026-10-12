@@ -203,6 +203,38 @@ fn write_file(target: &Path, data: &[u8]) -> std::io::Result<()> {
     fs::write(target, data)
 }
 
+/// Read one file at the package root (for example `package.json`) straight
+/// from a tarball, without writing anything to disk. Stops after `limits`'
+/// entry count or unpacked size, and ignores files over `max_bytes`.
+/// Returns `None` if the file is missing or the archive is unreadable.
+pub fn read_root_file(
+    tgz: &[u8],
+    name: &str,
+    max_bytes: u64,
+    limits: &ExtractLimits,
+) -> Option<Vec<u8>> {
+    let mut archive = Archive::new(GzDecoder::new(tgz));
+    let mut total: u64 = 0;
+    for (count, entry) in archive.entries().ok()?.enumerate() {
+        let mut entry = entry.ok()?;
+        let size = entry.header().size().unwrap_or(0);
+        total = total.saturating_add(size);
+        if count >= limits.max_entries || total > limits.max_total_bytes {
+            return None;
+        }
+        if entry.header().entry_type() != EntryType::Regular {
+            continue;
+        }
+        let path = entry.path().ok()?.to_string_lossy().into_owned();
+        if safe_relative_path(Path::new(&path)).as_deref() == Some(name) && size <= max_bytes {
+            let mut data = Vec::new();
+            (&mut entry).take(max_bytes).read_to_end(&mut data).ok()?;
+            return Some(data);
+        }
+    }
+    None
+}
+
 /// Turn an archive path into a safe relative path, or `None` if it must be
 /// rejected.
 ///
@@ -363,6 +395,28 @@ mod tests {
         let out = extract_tarball(&tgz, dir.path(), &limits).expect("extract");
         assert_eq!(out.files.len(), 2);
         assert!(out.warnings[0].contains("more than 2 entries"));
+    }
+
+    #[test]
+    fn reads_a_root_file_without_extracting() {
+        let tgz = build_tgz(&[
+            (
+                "package/lib/package.json",
+                br#"{"name":"nested"}"#.as_slice(),
+            ),
+            ("package/package.json", br#"{"name":"root"}"#),
+        ]);
+        let limits = ExtractLimits::default();
+        assert_eq!(
+            read_root_file(&tgz, "package.json", 1024, &limits).as_deref(),
+            Some(br#"{"name":"root"}"#.as_slice())
+        );
+        assert_eq!(read_root_file(&tgz, "missing.json", 1024, &limits), None);
+        assert_eq!(read_root_file(&tgz, "package.json", 4, &limits), None);
+        assert_eq!(
+            read_root_file(b"not gzip", "package.json", 1024, &limits),
+            None
+        );
     }
 
     #[test]

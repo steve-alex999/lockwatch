@@ -13,7 +13,10 @@ use clap::{Args, Parser, Subcommand, ValueEnum};
 use lockwatch_core::registry::DEFAULT_REGISTRY;
 use lockwatch_core::report::Report;
 use lockwatch_core::rules::{Severity, RULES};
-use lockwatch_core::scan::{scan_lockfile, scan_package_spec, ScanOptions};
+use lockwatch_core::scan::{
+    scan_lockfile, scan_package_spec, scan_tarball, LocalTarball, ScanOptions,
+    MAX_LOCAL_TARBALL_BYTES,
+};
 use lockwatch_core::time::parse_rfc3339;
 
 /// `#[derive(Parser)]` makes clap generate the argument parser, `--help`
@@ -42,6 +45,25 @@ enum Command {
     ScanPackage {
         /// <name>@<version>
         spec: String,
+        #[command(flatten)]
+        opts: ScanArgs,
+    },
+    /// Scan a package tarball (.tgz) from disk, or from stdin with `-`
+    ScanTarball {
+        /// Path to the .tgz file, or `-` to read it from stdin
+        tarball: PathBuf,
+        /// Package name [default: read from the tarball's package.json]
+        #[arg(long)]
+        name: Option<String>,
+        /// Package version [default: read from the tarball's package.json]
+        #[arg(long = "package-version")]
+        package_version: Option<String>,
+        /// Expected integrity (SRI, e.g. sha512-...); a mismatch is LW012
+        #[arg(long)]
+        integrity: Option<String>,
+        /// Fetch registry metadata for LW009/LW010 (off by default)
+        #[arg(long)]
+        metadata: bool,
         #[command(flatten)]
         opts: ScanArgs,
     },
@@ -233,11 +255,62 @@ async fn run(cli: Cli) -> Result<ExitCode> {
                 .with_context(|| format!("scanning {spec}"))?;
             finish(&report, &opts)
         }
+        Command::ScanTarball {
+            tarball,
+            name,
+            package_version,
+            integrity,
+            metadata,
+            opts,
+        } => {
+            let (bytes, label) = read_tarball(&tarball)?;
+            let local = LocalTarball {
+                name,
+                version: package_version,
+                integrity,
+                fetch_metadata: metadata,
+                label,
+            };
+            let report = scan_tarball(bytes, local, &opts.to_options()?)
+                .await
+                .with_context(|| format!("scanning {}", tarball.display()))?;
+            finish(&report, &opts)
+        }
         Command::Rules { format } => {
             print_rules(format)?;
             Ok(ExitCode::SUCCESS)
         }
     }
+}
+
+/// Read a tarball from a file, or from stdin when the path is `-`, with the
+/// same size limit as a registry download. Returns the bytes and a label for
+/// the report.
+fn read_tarball(path: &std::path::Path) -> Result<(Vec<u8>, String)> {
+    use std::io::Read;
+    let limit = MAX_LOCAL_TARBALL_BYTES;
+    let mut bytes = Vec::new();
+    let label = if path.as_os_str() == "-" {
+        std::io::stdin()
+            .lock()
+            .take(limit + 1)
+            .read_to_end(&mut bytes)
+            .context("reading the tarball from stdin")?;
+        "stdin".to_string()
+    } else {
+        std::fs::File::open(path)
+            .with_context(|| format!("cannot open {}", path.display()))?
+            .take(limit + 1)
+            .read_to_end(&mut bytes)
+            .with_context(|| format!("cannot read {}", path.display()))?;
+        path.file_name()
+            .map(|n| n.to_string_lossy().into_owned())
+            .unwrap_or_else(|| path.display().to_string())
+    };
+    if bytes.len() as u64 > limit {
+        bail!("tarball is larger than {limit} bytes");
+    }
+    Ok((bytes, label))
 }
 
 fn init_logging(verbose: u8) {

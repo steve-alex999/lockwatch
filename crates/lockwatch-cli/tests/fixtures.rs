@@ -203,3 +203,66 @@ fn rules_command_lists_twelve_rules() {
     assert_eq!(rules[0]["id"], "LW001");
     assert_eq!(rules[11]["severity"], "critical");
 }
+
+#[test]
+fn scan_tarball_reads_a_file_and_stdin() {
+    use std::io::Write;
+    use std::process::Stdio;
+
+    // Any fixture tarball will do; find lwfx-cp-exec's via its packument.
+    let packument: Value = serde_json::from_str(
+        &std::fs::read_to_string(common::fixture("cache/packuments/lwfx-cp-exec.json"))
+            .expect("packument"),
+    )
+    .expect("json");
+    let sri = packument["versions"]["1.0.0"]["integrity"]
+        .as_str()
+        .expect("integrity")
+        .to_string();
+    // Cache files are named by the hex form of the integrity.
+    let entry = std::fs::read_dir(common::fixture("cache/tarballs"))
+        .expect("dir")
+        .filter_map(|e| e.ok().map(|e| e.path()))
+        .find(|p| {
+            let bytes = std::fs::read(p).expect("read");
+            lockwatch_core::integrity::Integrity::parse(&sri)
+                .expect("sri")
+                .matches(&bytes)
+        })
+        .expect("tarball for lwfx-cp-exec");
+
+    let out = lockwatch()
+        .arg("scan-tarball")
+        .arg(&entry)
+        .args(["--format", "json", "--fail-on", "none", "--integrity", &sri])
+        .output()
+        .expect("run");
+    let report = json_report(&out);
+    assert_eq!(report["packages"][0]["name"], "lwfx-cp-exec");
+    assert!(rule_ids(&report).contains("LW003"));
+    assert!(!rule_ids(&report).contains("LW012"));
+
+    let mut child = lockwatch()
+        .args(["scan-tarball", "-", "--format", "json", "--fail-on", "high"])
+        .args(["--name", "piped", "--package-version", "9.9.9"])
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .spawn()
+        .expect("spawn");
+    child
+        .stdin
+        .take()
+        .expect("stdin")
+        .write_all(&std::fs::read(&entry).expect("read"))
+        .expect("write");
+    let out = child.wait_with_output().expect("wait");
+    assert_eq!(
+        out.status.code(),
+        Some(1),
+        "high finding with --fail-on high"
+    );
+    let report = json_report(&out);
+    assert_eq!(report["lockfile"], "stdin");
+    assert_eq!(report["packages"][0]["version"], "9.9.9");
+    assert!(schema::validate(&load_schema(), &report).is_empty());
+}

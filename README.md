@@ -54,6 +54,7 @@ cargo build --release
 ./target/release/lockwatch scan path/to/package-lock.json
 ./target/release/lockwatch scan package-lock.json --format json --out report.json
 ./target/release/lockwatch scan-package left-pad@1.3.0
+./target/release/lockwatch scan-tarball some-package-1.0.0.tgz   # local file, or - for stdin
 ./target/release/lockwatch rules
 ```
 
@@ -77,6 +78,11 @@ Options for `scan` and `scan-package`:
 | `--registry URL` | `https://registry.npmjs.org` | Registry for metadata and tarballs |
 | `--timeout SECS` | `60` | Per-request timeout |
 | `--now RFC3339` | current time | Evaluate time-based rules as of this time |
+
+`scan-tarball` scans a package tarball you already have (or one piped in on
+stdin). It reads the name and version from its `package.json` unless
+`--name`/`--package-version` are given, checks `--integrity` if given (LW012),
+and only contacts the registry with `--metadata` (for LW009/LW010).
 
 Exit codes: `0` nothing at or above `--fail-on`; `1` findings at or above it;
 `2` tool error, or some packages could not be scanned (listed under

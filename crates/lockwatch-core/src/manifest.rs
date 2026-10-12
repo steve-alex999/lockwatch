@@ -60,6 +60,16 @@ impl Manifest {
         None
     }
 
+    /// The `name` field, if it is a string.
+    pub fn name(&self) -> Option<&str> {
+        self.raw.get("name")?.as_str()
+    }
+
+    /// The `version` field, if it is a string.
+    pub fn version(&self) -> Option<&str> {
+        self.raw.get("version")?.as_str()
+    }
+
     /// The string value of `scripts.<name>`.
     pub fn script(&self, name: &str) -> Option<&str> {
         self.raw.get("scripts")?.get(name)?.as_str()
