@@ -276,7 +276,7 @@ It has 401 entries, 395 unique packages.
 DataDog's malicious-software-packages) would need a "scan a local tarball"
 command, and the spec's safety rules for handling live malware. Skipped for
 v1 and stated in the README; it is the most valuable next step for an honest
-detection rate.
+detection rate. (Done later: see D41 to D45.)
 
 ## Real-malware evaluation (follow-up to D40)
 

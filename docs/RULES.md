@@ -288,6 +288,9 @@ medium; see `eval/results/summary.md`.
 
 - Static analysis only. Code that is downloaded or decrypted at runtime, or
   behaviour that depends on the environment, is not seen.
+- LW003 and LW004 only look at install-time code. On real malware
+  (`eval/results/malware/summary.md`), packages whose payload runs when they
+  are `require`d were the largest group lockwatch did not flag.
 - One flat scope per file, no data flow between functions or files (beyond
   one level of install-time requires). A determined attacker can hide a call
   from it.

@@ -241,15 +241,40 @@ Machine: Intel Xeon @ 2.80 GHz, 4 logical CPUs, 15 GB RAM, Linux 6.18, rustc
 
 ### Real malicious samples
 
-**Not evaluated.** The optional dataset of real malicious npm packages was
-not used, so there is no real-world detection rate. The fixture numbers above
-are not a substitute for one.
+A random sample (seed 20261012) of the npm part of DataDog's
+[malicious-software-packages-dataset](https://github.com/DataDog/malicious-software-packages-dataset)
+at commit `805fcd7`, scanned with `eval/malware/run_malware_eval.sh`. Samples
+are downloaded, decrypted (in memory) and scanned only inside a container,
+nothing is executed, and nothing but names and verdicts is kept
+([eval/malware/README.md](eval/malware/README.md)). Each sample is scanned
+as of its discovery date, with the registry metadata saved alongside it.
+Full results: [eval/results/malware/summary.md](eval/results/malware/summary.md).
+
+| Category | Samples | Flagged (medium+) | High or critical | Any finding except LW009 |
+|---|---:|---:|---:|---:|
+| `malicious_intent` (published to deliver malware) | 2000 | **922 (46.1%)** | 351 (17.6%) | 1464 (73.2%) |
+| `compromised_lib` (malicious versions of real packages) | 600 | **504 (84.0%)** | 280 (46.7%) | 593 (98.8%) |
+
+What this shows:
+- Compromised versions of real packages are mostly caught: they add install
+  scripts that run code, read secrets (LW005 on 54.5%) and obfuscate (LW007
+  on 58.7%).
+- Packages published to deliver malware are caught less than half the time.
+  For 524 of the 2000, the only finding was LW009 (very new version); 369
+  more had an install script but nothing else. Code that runs when the
+  package is `require`d, rather than at install time, is not covered by
+  LW003/LW004, and that is the main gap to work on next.
+- LW009 fired on almost every sample because they are scanned as of their
+  discovery date; it adds 3 points, so it rarely changes whether a package is
+  flagged.
 
 ### Honesty notes
 
 - The fixtures and the rules were written by the same people, so the
   fixture results show the rules do what they were written to do; they say
-  little about unseen malware.
+  little about unseen malware. The real-sample numbers are the better guide,
+  with their own bias: the dataset was labelled mostly with GuardDog's static
+  rules, and many samples are near-copies from the same campaigns.
 - Static analysis misses behaviour that only appears at runtime: code
   downloaded or decrypted while running, environment-dependent branches,
   anything built from data the scanner cannot evaluate.
@@ -269,6 +294,7 @@ cargo fmt --all -- --check && cargo clippy --workspace --all-targets -- -D warni
 cargo test --workspace                       # unit, snapshot, schema, no-exec tests
 cargo run -p lockwatch-core --example build_fixtures   # rebuild fixtures/cache and lockfiles
 cd api && npm ci && npm run lint && npm test # API tests (integration tests use ../target/*/lockwatch)
+eval/malware/run_malware_eval.sh             # real-malware evaluation (Docker; samples stay in the container)
 eval/run_eval.sh                             # full evaluation (network; about 2 to 3 minutes here)
 node scripts/build_popular.ts                # refresh data/popular.txt
 node scripts/build_top500.ts                 # refresh eval/benign_top500.txt

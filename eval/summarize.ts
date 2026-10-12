@@ -403,7 +403,7 @@ md.push("", "Machine:", "", "```", machine, "```", "");
 md.push(
   "## 4. Real malicious samples",
   "",
-  "Not evaluated: the optional real-sample dataset was not used in this run.",
+  "Run separately with `eval/malware/run_malware_eval.sh`; results in `eval/results/malware/summary.md`.",
   "",
 );
 writeFileSync(join(results, "summary.md"), md.join("\n"));
