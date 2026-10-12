@@ -1,0 +1,7 @@
+{
+  "comment": "Fixture registry metadata. Scans use --now 2026-10-20T00:00:00Z.",
+  "versions": [
+    { "version": "0.9.0", "publisher": "fixture-author", "time": "2025-06-01T00:00:00Z" },
+    { "version": "1.0.0", "publisher": "fixture-author", "time": "2026-10-18T09:30:00Z" }
+  ]
+}

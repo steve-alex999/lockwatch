@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-net-raw-socket",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): reverse-shell style raw TCP connection",
+  "scripts": { "postinstall": "node lib/connect.js" }
+}

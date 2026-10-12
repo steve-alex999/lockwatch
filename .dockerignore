@@ -1,0 +1,8 @@
+.git
+target
+api/node_modules
+api/dist
+api/coverage
+eval/work
+fixtures
+**/*.db

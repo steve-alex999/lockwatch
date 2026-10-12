@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-hidden-elf",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): ships an ELF executable without declaring a native build",
+  "main": "index.js"
+}

@@ -1,0 +1,32 @@
+# Run the API on http://localhost:8080:
+#   docker compose up --build
+services:
+  api:
+    build: .
+    image: lockwatch:latest
+    ports:
+      - "8080:8080"
+    environment:
+      SCAN_TIMEOUT_MS: "120000"
+      MAX_CONCURRENT_SCANS: "2"
+      RATE_LIMIT_MAX: "30"
+      LOG_LEVEL: "info"
+    volumes:
+      # Downloaded tarballs and registry metadata, reused across scans.
+      - lockwatch-cache:/cache
+      # SQLite database with jobs and reports (kept 7 days).
+      - lockwatch-data:/data
+    # Defence in depth: read-only root filesystem, no Linux capabilities,
+    # no privilege escalation. Scans write only to /tmp, /cache and /data.
+    read_only: true
+    tmpfs:
+      - /tmp:size=1g
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+volumes:
+  lockwatch-cache:
+  lockwatch-data:

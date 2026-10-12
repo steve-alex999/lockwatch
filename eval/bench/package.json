@@ -1,0 +1,1 @@
+{"name":"lockwatch-bench","version":"1.0.0","private":true,"description":"Benchmark project for eval/run_eval.sh: about 400 real packages. The lockfile was created with npm install --package-lock-only --ignore-scripts (no tarballs downloaded, no scripts run).","dependencies":{"express":"^5.3.0","jest":"^30.5.2","prettier":"^3.9.10","typescript":"^7.0.2"}}

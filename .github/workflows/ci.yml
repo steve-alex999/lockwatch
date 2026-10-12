@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  rust:
+    name: Rust (fmt, clippy, tests)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      # strace lets the no-exec test check that a scan makes exactly one execve.
+      - run: sudo apt-get update && sudo apt-get install -y strace
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets -- -D warnings
+      - run: cargo test --workspace
+      - name: Committed fixtures match their sources
+        run: |
+          cargo run -q -p lockwatch-core --example build_fixtures
+          git diff --exit-code -- fixtures
+
+  node:
+    name: Node API (lint, unit tests)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: api/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
+  integration:
+    name: Integration (API + Rust binary, offline fixtures)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo build --release -p lockwatch-cli
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: api/package-lock.json
+      - run: npm ci
+        working-directory: api
+      - run: npx vitest run test/integration.test.ts
+        working-directory: api
+        env:
+          LOCKWATCH_BIN: ${{ github.workspace }}/target/release/lockwatch
+          REQUIRE_LOCKWATCH_BIN: "1"
+
+  docker:
+    name: Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose build
+      - name: Start the API with docker compose and check /health
+        run: |
+          docker compose up -d
+          for i in $(seq 1 60); do
+            curl -sf http://localhost:8080/health && break
+            sleep 2
+          done
+          curl -sf http://localhost:8080/health | grep -q '"found":true'
+          curl -sf http://localhost:8080/rules | grep -q LW012
+      - name: Scan the fixtures offline inside the image
+        run: |
+          docker run -d --name offline -p 8081:8080 --read-only --tmpfs /tmp \
+            --tmpfs /data:uid=1000,gid=1000 --cap-drop ALL \
+            -e LOCKWATCH_OFFLINE=1 -e LOCKWATCH_CACHE_DIR=/fixtures/cache \
+            -v "$PWD/fixtures:/fixtures:ro" lockwatch:latest
+          for i in $(seq 1 60); do curl -sf http://localhost:8081/health && break; sleep 2; done
+          curl -sf -F "lockfile=@fixtures/lockfiles/mixed.json" http://localhost:8081/scan > report.json
+          grep -q '"rule_id":"LW012"' report.json
+      - if: always()
+        run: docker compose logs; docker logs offline || true

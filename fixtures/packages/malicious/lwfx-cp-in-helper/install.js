@@ -1,0 +1,3 @@
+// Nothing suspicious here...
+const util = require('./lib/util');
+util.prepare();

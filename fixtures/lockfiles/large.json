@@ -1,0 +1,1437 @@
+{
+  "lockfileVersion": 3,
+  "name": "lockwatch-fixtures-large",
+  "packages": {
+    "": {
+      "name": "lockwatch-fixtures-large",
+      "version": "1.0.0"
+    },
+    "node_modules/axois": {
+      "integrity": "sha512-OZaL134zQY+4vg+yyskUTlutykdXSsfl6Ig60jMxjPCoQqt5mtPugIV3YzhM7Vw6ZOcLO1gucqDc/J96wSe8rw==",
+      "resolved": "https://registry.npmjs.org/axois/-/axois-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/axois/node_modules/lwfx-ok-prebuild": {
+      "integrity": "sha512-rGwuT1NYNJxCfMDi/K0P7TXi6ZwzYOzHA3oJZT3d6OwI97FwQv+6RpLoEii1L9srO59LVSU+Y4YRirDAGGZI7g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prebuild/-/lwfx-ok-prebuild-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/axois/node_modules/lwfx-ok-prepare-tsc": {
+      "integrity": "sha512-rEMJec5OecEpRmZUlCHjdyqqT+rX9vysj1mC+K87EtgUsu+mPDLMpJUNS/Am+/3K/p6cPouabBw1E5KjsiPnUA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prepare-tsc/-/lwfx-ok-prepare-tsc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/axois/node_modules/lwfx-ok-sdk-api-key": {
+      "integrity": "sha512-rCrl8d49APHZ4wxo3aO9wcOU2B4p5fpPkdkrDgzXE2I/S/U7xpaNp6SJovUB7RBYJl4QMR4qGFcaAPSFujAxXg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-sdk-api-key/-/lwfx-ok-sdk-api-key-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/axois/node_modules/lwfx-ok-template-engine": {
+      "integrity": "sha512-0HXSmKgTurcXD2BWVWFT4972WJYbMr2uvN6mRyJMBEDS3QGrNcyu/eNSmRVv22R7opOfFoctVDWN6rlueyEoHg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-template-engine/-/lwfx-ok-template-engine-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/cross_env": {
+      "integrity": "sha512-NHTYH2KV0Yr0aO4qjsjzJhx1+1P/mKLvyCJaNIXVe7GTvGeMXIGC6IqJzs4JlgOytZ8xU3aEc0zxWLL/ejfgfA==",
+      "resolved": "https://registry.npmjs.org/cross_env/-/cross_env-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/cross_env/node_modules/axois": {
+      "integrity": "sha512-OZaL134zQY+4vg+yyskUTlutykdXSsfl6Ig60jMxjPCoQqt5mtPugIV3YzhM7Vw6ZOcLO1gucqDc/J96wSe8rw==",
+      "resolved": "https://registry.npmjs.org/axois/-/axois-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/cross_env/node_modules/lwfx-ok-prepare-tsc": {
+      "integrity": "sha512-rEMJec5OecEpRmZUlCHjdyqqT+rX9vysj1mC+K87EtgUsu+mPDLMpJUNS/Am+/3K/p6cPouabBw1E5KjsiPnUA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prepare-tsc/-/lwfx-ok-prepare-tsc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/cross_env/node_modules/lwfx-ok-sdk-api-key": {
+      "integrity": "sha512-rCrl8d49APHZ4wxo3aO9wcOU2B4p5fpPkdkrDgzXE2I/S/U7xpaNp6SJovUB7RBYJl4QMR4qGFcaAPSFujAxXg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-sdk-api-key/-/lwfx-ok-sdk-api-key-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/cross_env/node_modules/lwfx-ok-template-engine": {
+      "integrity": "sha512-0HXSmKgTurcXD2BWVWFT4972WJYbMr2uvN6mRyJMBEDS3QGrNcyu/eNSmRVv22R7opOfFoctVDWN6rlueyEoHg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-template-engine/-/lwfx-ok-template-engine-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/expresss": {
+      "integrity": "sha512-xcsxLwxjfhezmG7A/09NpH+LRum+H1Qpn9Ujo2zLblob+4sa5WYXb0XWvHt0I/VJo8oFSzYz47413Q0d28YnrA==",
+      "resolved": "https://registry.npmjs.org/expresss/-/expresss-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/expresss/node_modules/axois": {
+      "integrity": "sha512-OZaL134zQY+4vg+yyskUTlutykdXSsfl6Ig60jMxjPCoQqt5mtPugIV3YzhM7Vw6ZOcLO1gucqDc/J96wSe8rw==",
+      "resolved": "https://registry.npmjs.org/axois/-/axois-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/expresss/node_modules/cross_env": {
+      "integrity": "sha512-NHTYH2KV0Yr0aO4qjsjzJhx1+1P/mKLvyCJaNIXVe7GTvGeMXIGC6IqJzs4JlgOytZ8xU3aEc0zxWLL/ejfgfA==",
+      "resolved": "https://registry.npmjs.org/cross_env/-/cross_env-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/expresss/node_modules/lwfx-ok-sdk-api-key": {
+      "integrity": "sha512-rCrl8d49APHZ4wxo3aO9wcOU2B4p5fpPkdkrDgzXE2I/S/U7xpaNp6SJovUB7RBYJl4QMR4qGFcaAPSFujAxXg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-sdk-api-key/-/lwfx-ok-sdk-api-key-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/expresss/node_modules/lwfx-ok-template-engine": {
+      "integrity": "sha512-0HXSmKgTurcXD2BWVWFT4972WJYbMr2uvN6mRyJMBEDS3QGrNcyu/eNSmRVv22R7opOfFoctVDWN6rlueyEoHg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-template-engine/-/lwfx-ok-template-engine-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lodahs": {
+      "integrity": "sha512-dUt6GFFUzsYAva/ILdYbelhOeMY0hzJaYX626ZOUYwk8lgY7eZOIV98v38dju6lv56X1+LY1FCtlUbVqdIwEqQ==",
+      "resolved": "https://registry.npmjs.org/lodahs/-/lodahs-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lodahs/node_modules/axois": {
+      "integrity": "sha512-OZaL134zQY+4vg+yyskUTlutykdXSsfl6Ig60jMxjPCoQqt5mtPugIV3YzhM7Vw6ZOcLO1gucqDc/J96wSe8rw==",
+      "resolved": "https://registry.npmjs.org/axois/-/axois-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lodahs/node_modules/cross_env": {
+      "integrity": "sha512-NHTYH2KV0Yr0aO4qjsjzJhx1+1P/mKLvyCJaNIXVe7GTvGeMXIGC6IqJzs4JlgOytZ8xU3aEc0zxWLL/ejfgfA==",
+      "resolved": "https://registry.npmjs.org/cross_env/-/cross_env-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lodahs/node_modules/expresss": {
+      "integrity": "sha512-xcsxLwxjfhezmG7A/09NpH+LRum+H1Qpn9Ujo2zLblob+4sa5WYXb0XWvHt0I/VJo8oFSzYz47413Q0d28YnrA==",
+      "resolved": "https://registry.npmjs.org/expresss/-/expresss-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lodahs/node_modules/lwfx-ok-template-engine": {
+      "integrity": "sha512-0HXSmKgTurcXD2BWVWFT4972WJYbMr2uvN6mRyJMBEDS3QGrNcyu/eNSmRVv22R7opOfFoctVDWN6rlueyEoHg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-template-engine/-/lwfx-ok-template-engine-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-base64-sh": {
+      "integrity": "sha512-dA6fG8NKIILQfHRUbZiAYsr2+hFCZqA8zZdmW65S1N6HPtKCs3cOk4wxHONT0TnRkIc3ifuypOm8mVdGY/iYRA==",
+      "resolved": "https://registry.npmjs.org/lwfx-base64-sh/-/lwfx-base64-sh-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-base64-sh/node_modules/axois": {
+      "integrity": "sha512-OZaL134zQY+4vg+yyskUTlutykdXSsfl6Ig60jMxjPCoQqt5mtPugIV3YzhM7Vw6ZOcLO1gucqDc/J96wSe8rw==",
+      "resolved": "https://registry.npmjs.org/axois/-/axois-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-base64-sh/node_modules/cross_env": {
+      "integrity": "sha512-NHTYH2KV0Yr0aO4qjsjzJhx1+1P/mKLvyCJaNIXVe7GTvGeMXIGC6IqJzs4JlgOytZ8xU3aEc0zxWLL/ejfgfA==",
+      "resolved": "https://registry.npmjs.org/cross_env/-/cross_env-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-base64-sh/node_modules/expresss": {
+      "integrity": "sha512-xcsxLwxjfhezmG7A/09NpH+LRum+H1Qpn9Ujo2zLblob+4sa5WYXb0XWvHt0I/VJo8oFSzYz47413Q0d28YnrA==",
+      "resolved": "https://registry.npmjs.org/expresss/-/expresss-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-base64-sh/node_modules/lodahs": {
+      "integrity": "sha512-dUt6GFFUzsYAva/ILdYbelhOeMY0hzJaYX626ZOUYwk8lgY7eZOIV98v38dju6lv56X1+LY1FCtlUbVqdIwEqQ==",
+      "resolved": "https://registry.npmjs.org/lodahs/-/lodahs-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-computed-require": {
+      "integrity": "sha512-D8VD6FhZLf2tH1ulnuwI4EPkugt/orKYkwLLlYO/wqj28BR3uri0bqCIveBbP52+g6favtD0jP629T7K3PyHfQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-computed-require/-/lwfx-computed-require-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-computed-require/node_modules/cross_env": {
+      "integrity": "sha512-NHTYH2KV0Yr0aO4qjsjzJhx1+1P/mKLvyCJaNIXVe7GTvGeMXIGC6IqJzs4JlgOytZ8xU3aEc0zxWLL/ejfgfA==",
+      "resolved": "https://registry.npmjs.org/cross_env/-/cross_env-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-computed-require/node_modules/expresss": {
+      "integrity": "sha512-xcsxLwxjfhezmG7A/09NpH+LRum+H1Qpn9Ujo2zLblob+4sa5WYXb0XWvHt0I/VJo8oFSzYz47413Q0d28YnrA==",
+      "resolved": "https://registry.npmjs.org/expresss/-/expresss-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-computed-require/node_modules/lodahs": {
+      "integrity": "sha512-dUt6GFFUzsYAva/ILdYbelhOeMY0hzJaYX626ZOUYwk8lgY7eZOIV98v38dju6lv56X1+LY1FCtlUbVqdIwEqQ==",
+      "resolved": "https://registry.npmjs.org/lodahs/-/lodahs-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-computed-require/node_modules/lwfx-base64-sh": {
+      "integrity": "sha512-dA6fG8NKIILQfHRUbZiAYsr2+hFCZqA8zZdmW65S1N6HPtKCs3cOk4wxHONT0TnRkIc3ifuypOm8mVdGY/iYRA==",
+      "resolved": "https://registry.npmjs.org/lwfx-base64-sh/-/lwfx-base64-sh-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-aliased-require": {
+      "integrity": "sha512-/6Qo8TGtYnrodFmdTp6GGqhAeimVocm/nHIlXMqUuQeeBnbGi0UC6bN8iv15G0syX//BkaBUQrWKH/91FgT3ag==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-aliased-require/-/lwfx-cp-aliased-require-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-aliased-require/node_modules/expresss": {
+      "integrity": "sha512-xcsxLwxjfhezmG7A/09NpH+LRum+H1Qpn9Ujo2zLblob+4sa5WYXb0XWvHt0I/VJo8oFSzYz47413Q0d28YnrA==",
+      "resolved": "https://registry.npmjs.org/expresss/-/expresss-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-aliased-require/node_modules/lodahs": {
+      "integrity": "sha512-dUt6GFFUzsYAva/ILdYbelhOeMY0hzJaYX626ZOUYwk8lgY7eZOIV98v38dju6lv56X1+LY1FCtlUbVqdIwEqQ==",
+      "resolved": "https://registry.npmjs.org/lodahs/-/lodahs-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-aliased-require/node_modules/lwfx-base64-sh": {
+      "integrity": "sha512-dA6fG8NKIILQfHRUbZiAYsr2+hFCZqA8zZdmW65S1N6HPtKCs3cOk4wxHONT0TnRkIc3ifuypOm8mVdGY/iYRA==",
+      "resolved": "https://registry.npmjs.org/lwfx-base64-sh/-/lwfx-base64-sh-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-aliased-require/node_modules/lwfx-computed-require": {
+      "integrity": "sha512-D8VD6FhZLf2tH1ulnuwI4EPkugt/orKYkwLLlYO/wqj28BR3uri0bqCIveBbP52+g6favtD0jP629T7K3PyHfQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-computed-require/-/lwfx-computed-require-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-base64-module": {
+      "integrity": "sha512-FSWgtGGicQlplnfnJnUgPwkNMqCh3OBrE53iOolHI0aDCCr/EYHL15pqQO9dRG25E+c0f/q2yqeREPCrJPSOdA==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-base64-module/-/lwfx-cp-base64-module-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-base64-module/node_modules/lodahs": {
+      "integrity": "sha512-dUt6GFFUzsYAva/ILdYbelhOeMY0hzJaYX626ZOUYwk8lgY7eZOIV98v38dju6lv56X1+LY1FCtlUbVqdIwEqQ==",
+      "resolved": "https://registry.npmjs.org/lodahs/-/lodahs-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-base64-module/node_modules/lwfx-base64-sh": {
+      "integrity": "sha512-dA6fG8NKIILQfHRUbZiAYsr2+hFCZqA8zZdmW65S1N6HPtKCs3cOk4wxHONT0TnRkIc3ifuypOm8mVdGY/iYRA==",
+      "resolved": "https://registry.npmjs.org/lwfx-base64-sh/-/lwfx-base64-sh-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-base64-module/node_modules/lwfx-computed-require": {
+      "integrity": "sha512-D8VD6FhZLf2tH1ulnuwI4EPkugt/orKYkwLLlYO/wqj28BR3uri0bqCIveBbP52+g6favtD0jP629T7K3PyHfQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-computed-require/-/lwfx-computed-require-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-base64-module/node_modules/lwfx-cp-aliased-require": {
+      "integrity": "sha512-/6Qo8TGtYnrodFmdTp6GGqhAeimVocm/nHIlXMqUuQeeBnbGi0UC6bN8iv15G0syX//BkaBUQrWKH/91FgT3ag==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-aliased-require/-/lwfx-cp-aliased-require-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-destructured": {
+      "integrity": "sha512-I4Da/VJeajSv+YchAyCFEJNbZCQSR+6fKgk+t8c0VmOT/1jlSwUZyxkcFbAVQZf+oigaEW85eH2kZ7YO3b5/4A==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-destructured/-/lwfx-cp-destructured-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-destructured/node_modules/lwfx-base64-sh": {
+      "integrity": "sha512-dA6fG8NKIILQfHRUbZiAYsr2+hFCZqA8zZdmW65S1N6HPtKCs3cOk4wxHONT0TnRkIc3ifuypOm8mVdGY/iYRA==",
+      "resolved": "https://registry.npmjs.org/lwfx-base64-sh/-/lwfx-base64-sh-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-destructured/node_modules/lwfx-computed-require": {
+      "integrity": "sha512-D8VD6FhZLf2tH1ulnuwI4EPkugt/orKYkwLLlYO/wqj28BR3uri0bqCIveBbP52+g6favtD0jP629T7K3PyHfQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-computed-require/-/lwfx-computed-require-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-destructured/node_modules/lwfx-cp-aliased-require": {
+      "integrity": "sha512-/6Qo8TGtYnrodFmdTp6GGqhAeimVocm/nHIlXMqUuQeeBnbGi0UC6bN8iv15G0syX//BkaBUQrWKH/91FgT3ag==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-aliased-require/-/lwfx-cp-aliased-require-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-destructured/node_modules/lwfx-cp-base64-module": {
+      "integrity": "sha512-FSWgtGGicQlplnfnJnUgPwkNMqCh3OBrE53iOolHI0aDCCr/EYHL15pqQO9dRG25E+c0f/q2yqeREPCrJPSOdA==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-base64-module/-/lwfx-cp-base64-module-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-exec": {
+      "integrity": "sha512-6tiHSbfTfmOdUqKMyvit9KvLRIaQPFRjHnKE8tQag2cOA4ST746/38cEBADgE+WP+0PyjozZh0p5w67n7doHmw==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-exec/-/lwfx-cp-exec-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-exec/node_modules/lwfx-computed-require": {
+      "integrity": "sha512-D8VD6FhZLf2tH1ulnuwI4EPkugt/orKYkwLLlYO/wqj28BR3uri0bqCIveBbP52+g6favtD0jP629T7K3PyHfQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-computed-require/-/lwfx-computed-require-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-exec/node_modules/lwfx-cp-aliased-require": {
+      "integrity": "sha512-/6Qo8TGtYnrodFmdTp6GGqhAeimVocm/nHIlXMqUuQeeBnbGi0UC6bN8iv15G0syX//BkaBUQrWKH/91FgT3ag==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-aliased-require/-/lwfx-cp-aliased-require-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-exec/node_modules/lwfx-cp-base64-module": {
+      "integrity": "sha512-FSWgtGGicQlplnfnJnUgPwkNMqCh3OBrE53iOolHI0aDCCr/EYHL15pqQO9dRG25E+c0f/q2yqeREPCrJPSOdA==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-base64-module/-/lwfx-cp-base64-module-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-exec/node_modules/lwfx-cp-destructured": {
+      "integrity": "sha512-I4Da/VJeajSv+YchAyCFEJNbZCQSR+6fKgk+t8c0VmOT/1jlSwUZyxkcFbAVQZf+oigaEW85eH2kZ7YO3b5/4A==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-destructured/-/lwfx-cp-destructured-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-in-helper": {
+      "integrity": "sha512-954oykJq1EL3MdrOm08H7+LA3k0n8q34cerqubMLRP7I6C/YCIXfKjx+eqJ3T8H2aqan6rc69ypUnJ1p2wJ4XQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-in-helper/-/lwfx-cp-in-helper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-in-helper/node_modules/lwfx-cp-aliased-require": {
+      "integrity": "sha512-/6Qo8TGtYnrodFmdTp6GGqhAeimVocm/nHIlXMqUuQeeBnbGi0UC6bN8iv15G0syX//BkaBUQrWKH/91FgT3ag==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-aliased-require/-/lwfx-cp-aliased-require-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-in-helper/node_modules/lwfx-cp-base64-module": {
+      "integrity": "sha512-FSWgtGGicQlplnfnJnUgPwkNMqCh3OBrE53iOolHI0aDCCr/EYHL15pqQO9dRG25E+c0f/q2yqeREPCrJPSOdA==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-base64-module/-/lwfx-cp-base64-module-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-in-helper/node_modules/lwfx-cp-destructured": {
+      "integrity": "sha512-I4Da/VJeajSv+YchAyCFEJNbZCQSR+6fKgk+t8c0VmOT/1jlSwUZyxkcFbAVQZf+oigaEW85eH2kZ7YO3b5/4A==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-destructured/-/lwfx-cp-destructured-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-in-helper/node_modules/lwfx-cp-exec": {
+      "integrity": "sha512-6tiHSbfTfmOdUqKMyvit9KvLRIaQPFRjHnKE8tQag2cOA4ST746/38cEBADgE+WP+0PyjozZh0p5w67n7doHmw==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-exec/-/lwfx-cp-exec-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-minified": {
+      "integrity": "sha512-W9xtMyFMohgMXj+HoUJhSubSK0D+KH4cwJFS4sAO+DdYYjz35H3opVUSeSQvQ5mGyWS2aCBMc4nfp1M2o+GeGg==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-minified/-/lwfx-cp-minified-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-minified/node_modules/lwfx-cp-base64-module": {
+      "integrity": "sha512-FSWgtGGicQlplnfnJnUgPwkNMqCh3OBrE53iOolHI0aDCCr/EYHL15pqQO9dRG25E+c0f/q2yqeREPCrJPSOdA==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-base64-module/-/lwfx-cp-base64-module-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-minified/node_modules/lwfx-cp-destructured": {
+      "integrity": "sha512-I4Da/VJeajSv+YchAyCFEJNbZCQSR+6fKgk+t8c0VmOT/1jlSwUZyxkcFbAVQZf+oigaEW85eH2kZ7YO3b5/4A==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-destructured/-/lwfx-cp-destructured-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-minified/node_modules/lwfx-cp-exec": {
+      "integrity": "sha512-6tiHSbfTfmOdUqKMyvit9KvLRIaQPFRjHnKE8tQag2cOA4ST746/38cEBADgE+WP+0PyjozZh0p5w67n7doHmw==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-exec/-/lwfx-cp-exec-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-cp-minified/node_modules/lwfx-cp-in-helper": {
+      "integrity": "sha512-954oykJq1EL3MdrOm08H7+LA3k0n8q34cerqubMLRP7I6C/YCIXfKjx+eqJ3T8H2aqan6rc69ypUnJ1p2wJ4XQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-in-helper/-/lwfx-cp-in-helper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-curl-pipe-sh": {
+      "integrity": "sha512-lD7KAQ/w3KdHU1mwl18TuW1bN2LpdtNhURqMDbklaDNtQnK4r02xu7yezcS7I0hs581wRMZHeCi9pEn4lU51XA==",
+      "resolved": "https://registry.npmjs.org/lwfx-curl-pipe-sh/-/lwfx-curl-pipe-sh-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-curl-pipe-sh/node_modules/lwfx-cp-destructured": {
+      "integrity": "sha512-I4Da/VJeajSv+YchAyCFEJNbZCQSR+6fKgk+t8c0VmOT/1jlSwUZyxkcFbAVQZf+oigaEW85eH2kZ7YO3b5/4A==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-destructured/-/lwfx-cp-destructured-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-curl-pipe-sh/node_modules/lwfx-cp-exec": {
+      "integrity": "sha512-6tiHSbfTfmOdUqKMyvit9KvLRIaQPFRjHnKE8tQag2cOA4ST746/38cEBADgE+WP+0PyjozZh0p5w67n7doHmw==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-exec/-/lwfx-cp-exec-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-curl-pipe-sh/node_modules/lwfx-cp-in-helper": {
+      "integrity": "sha512-954oykJq1EL3MdrOm08H7+LA3k0n8q34cerqubMLRP7I6C/YCIXfKjx+eqJ3T8H2aqan6rc69ypUnJ1p2wJ4XQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-in-helper/-/lwfx-cp-in-helper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-curl-pipe-sh/node_modules/lwfx-cp-minified": {
+      "integrity": "sha512-W9xtMyFMohgMXj+HoUJhSubSK0D+KH4cwJFS4sAO+DdYYjz35H3opVUSeSQvQ5mGyWS2aCBMc4nfp1M2o+GeGg==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-minified/-/lwfx-cp-minified-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-dll-dropper": {
+      "integrity": "sha512-lur28dbA2wmi39x7mClLX0cPkpShMWH5nUsK+ODuLfOIw6+Lu8EXz0lECNjHxR6WRHgJnuqaJAEm0IJ2T1Zj6Q==",
+      "resolved": "https://registry.npmjs.org/lwfx-dll-dropper/-/lwfx-dll-dropper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-dll-dropper/node_modules/lwfx-cp-exec": {
+      "integrity": "sha512-6tiHSbfTfmOdUqKMyvit9KvLRIaQPFRjHnKE8tQag2cOA4ST746/38cEBADgE+WP+0PyjozZh0p5w67n7doHmw==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-exec/-/lwfx-cp-exec-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-dll-dropper/node_modules/lwfx-cp-in-helper": {
+      "integrity": "sha512-954oykJq1EL3MdrOm08H7+LA3k0n8q34cerqubMLRP7I6C/YCIXfKjx+eqJ3T8H2aqan6rc69ypUnJ1p2wJ4XQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-in-helper/-/lwfx-cp-in-helper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-dll-dropper/node_modules/lwfx-cp-minified": {
+      "integrity": "sha512-W9xtMyFMohgMXj+HoUJhSubSK0D+KH4cwJFS4sAO+DdYYjz35H3opVUSeSQvQ5mGyWS2aCBMc4nfp1M2o+GeGg==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-minified/-/lwfx-cp-minified-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-dll-dropper/node_modules/lwfx-curl-pipe-sh": {
+      "integrity": "sha512-lD7KAQ/w3KdHU1mwl18TuW1bN2LpdtNhURqMDbklaDNtQnK4r02xu7yezcS7I0hs581wRMZHeCi9pEn4lU51XA==",
+      "resolved": "https://registry.npmjs.org/lwfx-curl-pipe-sh/-/lwfx-curl-pipe-sh-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-env-dump": {
+      "integrity": "sha512-Qt37iByqaaM+8PKiZjHffpSE16VxzeP1VazWlWzBtNK14r8sZ/cTz7Nkav7aXp3Ksrcd2UwyWehKwoN706HZDA==",
+      "resolved": "https://registry.npmjs.org/lwfx-env-dump/-/lwfx-env-dump-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-env-dump/node_modules/lwfx-cp-in-helper": {
+      "integrity": "sha512-954oykJq1EL3MdrOm08H7+LA3k0n8q34cerqubMLRP7I6C/YCIXfKjx+eqJ3T8H2aqan6rc69ypUnJ1p2wJ4XQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-in-helper/-/lwfx-cp-in-helper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-env-dump/node_modules/lwfx-cp-minified": {
+      "integrity": "sha512-W9xtMyFMohgMXj+HoUJhSubSK0D+KH4cwJFS4sAO+DdYYjz35H3opVUSeSQvQ5mGyWS2aCBMc4nfp1M2o+GeGg==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-minified/-/lwfx-cp-minified-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-env-dump/node_modules/lwfx-curl-pipe-sh": {
+      "integrity": "sha512-lD7KAQ/w3KdHU1mwl18TuW1bN2LpdtNhURqMDbklaDNtQnK4r02xu7yezcS7I0hs581wRMZHeCi9pEn4lU51XA==",
+      "resolved": "https://registry.npmjs.org/lwfx-curl-pipe-sh/-/lwfx-curl-pipe-sh-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-env-dump/node_modules/lwfx-dll-dropper": {
+      "integrity": "sha512-lur28dbA2wmi39x7mClLX0cPkpShMWH5nUsK+ODuLfOIw6+Lu8EXz0lECNjHxR6WRHgJnuqaJAEm0IJ2T1Zj6Q==",
+      "resolved": "https://registry.npmjs.org/lwfx-dll-dropper/-/lwfx-dll-dropper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-esm-cp-import": {
+      "integrity": "sha512-SRzwlhGdeGhbCDZU89tF1VFNJpI2/4IkJWFL60oSB73cEX9qz9mcaMbUGnGXsytXUtvRX4Euj3AVWBZPIEG2aw==",
+      "resolved": "https://registry.npmjs.org/lwfx-esm-cp-import/-/lwfx-esm-cp-import-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-esm-cp-import/node_modules/lwfx-cp-minified": {
+      "integrity": "sha512-W9xtMyFMohgMXj+HoUJhSubSK0D+KH4cwJFS4sAO+DdYYjz35H3opVUSeSQvQ5mGyWS2aCBMc4nfp1M2o+GeGg==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-minified/-/lwfx-cp-minified-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-esm-cp-import/node_modules/lwfx-curl-pipe-sh": {
+      "integrity": "sha512-lD7KAQ/w3KdHU1mwl18TuW1bN2LpdtNhURqMDbklaDNtQnK4r02xu7yezcS7I0hs581wRMZHeCi9pEn4lU51XA==",
+      "resolved": "https://registry.npmjs.org/lwfx-curl-pipe-sh/-/lwfx-curl-pipe-sh-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-esm-cp-import/node_modules/lwfx-dll-dropper": {
+      "integrity": "sha512-lur28dbA2wmi39x7mClLX0cPkpShMWH5nUsK+ODuLfOIw6+Lu8EXz0lECNjHxR6WRHgJnuqaJAEm0IJ2T1Zj6Q==",
+      "resolved": "https://registry.npmjs.org/lwfx-dll-dropper/-/lwfx-dll-dropper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-esm-cp-import/node_modules/lwfx-env-dump": {
+      "integrity": "sha512-Qt37iByqaaM+8PKiZjHffpSE16VxzeP1VazWlWzBtNK14r8sZ/cTz7Nkav7aXp3Ksrcd2UwyWehKwoN706HZDA==",
+      "resolved": "https://registry.npmjs.org/lwfx-env-dump/-/lwfx-env-dump-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-eval-payload": {
+      "integrity": "sha512-EAOvdJmte2fSBKDtTF76xjKu1qnrAyFtWfIhiGhAqo8Ca4MZaOqQ7BrkyPHm+kkMhkgK/dRkDhljjRiB9AFqxw==",
+      "resolved": "https://registry.npmjs.org/lwfx-eval-payload/-/lwfx-eval-payload-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-eval-payload/node_modules/lwfx-curl-pipe-sh": {
+      "integrity": "sha512-lD7KAQ/w3KdHU1mwl18TuW1bN2LpdtNhURqMDbklaDNtQnK4r02xu7yezcS7I0hs581wRMZHeCi9pEn4lU51XA==",
+      "resolved": "https://registry.npmjs.org/lwfx-curl-pipe-sh/-/lwfx-curl-pipe-sh-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-eval-payload/node_modules/lwfx-dll-dropper": {
+      "integrity": "sha512-lur28dbA2wmi39x7mClLX0cPkpShMWH5nUsK+ODuLfOIw6+Lu8EXz0lECNjHxR6WRHgJnuqaJAEm0IJ2T1Zj6Q==",
+      "resolved": "https://registry.npmjs.org/lwfx-dll-dropper/-/lwfx-dll-dropper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-eval-payload/node_modules/lwfx-env-dump": {
+      "integrity": "sha512-Qt37iByqaaM+8PKiZjHffpSE16VxzeP1VazWlWzBtNK14r8sZ/cTz7Nkav7aXp3Ksrcd2UwyWehKwoN706HZDA==",
+      "resolved": "https://registry.npmjs.org/lwfx-env-dump/-/lwfx-env-dump-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-eval-payload/node_modules/lwfx-esm-cp-import": {
+      "integrity": "sha512-SRzwlhGdeGhbCDZU89tF1VFNJpI2/4IkJWFL60oSB73cEX9qz9mcaMbUGnGXsytXUtvRX4Euj3AVWBZPIEG2aw==",
+      "resolved": "https://registry.npmjs.org/lwfx-esm-cp-import/-/lwfx-esm-cp-import-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-fresh-release": {
+      "integrity": "sha512-WX5HD7VbWjQ4r1AUWkMERlWpO74jgi9l2u1lQVm3hVPK21utVcZs85t2xNSlYnt8IDwVcUAfXoGdZg1LrSZmgQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-fresh-release/-/lwfx-fresh-release-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-fresh-release/node_modules/lwfx-dll-dropper": {
+      "integrity": "sha512-lur28dbA2wmi39x7mClLX0cPkpShMWH5nUsK+ODuLfOIw6+Lu8EXz0lECNjHxR6WRHgJnuqaJAEm0IJ2T1Zj6Q==",
+      "resolved": "https://registry.npmjs.org/lwfx-dll-dropper/-/lwfx-dll-dropper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-fresh-release/node_modules/lwfx-env-dump": {
+      "integrity": "sha512-Qt37iByqaaM+8PKiZjHffpSE16VxzeP1VazWlWzBtNK14r8sZ/cTz7Nkav7aXp3Ksrcd2UwyWehKwoN706HZDA==",
+      "resolved": "https://registry.npmjs.org/lwfx-env-dump/-/lwfx-env-dump-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-fresh-release/node_modules/lwfx-esm-cp-import": {
+      "integrity": "sha512-SRzwlhGdeGhbCDZU89tF1VFNJpI2/4IkJWFL60oSB73cEX9qz9mcaMbUGnGXsytXUtvRX4Euj3AVWBZPIEG2aw==",
+      "resolved": "https://registry.npmjs.org/lwfx-esm-cp-import/-/lwfx-esm-cp-import-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-fresh-release/node_modules/lwfx-eval-payload": {
+      "integrity": "sha512-EAOvdJmte2fSBKDtTF76xjKu1qnrAyFtWfIhiGhAqo8Ca4MZaOqQ7BrkyPHm+kkMhkgK/dRkDhljjRiB9AFqxw==",
+      "resolved": "https://registry.npmjs.org/lwfx-eval-payload/-/lwfx-eval-payload-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-hidden-elf": {
+      "integrity": "sha512-eJ4aDdQPzoTWLpd0WEKhXl5uPuP4w09l4JI2RImwhoIU3RKwRV1EO/lxsZHWKd9DMGVhf8puTZjfumdgkWwmTg==",
+      "resolved": "https://registry.npmjs.org/lwfx-hidden-elf/-/lwfx-hidden-elf-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-hidden-elf/node_modules/lwfx-env-dump": {
+      "integrity": "sha512-Qt37iByqaaM+8PKiZjHffpSE16VxzeP1VazWlWzBtNK14r8sZ/cTz7Nkav7aXp3Ksrcd2UwyWehKwoN706HZDA==",
+      "resolved": "https://registry.npmjs.org/lwfx-env-dump/-/lwfx-env-dump-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-hidden-elf/node_modules/lwfx-esm-cp-import": {
+      "integrity": "sha512-SRzwlhGdeGhbCDZU89tF1VFNJpI2/4IkJWFL60oSB73cEX9qz9mcaMbUGnGXsytXUtvRX4Euj3AVWBZPIEG2aw==",
+      "resolved": "https://registry.npmjs.org/lwfx-esm-cp-import/-/lwfx-esm-cp-import-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-hidden-elf/node_modules/lwfx-eval-payload": {
+      "integrity": "sha512-EAOvdJmte2fSBKDtTF76xjKu1qnrAyFtWfIhiGhAqo8Ca4MZaOqQ7BrkyPHm+kkMhkgK/dRkDhljjRiB9AFqxw==",
+      "resolved": "https://registry.npmjs.org/lwfx-eval-payload/-/lwfx-eval-payload-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-hidden-elf/node_modules/lwfx-fresh-release": {
+      "integrity": "sha512-WX5HD7VbWjQ4r1AUWkMERlWpO74jgi9l2u1lQVm3hVPK21utVcZs85t2xNSlYnt8IDwVcUAfXoGdZg1LrSZmgQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-fresh-release/-/lwfx-fresh-release-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-iwr-iex": {
+      "integrity": "sha512-WQAZDuY/djnXf+Wg0nqj7MUhoKflPGHfSmS3RZOnnYOhhJVogjtzZNBRUgwGcu8PFwKqIKUFj3g6WZT+JNdoOQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-iwr-iex/-/lwfx-iwr-iex-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-iwr-iex/node_modules/lwfx-esm-cp-import": {
+      "integrity": "sha512-SRzwlhGdeGhbCDZU89tF1VFNJpI2/4IkJWFL60oSB73cEX9qz9mcaMbUGnGXsytXUtvRX4Euj3AVWBZPIEG2aw==",
+      "resolved": "https://registry.npmjs.org/lwfx-esm-cp-import/-/lwfx-esm-cp-import-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-iwr-iex/node_modules/lwfx-eval-payload": {
+      "integrity": "sha512-EAOvdJmte2fSBKDtTF76xjKu1qnrAyFtWfIhiGhAqo8Ca4MZaOqQ7BrkyPHm+kkMhkgK/dRkDhljjRiB9AFqxw==",
+      "resolved": "https://registry.npmjs.org/lwfx-eval-payload/-/lwfx-eval-payload-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-iwr-iex/node_modules/lwfx-fresh-release": {
+      "integrity": "sha512-WX5HD7VbWjQ4r1AUWkMERlWpO74jgi9l2u1lQVm3hVPK21utVcZs85t2xNSlYnt8IDwVcUAfXoGdZg1LrSZmgQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-fresh-release/-/lwfx-fresh-release-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-iwr-iex/node_modules/lwfx-hidden-elf": {
+      "integrity": "sha512-eJ4aDdQPzoTWLpd0WEKhXl5uPuP4w09l4JI2RImwhoIU3RKwRV1EO/lxsZHWKd9DMGVhf8puTZjfumdgkWwmTg==",
+      "resolved": "https://registry.npmjs.org/lwfx-hidden-elf/-/lwfx-hidden-elf-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-macho-addon": {
+      "integrity": "sha512-C04VnC96GuWIiQnI5rkekhfSPZwDpQFdsPKGT3yb5RopOuQQ38ln1ENuR28VUSz2Ri0OqrMY9nAMPUvuVANK9w==",
+      "resolved": "https://registry.npmjs.org/lwfx-macho-addon/-/lwfx-macho-addon-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-macho-addon/node_modules/lwfx-eval-payload": {
+      "integrity": "sha512-EAOvdJmte2fSBKDtTF76xjKu1qnrAyFtWfIhiGhAqo8Ca4MZaOqQ7BrkyPHm+kkMhkgK/dRkDhljjRiB9AFqxw==",
+      "resolved": "https://registry.npmjs.org/lwfx-eval-payload/-/lwfx-eval-payload-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-macho-addon/node_modules/lwfx-fresh-release": {
+      "integrity": "sha512-WX5HD7VbWjQ4r1AUWkMERlWpO74jgi9l2u1lQVm3hVPK21utVcZs85t2xNSlYnt8IDwVcUAfXoGdZg1LrSZmgQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-fresh-release/-/lwfx-fresh-release-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-macho-addon/node_modules/lwfx-hidden-elf": {
+      "integrity": "sha512-eJ4aDdQPzoTWLpd0WEKhXl5uPuP4w09l4JI2RImwhoIU3RKwRV1EO/lxsZHWKd9DMGVhf8puTZjfumdgkWwmTg==",
+      "resolved": "https://registry.npmjs.org/lwfx-hidden-elf/-/lwfx-hidden-elf-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-macho-addon/node_modules/lwfx-iwr-iex": {
+      "integrity": "sha512-WQAZDuY/djnXf+Wg0nqj7MUhoKflPGHfSmS3RZOnnYOhhJVogjtzZNBRUgwGcu8PFwKqIKUFj3g6WZT+JNdoOQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-iwr-iex/-/lwfx-iwr-iex-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-dns-tunnel": {
+      "integrity": "sha512-Jp01iFcYHVSUkf1BgysS7qXsMyw/4M1fzIPwP2HJa59bBGQjclKifTNRIA9V8VO4kgv3yH3c8y4RZzWnV9Y6Yg==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-dns-tunnel/-/lwfx-net-dns-tunnel-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-dns-tunnel/node_modules/lwfx-fresh-release": {
+      "integrity": "sha512-WX5HD7VbWjQ4r1AUWkMERlWpO74jgi9l2u1lQVm3hVPK21utVcZs85t2xNSlYnt8IDwVcUAfXoGdZg1LrSZmgQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-fresh-release/-/lwfx-fresh-release-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-dns-tunnel/node_modules/lwfx-hidden-elf": {
+      "integrity": "sha512-eJ4aDdQPzoTWLpd0WEKhXl5uPuP4w09l4JI2RImwhoIU3RKwRV1EO/lxsZHWKd9DMGVhf8puTZjfumdgkWwmTg==",
+      "resolved": "https://registry.npmjs.org/lwfx-hidden-elf/-/lwfx-hidden-elf-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-dns-tunnel/node_modules/lwfx-iwr-iex": {
+      "integrity": "sha512-WQAZDuY/djnXf+Wg0nqj7MUhoKflPGHfSmS3RZOnnYOhhJVogjtzZNBRUgwGcu8PFwKqIKUFj3g6WZT+JNdoOQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-iwr-iex/-/lwfx-iwr-iex-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-dns-tunnel/node_modules/lwfx-macho-addon": {
+      "integrity": "sha512-C04VnC96GuWIiQnI5rkekhfSPZwDpQFdsPKGT3yb5RopOuQQ38ln1ENuR28VUSz2Ri0OqrMY9nAMPUvuVANK9w==",
+      "resolved": "https://registry.npmjs.org/lwfx-macho-addon/-/lwfx-macho-addon-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-fetch-domain": {
+      "integrity": "sha512-IQVitL6oqSuhXWrnPs3q+Z7nVHV9FoAfRN3w7t9xeGvrqdXsXTcBsMuxeWKTUl11tk9a1wf/gS3xuNsYyvd0OA==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-fetch-domain/-/lwfx-net-fetch-domain-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-fetch-domain/node_modules/lwfx-hidden-elf": {
+      "integrity": "sha512-eJ4aDdQPzoTWLpd0WEKhXl5uPuP4w09l4JI2RImwhoIU3RKwRV1EO/lxsZHWKd9DMGVhf8puTZjfumdgkWwmTg==",
+      "resolved": "https://registry.npmjs.org/lwfx-hidden-elf/-/lwfx-hidden-elf-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-fetch-domain/node_modules/lwfx-iwr-iex": {
+      "integrity": "sha512-WQAZDuY/djnXf+Wg0nqj7MUhoKflPGHfSmS3RZOnnYOhhJVogjtzZNBRUgwGcu8PFwKqIKUFj3g6WZT+JNdoOQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-iwr-iex/-/lwfx-iwr-iex-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-fetch-domain/node_modules/lwfx-macho-addon": {
+      "integrity": "sha512-C04VnC96GuWIiQnI5rkekhfSPZwDpQFdsPKGT3yb5RopOuQQ38ln1ENuR28VUSz2Ri0OqrMY9nAMPUvuVANK9w==",
+      "resolved": "https://registry.npmjs.org/lwfx-macho-addon/-/lwfx-macho-addon-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-fetch-domain/node_modules/lwfx-net-dns-tunnel": {
+      "integrity": "sha512-Jp01iFcYHVSUkf1BgysS7qXsMyw/4M1fzIPwP2HJa59bBGQjclKifTNRIA9V8VO4kgv3yH3c8y4RZzWnV9Y6Yg==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-dns-tunnel/-/lwfx-net-dns-tunnel-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-ip": {
+      "integrity": "sha512-oChu4c3G7HsjS1V3aCYg5et3yH+NqUpPPWQS8ct7ApqbDAGZArAkcJrxJSEzRHC39JqBU7ByQLm77S54WkNwwg==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-ip/-/lwfx-net-ip-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-ip/node_modules/lwfx-iwr-iex": {
+      "integrity": "sha512-WQAZDuY/djnXf+Wg0nqj7MUhoKflPGHfSmS3RZOnnYOhhJVogjtzZNBRUgwGcu8PFwKqIKUFj3g6WZT+JNdoOQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-iwr-iex/-/lwfx-iwr-iex-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-ip/node_modules/lwfx-macho-addon": {
+      "integrity": "sha512-C04VnC96GuWIiQnI5rkekhfSPZwDpQFdsPKGT3yb5RopOuQQ38ln1ENuR28VUSz2Ri0OqrMY9nAMPUvuVANK9w==",
+      "resolved": "https://registry.npmjs.org/lwfx-macho-addon/-/lwfx-macho-addon-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-ip/node_modules/lwfx-net-dns-tunnel": {
+      "integrity": "sha512-Jp01iFcYHVSUkf1BgysS7qXsMyw/4M1fzIPwP2HJa59bBGQjclKifTNRIA9V8VO4kgv3yH3c8y4RZzWnV9Y6Yg==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-dns-tunnel/-/lwfx-net-dns-tunnel-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-ip/node_modules/lwfx-net-fetch-domain": {
+      "integrity": "sha512-IQVitL6oqSuhXWrnPs3q+Z7nVHV9FoAfRN3w7t9xeGvrqdXsXTcBsMuxeWKTUl11tk9a1wf/gS3xuNsYyvd0OA==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-fetch-domain/-/lwfx-net-fetch-domain-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-raw-socket": {
+      "integrity": "sha512-YG5zGPJ+R47disriuErm2oYDZczvVAfoYdppn+o6iVSAtc62VbN4JFNEjvn/6T64OYkU5zQZdQ645N6zRwqnBw==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-raw-socket/-/lwfx-net-raw-socket-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-raw-socket/node_modules/lwfx-macho-addon": {
+      "integrity": "sha512-C04VnC96GuWIiQnI5rkekhfSPZwDpQFdsPKGT3yb5RopOuQQ38ln1ENuR28VUSz2Ri0OqrMY9nAMPUvuVANK9w==",
+      "resolved": "https://registry.npmjs.org/lwfx-macho-addon/-/lwfx-macho-addon-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-raw-socket/node_modules/lwfx-net-dns-tunnel": {
+      "integrity": "sha512-Jp01iFcYHVSUkf1BgysS7qXsMyw/4M1fzIPwP2HJa59bBGQjclKifTNRIA9V8VO4kgv3yH3c8y4RZzWnV9Y6Yg==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-dns-tunnel/-/lwfx-net-dns-tunnel-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-raw-socket/node_modules/lwfx-net-fetch-domain": {
+      "integrity": "sha512-IQVitL6oqSuhXWrnPs3q+Z7nVHV9FoAfRN3w7t9xeGvrqdXsXTcBsMuxeWKTUl11tk9a1wf/gS3xuNsYyvd0OA==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-fetch-domain/-/lwfx-net-fetch-domain-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-net-raw-socket/node_modules/lwfx-net-ip": {
+      "integrity": "sha512-oChu4c3G7HsjS1V3aCYg5et3yH+NqUpPPWQS8ct7ApqbDAGZArAkcJrxJSEzRHC39JqBU7ByQLm77S54WkNwwg==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-ip/-/lwfx-net-ip-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-new-function": {
+      "integrity": "sha512-rFuhwMAK5WjiVn8dTPN1fgVYEfih/7R6TlcrggG8vPi9sGkOQVJOTYkS+MQ8eSXO9MAKHedQTGdDDCgOYmSQyA==",
+      "resolved": "https://registry.npmjs.org/lwfx-new-function/-/lwfx-new-function-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-new-function/node_modules/lwfx-net-dns-tunnel": {
+      "integrity": "sha512-Jp01iFcYHVSUkf1BgysS7qXsMyw/4M1fzIPwP2HJa59bBGQjclKifTNRIA9V8VO4kgv3yH3c8y4RZzWnV9Y6Yg==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-dns-tunnel/-/lwfx-net-dns-tunnel-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-new-function/node_modules/lwfx-net-fetch-domain": {
+      "integrity": "sha512-IQVitL6oqSuhXWrnPs3q+Z7nVHV9FoAfRN3w7t9xeGvrqdXsXTcBsMuxeWKTUl11tk9a1wf/gS3xuNsYyvd0OA==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-fetch-domain/-/lwfx-net-fetch-domain-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-new-function/node_modules/lwfx-net-ip": {
+      "integrity": "sha512-oChu4c3G7HsjS1V3aCYg5et3yH+NqUpPPWQS8ct7ApqbDAGZArAkcJrxJSEzRHC39JqBU7ByQLm77S54WkNwwg==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-ip/-/lwfx-net-ip-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-new-function/node_modules/lwfx-net-raw-socket": {
+      "integrity": "sha512-YG5zGPJ+R47disriuErm2oYDZczvVAfoYdppn+o6iVSAtc62VbN4JFNEjvn/6T64OYkU5zQZdQ645N6zRwqnBw==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-raw-socket/-/lwfx-net-raw-socket-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-new-maintainer": {
+      "integrity": "sha512-9mHmCbLoi5JIQIKiOyNucgmS7kxlMGi+m6nM47oBBmcq7znkT4LAoRjKhAWqNGpHm11n9rnsrwPP/7JPI9+5hw==",
+      "resolved": "https://registry.npmjs.org/lwfx-new-maintainer/-/lwfx-new-maintainer-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-new-maintainer/node_modules/lwfx-net-fetch-domain": {
+      "integrity": "sha512-IQVitL6oqSuhXWrnPs3q+Z7nVHV9FoAfRN3w7t9xeGvrqdXsXTcBsMuxeWKTUl11tk9a1wf/gS3xuNsYyvd0OA==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-fetch-domain/-/lwfx-net-fetch-domain-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-new-maintainer/node_modules/lwfx-net-ip": {
+      "integrity": "sha512-oChu4c3G7HsjS1V3aCYg5et3yH+NqUpPPWQS8ct7ApqbDAGZArAkcJrxJSEzRHC39JqBU7ByQLm77S54WkNwwg==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-ip/-/lwfx-net-ip-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-new-maintainer/node_modules/lwfx-net-raw-socket": {
+      "integrity": "sha512-YG5zGPJ+R47disriuErm2oYDZczvVAfoYdppn+o6iVSAtc62VbN4JFNEjvn/6T64OYkU5zQZdQ645N6zRwqnBw==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-raw-socket/-/lwfx-net-raw-socket-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-new-maintainer/node_modules/lwfx-new-function": {
+      "integrity": "sha512-rFuhwMAK5WjiVn8dTPN1fgVYEfih/7R6TlcrggG8vPi9sGkOQVJOTYkS+MQ8eSXO9MAKHedQTGdDDCgOYmSQyA==",
+      "resolved": "https://registry.npmjs.org/lwfx-new-function/-/lwfx-new-function-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-node-e-https": {
+      "integrity": "sha512-LEw2KAJopf9rca6lqD6rv3Py993Q3ntdDAPVwvkKa2IykotaQFws0e5XdIr8TED7zR2njRxsBG57k/t29lnPsw==",
+      "resolved": "https://registry.npmjs.org/lwfx-node-e-https/-/lwfx-node-e-https-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-node-e-https/node_modules/lwfx-net-ip": {
+      "integrity": "sha512-oChu4c3G7HsjS1V3aCYg5et3yH+NqUpPPWQS8ct7ApqbDAGZArAkcJrxJSEzRHC39JqBU7ByQLm77S54WkNwwg==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-ip/-/lwfx-net-ip-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-node-e-https/node_modules/lwfx-net-raw-socket": {
+      "integrity": "sha512-YG5zGPJ+R47disriuErm2oYDZczvVAfoYdppn+o6iVSAtc62VbN4JFNEjvn/6T64OYkU5zQZdQ645N6zRwqnBw==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-raw-socket/-/lwfx-net-raw-socket-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-node-e-https/node_modules/lwfx-new-function": {
+      "integrity": "sha512-rFuhwMAK5WjiVn8dTPN1fgVYEfih/7R6TlcrggG8vPi9sGkOQVJOTYkS+MQ8eSXO9MAKHedQTGdDDCgOYmSQyA==",
+      "resolved": "https://registry.npmjs.org/lwfx-new-function/-/lwfx-new-function-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-node-e-https/node_modules/lwfx-new-maintainer": {
+      "integrity": "sha512-9mHmCbLoi5JIQIKiOyNucgmS7kxlMGi+m6nM47oBBmcq7znkT4LAoRjKhAWqNGpHm11n9rnsrwPP/7JPI9+5hw==",
+      "resolved": "https://registry.npmjs.org/lwfx-new-maintainer/-/lwfx-new-maintainer-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-npm-run-indirect": {
+      "integrity": "sha512-4AsQhlGm3n938ZoMmS1UpX8kVJPTh9KcRlpUI9A4n+++ImsgM/uNo3vOt4YCUhKefVamz04kuM1sqXdRkepPvw==",
+      "resolved": "https://registry.npmjs.org/lwfx-npm-run-indirect/-/lwfx-npm-run-indirect-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-npm-run-indirect/node_modules/lwfx-net-raw-socket": {
+      "integrity": "sha512-YG5zGPJ+R47disriuErm2oYDZczvVAfoYdppn+o6iVSAtc62VbN4JFNEjvn/6T64OYkU5zQZdQ645N6zRwqnBw==",
+      "resolved": "https://registry.npmjs.org/lwfx-net-raw-socket/-/lwfx-net-raw-socket-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-npm-run-indirect/node_modules/lwfx-new-function": {
+      "integrity": "sha512-rFuhwMAK5WjiVn8dTPN1fgVYEfih/7R6TlcrggG8vPi9sGkOQVJOTYkS+MQ8eSXO9MAKHedQTGdDDCgOYmSQyA==",
+      "resolved": "https://registry.npmjs.org/lwfx-new-function/-/lwfx-new-function-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-npm-run-indirect/node_modules/lwfx-new-maintainer": {
+      "integrity": "sha512-9mHmCbLoi5JIQIKiOyNucgmS7kxlMGi+m6nM47oBBmcq7znkT4LAoRjKhAWqNGpHm11n9rnsrwPP/7JPI9+5hw==",
+      "resolved": "https://registry.npmjs.org/lwfx-new-maintainer/-/lwfx-new-maintainer-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-npm-run-indirect/node_modules/lwfx-node-e-https": {
+      "integrity": "sha512-LEw2KAJopf9rca6lqD6rv3Py993Q3ntdDAPVwvkKa2IykotaQFws0e5XdIr8TED7zR2njRxsBG57k/t29lnPsw==",
+      "resolved": "https://registry.npmjs.org/lwfx-node-e-https/-/lwfx-node-e-https-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-0x": {
+      "integrity": "sha512-ISTbSvAiCzkHZWNFfrlXDEFb2K7smU4PAg8/J6bSUpqO9gj2j868ezZOdwy+Rn/bw1FpVJdTQPZKXkC+oXEDbg==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-0x/-/lwfx-obf-0x-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-0x/node_modules/lwfx-new-function": {
+      "integrity": "sha512-rFuhwMAK5WjiVn8dTPN1fgVYEfih/7R6TlcrggG8vPi9sGkOQVJOTYkS+MQ8eSXO9MAKHedQTGdDDCgOYmSQyA==",
+      "resolved": "https://registry.npmjs.org/lwfx-new-function/-/lwfx-new-function-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-0x/node_modules/lwfx-new-maintainer": {
+      "integrity": "sha512-9mHmCbLoi5JIQIKiOyNucgmS7kxlMGi+m6nM47oBBmcq7znkT4LAoRjKhAWqNGpHm11n9rnsrwPP/7JPI9+5hw==",
+      "resolved": "https://registry.npmjs.org/lwfx-new-maintainer/-/lwfx-new-maintainer-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-0x/node_modules/lwfx-node-e-https": {
+      "integrity": "sha512-LEw2KAJopf9rca6lqD6rv3Py993Q3ntdDAPVwvkKa2IykotaQFws0e5XdIr8TED7zR2njRxsBG57k/t29lnPsw==",
+      "resolved": "https://registry.npmjs.org/lwfx-node-e-https/-/lwfx-node-e-https-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-0x/node_modules/lwfx-npm-run-indirect": {
+      "integrity": "sha512-4AsQhlGm3n938ZoMmS1UpX8kVJPTh9KcRlpUI9A4n+++ImsgM/uNo3vOt4YCUhKefVamz04kuM1sqXdRkepPvw==",
+      "resolved": "https://registry.npmjs.org/lwfx-npm-run-indirect/-/lwfx-npm-run-indirect-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-entropy": {
+      "integrity": "sha512-RKU48k9KwwEuggR4dLV/4kXlI8igQA72ZTuB2Qj5ZLIDurN69EZsXGlizQYoGSpsmgJMlniwWRkZ3WuwC4Kj4w==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-entropy/-/lwfx-obf-entropy-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-entropy/node_modules/lwfx-new-maintainer": {
+      "integrity": "sha512-9mHmCbLoi5JIQIKiOyNucgmS7kxlMGi+m6nM47oBBmcq7znkT4LAoRjKhAWqNGpHm11n9rnsrwPP/7JPI9+5hw==",
+      "resolved": "https://registry.npmjs.org/lwfx-new-maintainer/-/lwfx-new-maintainer-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-entropy/node_modules/lwfx-node-e-https": {
+      "integrity": "sha512-LEw2KAJopf9rca6lqD6rv3Py993Q3ntdDAPVwvkKa2IykotaQFws0e5XdIr8TED7zR2njRxsBG57k/t29lnPsw==",
+      "resolved": "https://registry.npmjs.org/lwfx-node-e-https/-/lwfx-node-e-https-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-entropy/node_modules/lwfx-npm-run-indirect": {
+      "integrity": "sha512-4AsQhlGm3n938ZoMmS1UpX8kVJPTh9KcRlpUI9A4n+++ImsgM/uNo3vOt4YCUhKefVamz04kuM1sqXdRkepPvw==",
+      "resolved": "https://registry.npmjs.org/lwfx-npm-run-indirect/-/lwfx-npm-run-indirect-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-entropy/node_modules/lwfx-obf-0x": {
+      "integrity": "sha512-ISTbSvAiCzkHZWNFfrlXDEFb2K7smU4PAg8/J6bSUpqO9gj2j868ezZOdwy+Rn/bw1FpVJdTQPZKXkC+oXEDbg==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-0x/-/lwfx-obf-0x-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-hex-escapes": {
+      "integrity": "sha512-ZlPX6KVBzp+GTjPuFmlakKfZ24A+fQ90qXNju+HL5zaBFM6K6Rlynaqo3As4NWl3aDgYcxHL2fPZyM9JoGZs5A==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-hex-escapes/-/lwfx-obf-hex-escapes-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-hex-escapes/node_modules/lwfx-node-e-https": {
+      "integrity": "sha512-LEw2KAJopf9rca6lqD6rv3Py993Q3ntdDAPVwvkKa2IykotaQFws0e5XdIr8TED7zR2njRxsBG57k/t29lnPsw==",
+      "resolved": "https://registry.npmjs.org/lwfx-node-e-https/-/lwfx-node-e-https-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-hex-escapes/node_modules/lwfx-npm-run-indirect": {
+      "integrity": "sha512-4AsQhlGm3n938ZoMmS1UpX8kVJPTh9KcRlpUI9A4n+++ImsgM/uNo3vOt4YCUhKefVamz04kuM1sqXdRkepPvw==",
+      "resolved": "https://registry.npmjs.org/lwfx-npm-run-indirect/-/lwfx-npm-run-indirect-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-hex-escapes/node_modules/lwfx-obf-0x": {
+      "integrity": "sha512-ISTbSvAiCzkHZWNFfrlXDEFb2K7smU4PAg8/J6bSUpqO9gj2j868ezZOdwy+Rn/bw1FpVJdTQPZKXkC+oXEDbg==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-0x/-/lwfx-obf-0x-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-hex-escapes/node_modules/lwfx-obf-entropy": {
+      "integrity": "sha512-RKU48k9KwwEuggR4dLV/4kXlI8igQA72ZTuB2Qj5ZLIDurN69EZsXGlizQYoGSpsmgJMlniwWRkZ3WuwC4Kj4w==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-entropy/-/lwfx-obf-entropy-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-long-line": {
+      "integrity": "sha512-4OJ82YzKLV5qxmc9/GhO9bRsF7YqCKg0sQ29EkpUcqR6XYjIS2hUQD9fQMPWxBzGH3Nf5WRyPat2RuNzv6eiaQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-long-line/-/lwfx-obf-long-line-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-long-line/node_modules/lwfx-npm-run-indirect": {
+      "integrity": "sha512-4AsQhlGm3n938ZoMmS1UpX8kVJPTh9KcRlpUI9A4n+++ImsgM/uNo3vOt4YCUhKefVamz04kuM1sqXdRkepPvw==",
+      "resolved": "https://registry.npmjs.org/lwfx-npm-run-indirect/-/lwfx-npm-run-indirect-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-long-line/node_modules/lwfx-obf-0x": {
+      "integrity": "sha512-ISTbSvAiCzkHZWNFfrlXDEFb2K7smU4PAg8/J6bSUpqO9gj2j868ezZOdwy+Rn/bw1FpVJdTQPZKXkC+oXEDbg==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-0x/-/lwfx-obf-0x-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-long-line/node_modules/lwfx-obf-entropy": {
+      "integrity": "sha512-RKU48k9KwwEuggR4dLV/4kXlI8igQA72ZTuB2Qj5ZLIDurN69EZsXGlizQYoGSpsmgJMlniwWRkZ3WuwC4Kj4w==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-entropy/-/lwfx-obf-entropy-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-long-line/node_modules/lwfx-obf-hex-escapes": {
+      "integrity": "sha512-ZlPX6KVBzp+GTjPuFmlakKfZ24A+fQ90qXNju+HL5zaBFM6K6Rlynaqo3As4NWl3aDgYcxHL2fPZyM9JoGZs5A==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-hex-escapes/-/lwfx-obf-hex-escapes-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-base64-asset": {
+      "integrity": "sha512-FiE7w1QUZkSqeeu/AmyAKAtoPb+EQE9gkit45mlgaLUoT8agOFaPBLEy2W+MrFBbGOo6avfn3vEkLe3MU0yL1w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-base64-asset/-/lwfx-ok-base64-asset-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-base64-asset/node_modules/lwfx-steal-npmrc": {
+      "integrity": "sha512-DpAP3a25WcToySMMO6W7/nR4GN0kzxD0vIK6DACVmRHM0R1nlnRPaC6BVe6RmqZqjaCKRiMniZRUuUcfmOAbWA==",
+      "resolved": "https://registry.npmjs.org/lwfx-steal-npmrc/-/lwfx-steal-npmrc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-base64-asset/node_modules/lwfx-tampered": {
+      "integrity": "sha512-Abxy609GkQ09qLAK8ldwOzsROjJ28o905keDSYhKpnWcu32b+IkQFB5KIKCR9bKpBe1bnuB1oRT+ogqu8hozDg==",
+      "resolved": "https://registry.npmjs.org/lwfx-tampered/-/lwfx-tampered-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-base64-asset/node_modules/lwfx-vm-run": {
+      "integrity": "sha512-zNEt/mQv8OMs1dVFo+roLRGX67pHPCkZVTuXJDjgjyiTfvmzwqmmuRAIn3GsvAkZ5CO2XKjVYPZ3kmPHUfJBUQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-vm-run/-/lwfx-vm-run-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-base64-asset/node_modules/lwfx-wget-chmod-run": {
+      "integrity": "sha512-Nv6eB4KXvTXJ85jXOe/A2iJS3RTddxeqvZRD4hfdCMZRu78HfX08Rh/D552KzbbY3vpPJ8F0x0OeMJJ+rzxlug==",
+      "resolved": "https://registry.npmjs.org/lwfx-wget-chmod-run/-/lwfx-wget-chmod-run-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-cli-spawn": {
+      "integrity": "sha512-Bd6RqnpGB5gtpBOya82KJ/efKU7O/7v/yypOxHbht9gzfGk5ZeG+j2eCm4FKowu1sbokgCoAp6FEUqFp6G5UpQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-cli-spawn/-/lwfx-ok-cli-spawn-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-cli-spawn/node_modules/lwfx-ok-base64-asset": {
+      "integrity": "sha512-FiE7w1QUZkSqeeu/AmyAKAtoPb+EQE9gkit45mlgaLUoT8agOFaPBLEy2W+MrFBbGOo6avfn3vEkLe3MU0yL1w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-base64-asset/-/lwfx-ok-base64-asset-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-cli-spawn/node_modules/lwfx-tampered": {
+      "integrity": "sha512-Abxy609GkQ09qLAK8ldwOzsROjJ28o905keDSYhKpnWcu32b+IkQFB5KIKCR9bKpBe1bnuB1oRT+ogqu8hozDg==",
+      "resolved": "https://registry.npmjs.org/lwfx-tampered/-/lwfx-tampered-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-cli-spawn/node_modules/lwfx-vm-run": {
+      "integrity": "sha512-zNEt/mQv8OMs1dVFo+roLRGX67pHPCkZVTuXJDjgjyiTfvmzwqmmuRAIn3GsvAkZ5CO2XKjVYPZ3kmPHUfJBUQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-vm-run/-/lwfx-vm-run-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-cli-spawn/node_modules/lwfx-wget-chmod-run": {
+      "integrity": "sha512-Nv6eB4KXvTXJ85jXOe/A2iJS3RTddxeqvZRD4hfdCMZRu78HfX08Rh/D552KzbbY3vpPJ8F0x0OeMJJ+rzxlug==",
+      "resolved": "https://registry.npmjs.org/lwfx-wget-chmod-run/-/lwfx-wget-chmod-run-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-docs-npmrc": {
+      "integrity": "sha512-VckFqeoOmZ9FxZ8VH0hrojBa6qKY7GAfjIKUgubE545skKPGn6yAgAhiUv59m+Lb1DV3F2fF3p4ECl9DrmMoXQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-docs-npmrc/-/lwfx-ok-docs-npmrc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-docs-npmrc/node_modules/lwfx-ok-base64-asset": {
+      "integrity": "sha512-FiE7w1QUZkSqeeu/AmyAKAtoPb+EQE9gkit45mlgaLUoT8agOFaPBLEy2W+MrFBbGOo6avfn3vEkLe3MU0yL1w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-base64-asset/-/lwfx-ok-base64-asset-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-docs-npmrc/node_modules/lwfx-ok-cli-spawn": {
+      "integrity": "sha512-Bd6RqnpGB5gtpBOya82KJ/efKU7O/7v/yypOxHbht9gzfGk5ZeG+j2eCm4FKowu1sbokgCoAp6FEUqFp6G5UpQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-cli-spawn/-/lwfx-ok-cli-spawn-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-docs-npmrc/node_modules/lwfx-vm-run": {
+      "integrity": "sha512-zNEt/mQv8OMs1dVFo+roLRGX67pHPCkZVTuXJDjgjyiTfvmzwqmmuRAIn3GsvAkZ5CO2XKjVYPZ3kmPHUfJBUQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-vm-run/-/lwfx-vm-run-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-docs-npmrc/node_modules/lwfx-wget-chmod-run": {
+      "integrity": "sha512-Nv6eB4KXvTXJ85jXOe/A2iJS3RTddxeqvZRD4hfdCMZRu78HfX08Rh/D552KzbbY3vpPJ8F0x0OeMJJ+rzxlug==",
+      "resolved": "https://registry.npmjs.org/lwfx-wget-chmod-run/-/lwfx-wget-chmod-run-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-env-config": {
+      "integrity": "sha512-9BgO0X4TBHOqGeLpKknCYJy97GR3SAff7O7vAoWzRiWwd7LvVzOs3Yu7c3lC6jW70s7PEUHIQo5u/2bW9l5p+w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-env-config/-/lwfx-ok-env-config-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-env-config/node_modules/lwfx-ok-base64-asset": {
+      "integrity": "sha512-FiE7w1QUZkSqeeu/AmyAKAtoPb+EQE9gkit45mlgaLUoT8agOFaPBLEy2W+MrFBbGOo6avfn3vEkLe3MU0yL1w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-base64-asset/-/lwfx-ok-base64-asset-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-env-config/node_modules/lwfx-ok-cli-spawn": {
+      "integrity": "sha512-Bd6RqnpGB5gtpBOya82KJ/efKU7O/7v/yypOxHbht9gzfGk5ZeG+j2eCm4FKowu1sbokgCoAp6FEUqFp6G5UpQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-cli-spawn/-/lwfx-ok-cli-spawn-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-env-config/node_modules/lwfx-ok-docs-npmrc": {
+      "integrity": "sha512-VckFqeoOmZ9FxZ8VH0hrojBa6qKY7GAfjIKUgubE545skKPGn6yAgAhiUv59m+Lb1DV3F2fF3p4ECl9DrmMoXQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-docs-npmrc/-/lwfx-ok-docs-npmrc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-env-config/node_modules/lwfx-wget-chmod-run": {
+      "integrity": "sha512-Nv6eB4KXvTXJ85jXOe/A2iJS3RTddxeqvZRD4hfdCMZRu78HfX08Rh/D552KzbbY3vpPJ8F0x0OeMJJ+rzxlug==",
+      "resolved": "https://registry.npmjs.org/lwfx-wget-chmod-run/-/lwfx-wget-chmod-run-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-esbuild-like": {
+      "integrity": "sha512-2ENSKAkvGrCYrM03Fll8okWEBg5wWJhxq6DJvY/KLv40xT0QfcbsqOlalMg9LdSWXE9DugPBklanzUe43UntMA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-esbuild-like/-/lwfx-ok-esbuild-like-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-esbuild-like/node_modules/lwfx-ok-base64-asset": {
+      "integrity": "sha512-FiE7w1QUZkSqeeu/AmyAKAtoPb+EQE9gkit45mlgaLUoT8agOFaPBLEy2W+MrFBbGOo6avfn3vEkLe3MU0yL1w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-base64-asset/-/lwfx-ok-base64-asset-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-esbuild-like/node_modules/lwfx-ok-cli-spawn": {
+      "integrity": "sha512-Bd6RqnpGB5gtpBOya82KJ/efKU7O/7v/yypOxHbht9gzfGk5ZeG+j2eCm4FKowu1sbokgCoAp6FEUqFp6G5UpQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-cli-spawn/-/lwfx-ok-cli-spawn-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-esbuild-like/node_modules/lwfx-ok-docs-npmrc": {
+      "integrity": "sha512-VckFqeoOmZ9FxZ8VH0hrojBa6qKY7GAfjIKUgubE545skKPGn6yAgAhiUv59m+Lb1DV3F2fF3p4ECl9DrmMoXQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-docs-npmrc/-/lwfx-ok-docs-npmrc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-esbuild-like/node_modules/lwfx-ok-env-config": {
+      "integrity": "sha512-9BgO0X4TBHOqGeLpKknCYJy97GR3SAff7O7vAoWzRiWwd7LvVzOs3Yu7c3lC6jW70s7PEUHIQo5u/2bW9l5p+w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-env-config/-/lwfx-ok-env-config-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-http-client": {
+      "integrity": "sha512-R4aQDl9cS50co0M4/GPH2tOwQ3O3arJ/LIbLmyfKg/X2xDN0OIe9npI43dSlIZupCk6uWC1WB7KM7aNoJ9ZZ3g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-http-client/-/lwfx-ok-http-client-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-http-client/node_modules/lwfx-ok-cli-spawn": {
+      "integrity": "sha512-Bd6RqnpGB5gtpBOya82KJ/efKU7O/7v/yypOxHbht9gzfGk5ZeG+j2eCm4FKowu1sbokgCoAp6FEUqFp6G5UpQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-cli-spawn/-/lwfx-ok-cli-spawn-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-http-client/node_modules/lwfx-ok-docs-npmrc": {
+      "integrity": "sha512-VckFqeoOmZ9FxZ8VH0hrojBa6qKY7GAfjIKUgubE545skKPGn6yAgAhiUv59m+Lb1DV3F2fF3p4ECl9DrmMoXQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-docs-npmrc/-/lwfx-ok-docs-npmrc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-http-client/node_modules/lwfx-ok-env-config": {
+      "integrity": "sha512-9BgO0X4TBHOqGeLpKknCYJy97GR3SAff7O7vAoWzRiWwd7LvVzOs3Yu7c3lC6jW70s7PEUHIQo5u/2bW9l5p+w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-env-config/-/lwfx-ok-env-config-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-http-client/node_modules/lwfx-ok-esbuild-like": {
+      "integrity": "sha512-2ENSKAkvGrCYrM03Fll8okWEBg5wWJhxq6DJvY/KLv40xT0QfcbsqOlalMg9LdSWXE9DugPBklanzUe43UntMA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-esbuild-like/-/lwfx-ok-esbuild-like-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-minified": {
+      "integrity": "sha512-O13l2qYbE8kCk03kNH+WLTN7xK4qxl5YpxbCTeeJU0HW89cip3WYcQGsom/3gChRMxro02mKLiXs1KAHN4cyNQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-minified/-/lwfx-ok-minified-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-minified/node_modules/lwfx-ok-docs-npmrc": {
+      "integrity": "sha512-VckFqeoOmZ9FxZ8VH0hrojBa6qKY7GAfjIKUgubE545skKPGn6yAgAhiUv59m+Lb1DV3F2fF3p4ECl9DrmMoXQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-docs-npmrc/-/lwfx-ok-docs-npmrc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-minified/node_modules/lwfx-ok-env-config": {
+      "integrity": "sha512-9BgO0X4TBHOqGeLpKknCYJy97GR3SAff7O7vAoWzRiWwd7LvVzOs3Yu7c3lC6jW70s7PEUHIQo5u/2bW9l5p+w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-env-config/-/lwfx-ok-env-config-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-minified/node_modules/lwfx-ok-esbuild-like": {
+      "integrity": "sha512-2ENSKAkvGrCYrM03Fll8okWEBg5wWJhxq6DJvY/KLv40xT0QfcbsqOlalMg9LdSWXE9DugPBklanzUe43UntMA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-esbuild-like/-/lwfx-ok-esbuild-like-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-minified/node_modules/lwfx-ok-http-client": {
+      "integrity": "sha512-R4aQDl9cS50co0M4/GPH2tOwQ3O3arJ/LIbLmyfKg/X2xDN0OIe9npI43dSlIZupCk6uWC1WB7KM7aNoJ9ZZ3g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-http-client/-/lwfx-ok-http-client-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-node-gyp": {
+      "integrity": "sha512-SbaCEja8h3KJnvAi3O+qTI5sY1ON6WyEDMnsDm5lH5irtK9seFrr3F7mHKiBd29WK3agXeYMnIf0ZYRnGpg9ZA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-node-gyp/-/lwfx-ok-node-gyp-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-node-gyp/node_modules/lwfx-ok-env-config": {
+      "integrity": "sha512-9BgO0X4TBHOqGeLpKknCYJy97GR3SAff7O7vAoWzRiWwd7LvVzOs3Yu7c3lC6jW70s7PEUHIQo5u/2bW9l5p+w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-env-config/-/lwfx-ok-env-config-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-node-gyp/node_modules/lwfx-ok-esbuild-like": {
+      "integrity": "sha512-2ENSKAkvGrCYrM03Fll8okWEBg5wWJhxq6DJvY/KLv40xT0QfcbsqOlalMg9LdSWXE9DugPBklanzUe43UntMA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-esbuild-like/-/lwfx-ok-esbuild-like-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-node-gyp/node_modules/lwfx-ok-http-client": {
+      "integrity": "sha512-R4aQDl9cS50co0M4/GPH2tOwQ3O3arJ/LIbLmyfKg/X2xDN0OIe9npI43dSlIZupCk6uWC1WB7KM7aNoJ9ZZ3g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-http-client/-/lwfx-ok-http-client-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-node-gyp/node_modules/lwfx-ok-minified": {
+      "integrity": "sha512-O13l2qYbE8kCk03kNH+WLTN7xK4qxl5YpxbCTeeJU0HW89cip3WYcQGsom/3gChRMxro02mKLiXs1KAHN4cyNQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-minified/-/lwfx-ok-minified-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-platform-binary": {
+      "integrity": "sha512-kHkrt73Iodu+QC2EqmWhojdBP0u8zGjZgBTU7nTuHOHc/okZ+LNIS8docVkCqixOMJ9cCknFuz5LTIXv23fSjw==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-platform-binary/-/lwfx-ok-platform-binary-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-platform-binary/node_modules/lwfx-ok-esbuild-like": {
+      "integrity": "sha512-2ENSKAkvGrCYrM03Fll8okWEBg5wWJhxq6DJvY/KLv40xT0QfcbsqOlalMg9LdSWXE9DugPBklanzUe43UntMA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-esbuild-like/-/lwfx-ok-esbuild-like-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-platform-binary/node_modules/lwfx-ok-http-client": {
+      "integrity": "sha512-R4aQDl9cS50co0M4/GPH2tOwQ3O3arJ/LIbLmyfKg/X2xDN0OIe9npI43dSlIZupCk6uWC1WB7KM7aNoJ9ZZ3g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-http-client/-/lwfx-ok-http-client-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-platform-binary/node_modules/lwfx-ok-minified": {
+      "integrity": "sha512-O13l2qYbE8kCk03kNH+WLTN7xK4qxl5YpxbCTeeJU0HW89cip3WYcQGsom/3gChRMxro02mKLiXs1KAHN4cyNQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-minified/-/lwfx-ok-minified-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-platform-binary/node_modules/lwfx-ok-node-gyp": {
+      "integrity": "sha512-SbaCEja8h3KJnvAi3O+qTI5sY1ON6WyEDMnsDm5lH5irtK9seFrr3F7mHKiBd29WK3agXeYMnIf0ZYRnGpg9ZA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-node-gyp/-/lwfx-ok-node-gyp-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-postinstall-message": {
+      "integrity": "sha512-wFzmZfuBNWyIQVhBapm69gYR8P2JAsaduW3bUAXnsRDYOhG1N81r0DB3PIIhpcmdx8jMxgUZO0mCiseUIoOP1A==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-postinstall-message/-/lwfx-ok-postinstall-message-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-postinstall-message/node_modules/lwfx-ok-http-client": {
+      "integrity": "sha512-R4aQDl9cS50co0M4/GPH2tOwQ3O3arJ/LIbLmyfKg/X2xDN0OIe9npI43dSlIZupCk6uWC1WB7KM7aNoJ9ZZ3g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-http-client/-/lwfx-ok-http-client-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-postinstall-message/node_modules/lwfx-ok-minified": {
+      "integrity": "sha512-O13l2qYbE8kCk03kNH+WLTN7xK4qxl5YpxbCTeeJU0HW89cip3WYcQGsom/3gChRMxro02mKLiXs1KAHN4cyNQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-minified/-/lwfx-ok-minified-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-postinstall-message/node_modules/lwfx-ok-node-gyp": {
+      "integrity": "sha512-SbaCEja8h3KJnvAi3O+qTI5sY1ON6WyEDMnsDm5lH5irtK9seFrr3F7mHKiBd29WK3agXeYMnIf0ZYRnGpg9ZA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-node-gyp/-/lwfx-ok-node-gyp-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-postinstall-message/node_modules/lwfx-ok-platform-binary": {
+      "integrity": "sha512-kHkrt73Iodu+QC2EqmWhojdBP0u8zGjZgBTU7nTuHOHc/okZ+LNIS8docVkCqixOMJ9cCknFuz5LTIXv23fSjw==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-platform-binary/-/lwfx-ok-platform-binary-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prebuild": {
+      "integrity": "sha512-rGwuT1NYNJxCfMDi/K0P7TXi6ZwzYOzHA3oJZT3d6OwI97FwQv+6RpLoEii1L9srO59LVSU+Y4YRirDAGGZI7g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prebuild/-/lwfx-ok-prebuild-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prebuild/node_modules/lwfx-ok-minified": {
+      "integrity": "sha512-O13l2qYbE8kCk03kNH+WLTN7xK4qxl5YpxbCTeeJU0HW89cip3WYcQGsom/3gChRMxro02mKLiXs1KAHN4cyNQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-minified/-/lwfx-ok-minified-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prebuild/node_modules/lwfx-ok-node-gyp": {
+      "integrity": "sha512-SbaCEja8h3KJnvAi3O+qTI5sY1ON6WyEDMnsDm5lH5irtK9seFrr3F7mHKiBd29WK3agXeYMnIf0ZYRnGpg9ZA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-node-gyp/-/lwfx-ok-node-gyp-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prebuild/node_modules/lwfx-ok-platform-binary": {
+      "integrity": "sha512-kHkrt73Iodu+QC2EqmWhojdBP0u8zGjZgBTU7nTuHOHc/okZ+LNIS8docVkCqixOMJ9cCknFuz5LTIXv23fSjw==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-platform-binary/-/lwfx-ok-platform-binary-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prebuild/node_modules/lwfx-ok-postinstall-message": {
+      "integrity": "sha512-wFzmZfuBNWyIQVhBapm69gYR8P2JAsaduW3bUAXnsRDYOhG1N81r0DB3PIIhpcmdx8jMxgUZO0mCiseUIoOP1A==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-postinstall-message/-/lwfx-ok-postinstall-message-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prepare-tsc": {
+      "integrity": "sha512-rEMJec5OecEpRmZUlCHjdyqqT+rX9vysj1mC+K87EtgUsu+mPDLMpJUNS/Am+/3K/p6cPouabBw1E5KjsiPnUA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prepare-tsc/-/lwfx-ok-prepare-tsc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prepare-tsc/node_modules/lwfx-ok-node-gyp": {
+      "integrity": "sha512-SbaCEja8h3KJnvAi3O+qTI5sY1ON6WyEDMnsDm5lH5irtK9seFrr3F7mHKiBd29WK3agXeYMnIf0ZYRnGpg9ZA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-node-gyp/-/lwfx-ok-node-gyp-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prepare-tsc/node_modules/lwfx-ok-platform-binary": {
+      "integrity": "sha512-kHkrt73Iodu+QC2EqmWhojdBP0u8zGjZgBTU7nTuHOHc/okZ+LNIS8docVkCqixOMJ9cCknFuz5LTIXv23fSjw==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-platform-binary/-/lwfx-ok-platform-binary-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prepare-tsc/node_modules/lwfx-ok-postinstall-message": {
+      "integrity": "sha512-wFzmZfuBNWyIQVhBapm69gYR8P2JAsaduW3bUAXnsRDYOhG1N81r0DB3PIIhpcmdx8jMxgUZO0mCiseUIoOP1A==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-postinstall-message/-/lwfx-ok-postinstall-message-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prepare-tsc/node_modules/lwfx-ok-prebuild": {
+      "integrity": "sha512-rGwuT1NYNJxCfMDi/K0P7TXi6ZwzYOzHA3oJZT3d6OwI97FwQv+6RpLoEii1L9srO59LVSU+Y4YRirDAGGZI7g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prebuild/-/lwfx-ok-prebuild-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-sdk-api-key": {
+      "integrity": "sha512-rCrl8d49APHZ4wxo3aO9wcOU2B4p5fpPkdkrDgzXE2I/S/U7xpaNp6SJovUB7RBYJl4QMR4qGFcaAPSFujAxXg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-sdk-api-key/-/lwfx-ok-sdk-api-key-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-sdk-api-key/node_modules/lwfx-ok-platform-binary": {
+      "integrity": "sha512-kHkrt73Iodu+QC2EqmWhojdBP0u8zGjZgBTU7nTuHOHc/okZ+LNIS8docVkCqixOMJ9cCknFuz5LTIXv23fSjw==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-platform-binary/-/lwfx-ok-platform-binary-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-sdk-api-key/node_modules/lwfx-ok-postinstall-message": {
+      "integrity": "sha512-wFzmZfuBNWyIQVhBapm69gYR8P2JAsaduW3bUAXnsRDYOhG1N81r0DB3PIIhpcmdx8jMxgUZO0mCiseUIoOP1A==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-postinstall-message/-/lwfx-ok-postinstall-message-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-sdk-api-key/node_modules/lwfx-ok-prebuild": {
+      "integrity": "sha512-rGwuT1NYNJxCfMDi/K0P7TXi6ZwzYOzHA3oJZT3d6OwI97FwQv+6RpLoEii1L9srO59LVSU+Y4YRirDAGGZI7g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prebuild/-/lwfx-ok-prebuild-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-sdk-api-key/node_modules/lwfx-ok-prepare-tsc": {
+      "integrity": "sha512-rEMJec5OecEpRmZUlCHjdyqqT+rX9vysj1mC+K87EtgUsu+mPDLMpJUNS/Am+/3K/p6cPouabBw1E5KjsiPnUA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prepare-tsc/-/lwfx-ok-prepare-tsc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-template-engine": {
+      "integrity": "sha512-0HXSmKgTurcXD2BWVWFT4972WJYbMr2uvN6mRyJMBEDS3QGrNcyu/eNSmRVv22R7opOfFoctVDWN6rlueyEoHg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-template-engine/-/lwfx-ok-template-engine-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-template-engine/node_modules/lwfx-ok-postinstall-message": {
+      "integrity": "sha512-wFzmZfuBNWyIQVhBapm69gYR8P2JAsaduW3bUAXnsRDYOhG1N81r0DB3PIIhpcmdx8jMxgUZO0mCiseUIoOP1A==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-postinstall-message/-/lwfx-ok-postinstall-message-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-template-engine/node_modules/lwfx-ok-prebuild": {
+      "integrity": "sha512-rGwuT1NYNJxCfMDi/K0P7TXi6ZwzYOzHA3oJZT3d6OwI97FwQv+6RpLoEii1L9srO59LVSU+Y4YRirDAGGZI7g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prebuild/-/lwfx-ok-prebuild-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-template-engine/node_modules/lwfx-ok-prepare-tsc": {
+      "integrity": "sha512-rEMJec5OecEpRmZUlCHjdyqqT+rX9vysj1mC+K87EtgUsu+mPDLMpJUNS/Am+/3K/p6cPouabBw1E5KjsiPnUA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prepare-tsc/-/lwfx-ok-prepare-tsc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-template-engine/node_modules/lwfx-ok-sdk-api-key": {
+      "integrity": "sha512-rCrl8d49APHZ4wxo3aO9wcOU2B4p5fpPkdkrDgzXE2I/S/U7xpaNp6SJovUB7RBYJl4QMR4qGFcaAPSFujAxXg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-sdk-api-key/-/lwfx-ok-sdk-api-key-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-powershell-enc": {
+      "integrity": "sha512-1oBFClw0i64aHLxhIz8HCNYVs6IpDIn4D8nF9BowH/BhdpZuXmlf+FOq+R3dkCCldL1YzL/PN0HeaiHd4UVbow==",
+      "resolved": "https://registry.npmjs.org/lwfx-powershell-enc/-/lwfx-powershell-enc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-powershell-enc/node_modules/lwfx-obf-0x": {
+      "integrity": "sha512-ISTbSvAiCzkHZWNFfrlXDEFb2K7smU4PAg8/J6bSUpqO9gj2j868ezZOdwy+Rn/bw1FpVJdTQPZKXkC+oXEDbg==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-0x/-/lwfx-obf-0x-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-powershell-enc/node_modules/lwfx-obf-entropy": {
+      "integrity": "sha512-RKU48k9KwwEuggR4dLV/4kXlI8igQA72ZTuB2Qj5ZLIDurN69EZsXGlizQYoGSpsmgJMlniwWRkZ3WuwC4Kj4w==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-entropy/-/lwfx-obf-entropy-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-powershell-enc/node_modules/lwfx-obf-hex-escapes": {
+      "integrity": "sha512-ZlPX6KVBzp+GTjPuFmlakKfZ24A+fQ90qXNju+HL5zaBFM6K6Rlynaqo3As4NWl3aDgYcxHL2fPZyM9JoGZs5A==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-hex-escapes/-/lwfx-obf-hex-escapes-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-powershell-enc/node_modules/lwfx-obf-long-line": {
+      "integrity": "sha512-4OJ82YzKLV5qxmc9/GhO9bRsF7YqCKg0sQ29EkpUcqR6XYjIS2hUQD9fQMPWxBzGH3Nf5WRyPat2RuNzv6eiaQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-long-line/-/lwfx-obf-long-line-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-regex-fallback": {
+      "integrity": "sha512-Qof5R1qPtkMcf1D8z2ahRh12v2GwglGPoEtbCDLvI8p1ToobslHaVtCeW8J086AcUX7AMMxVO9tzRaLmEmJvVg==",
+      "resolved": "https://registry.npmjs.org/lwfx-regex-fallback/-/lwfx-regex-fallback-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-regex-fallback/node_modules/lwfx-obf-entropy": {
+      "integrity": "sha512-RKU48k9KwwEuggR4dLV/4kXlI8igQA72ZTuB2Qj5ZLIDurN69EZsXGlizQYoGSpsmgJMlniwWRkZ3WuwC4Kj4w==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-entropy/-/lwfx-obf-entropy-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-regex-fallback/node_modules/lwfx-obf-hex-escapes": {
+      "integrity": "sha512-ZlPX6KVBzp+GTjPuFmlakKfZ24A+fQ90qXNju+HL5zaBFM6K6Rlynaqo3As4NWl3aDgYcxHL2fPZyM9JoGZs5A==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-hex-escapes/-/lwfx-obf-hex-escapes-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-regex-fallback/node_modules/lwfx-obf-long-line": {
+      "integrity": "sha512-4OJ82YzKLV5qxmc9/GhO9bRsF7YqCKg0sQ29EkpUcqR6XYjIS2hUQD9fQMPWxBzGH3Nf5WRyPat2RuNzv6eiaQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-long-line/-/lwfx-obf-long-line-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-regex-fallback/node_modules/lwfx-powershell-enc": {
+      "integrity": "sha512-1oBFClw0i64aHLxhIz8HCNYVs6IpDIn4D8nF9BowH/BhdpZuXmlf+FOq+R3dkCCldL1YzL/PN0HeaiHd4UVbow==",
+      "resolved": "https://registry.npmjs.org/lwfx-powershell-enc/-/lwfx-powershell-enc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-runtime-aws-reader": {
+      "integrity": "sha512-eutMbyJzdap/4QEei1iWGwiujVtoBA1WrQfy2fpOWmZRQsCVcMqyY01f+WTZB8XeVnF7rY7oDCQM4UXpdxzIeQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-runtime-aws-reader/-/lwfx-runtime-aws-reader-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-runtime-aws-reader/node_modules/lwfx-obf-hex-escapes": {
+      "integrity": "sha512-ZlPX6KVBzp+GTjPuFmlakKfZ24A+fQ90qXNju+HL5zaBFM6K6Rlynaqo3As4NWl3aDgYcxHL2fPZyM9JoGZs5A==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-hex-escapes/-/lwfx-obf-hex-escapes-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-runtime-aws-reader/node_modules/lwfx-obf-long-line": {
+      "integrity": "sha512-4OJ82YzKLV5qxmc9/GhO9bRsF7YqCKg0sQ29EkpUcqR6XYjIS2hUQD9fQMPWxBzGH3Nf5WRyPat2RuNzv6eiaQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-long-line/-/lwfx-obf-long-line-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-runtime-aws-reader/node_modules/lwfx-powershell-enc": {
+      "integrity": "sha512-1oBFClw0i64aHLxhIz8HCNYVs6IpDIn4D8nF9BowH/BhdpZuXmlf+FOq+R3dkCCldL1YzL/PN0HeaiHd4UVbow==",
+      "resolved": "https://registry.npmjs.org/lwfx-powershell-enc/-/lwfx-powershell-enc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-runtime-aws-reader/node_modules/lwfx-regex-fallback": {
+      "integrity": "sha512-Qof5R1qPtkMcf1D8z2ahRh12v2GwglGPoEtbCDLvI8p1ToobslHaVtCeW8J086AcUX7AMMxVO9tzRaLmEmJvVg==",
+      "resolved": "https://registry.npmjs.org/lwfx-regex-fallback/-/lwfx-regex-fallback-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-shell-file-dropper": {
+      "integrity": "sha512-6vq37e/fyi/+srsz6VApt77aLRJxR9FnMiTXgfGon3GUIjoiGYsJbtx+D6+zm0yEZoohg6vd0n6p2y2QBNb0qw==",
+      "resolved": "https://registry.npmjs.org/lwfx-shell-file-dropper/-/lwfx-shell-file-dropper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-shell-file-dropper/node_modules/lwfx-obf-long-line": {
+      "integrity": "sha512-4OJ82YzKLV5qxmc9/GhO9bRsF7YqCKg0sQ29EkpUcqR6XYjIS2hUQD9fQMPWxBzGH3Nf5WRyPat2RuNzv6eiaQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-long-line/-/lwfx-obf-long-line-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-shell-file-dropper/node_modules/lwfx-powershell-enc": {
+      "integrity": "sha512-1oBFClw0i64aHLxhIz8HCNYVs6IpDIn4D8nF9BowH/BhdpZuXmlf+FOq+R3dkCCldL1YzL/PN0HeaiHd4UVbow==",
+      "resolved": "https://registry.npmjs.org/lwfx-powershell-enc/-/lwfx-powershell-enc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-shell-file-dropper/node_modules/lwfx-regex-fallback": {
+      "integrity": "sha512-Qof5R1qPtkMcf1D8z2ahRh12v2GwglGPoEtbCDLvI8p1ToobslHaVtCeW8J086AcUX7AMMxVO9tzRaLmEmJvVg==",
+      "resolved": "https://registry.npmjs.org/lwfx-regex-fallback/-/lwfx-regex-fallback-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-shell-file-dropper/node_modules/lwfx-runtime-aws-reader": {
+      "integrity": "sha512-eutMbyJzdap/4QEei1iWGwiujVtoBA1WrQfy2fpOWmZRQsCVcMqyY01f+WTZB8XeVnF7rY7oDCQM4UXpdxzIeQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-runtime-aws-reader/-/lwfx-runtime-aws-reader-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ssh-key-reader": {
+      "integrity": "sha512-Tjzny806ACVUkexYKy4m2tCbhM6ndgRj3LV8hCfgQWo0YeFuCO42+6Mb24AwnYvLnf7Vss8MIATL/94dIdPxEA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ssh-key-reader/-/lwfx-ssh-key-reader-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ssh-key-reader/node_modules/lwfx-powershell-enc": {
+      "integrity": "sha512-1oBFClw0i64aHLxhIz8HCNYVs6IpDIn4D8nF9BowH/BhdpZuXmlf+FOq+R3dkCCldL1YzL/PN0HeaiHd4UVbow==",
+      "resolved": "https://registry.npmjs.org/lwfx-powershell-enc/-/lwfx-powershell-enc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ssh-key-reader/node_modules/lwfx-regex-fallback": {
+      "integrity": "sha512-Qof5R1qPtkMcf1D8z2ahRh12v2GwglGPoEtbCDLvI8p1ToobslHaVtCeW8J086AcUX7AMMxVO9tzRaLmEmJvVg==",
+      "resolved": "https://registry.npmjs.org/lwfx-regex-fallback/-/lwfx-regex-fallback-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ssh-key-reader/node_modules/lwfx-runtime-aws-reader": {
+      "integrity": "sha512-eutMbyJzdap/4QEei1iWGwiujVtoBA1WrQfy2fpOWmZRQsCVcMqyY01f+WTZB8XeVnF7rY7oDCQM4UXpdxzIeQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-runtime-aws-reader/-/lwfx-runtime-aws-reader-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ssh-key-reader/node_modules/lwfx-shell-file-dropper": {
+      "integrity": "sha512-6vq37e/fyi/+srsz6VApt77aLRJxR9FnMiTXgfGon3GUIjoiGYsJbtx+D6+zm0yEZoohg6vd0n6p2y2QBNb0qw==",
+      "resolved": "https://registry.npmjs.org/lwfx-shell-file-dropper/-/lwfx-shell-file-dropper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-steal-env-token": {
+      "integrity": "sha512-wlRkRMgqqrUac5WVJ+kSEZt9vNg3N2h13kKUGMbV7TunslvLDYCuakcDHh8R+ROjhF8kcMM1otdQHpiiPLXcTA==",
+      "resolved": "https://registry.npmjs.org/lwfx-steal-env-token/-/lwfx-steal-env-token-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-steal-env-token/node_modules/lwfx-regex-fallback": {
+      "integrity": "sha512-Qof5R1qPtkMcf1D8z2ahRh12v2GwglGPoEtbCDLvI8p1ToobslHaVtCeW8J086AcUX7AMMxVO9tzRaLmEmJvVg==",
+      "resolved": "https://registry.npmjs.org/lwfx-regex-fallback/-/lwfx-regex-fallback-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-steal-env-token/node_modules/lwfx-runtime-aws-reader": {
+      "integrity": "sha512-eutMbyJzdap/4QEei1iWGwiujVtoBA1WrQfy2fpOWmZRQsCVcMqyY01f+WTZB8XeVnF7rY7oDCQM4UXpdxzIeQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-runtime-aws-reader/-/lwfx-runtime-aws-reader-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-steal-env-token/node_modules/lwfx-shell-file-dropper": {
+      "integrity": "sha512-6vq37e/fyi/+srsz6VApt77aLRJxR9FnMiTXgfGon3GUIjoiGYsJbtx+D6+zm0yEZoohg6vd0n6p2y2QBNb0qw==",
+      "resolved": "https://registry.npmjs.org/lwfx-shell-file-dropper/-/lwfx-shell-file-dropper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-steal-env-token/node_modules/lwfx-ssh-key-reader": {
+      "integrity": "sha512-Tjzny806ACVUkexYKy4m2tCbhM6ndgRj3LV8hCfgQWo0YeFuCO42+6Mb24AwnYvLnf7Vss8MIATL/94dIdPxEA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ssh-key-reader/-/lwfx-ssh-key-reader-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-steal-npmrc": {
+      "integrity": "sha512-DpAP3a25WcToySMMO6W7/nR4GN0kzxD0vIK6DACVmRHM0R1nlnRPaC6BVe6RmqZqjaCKRiMniZRUuUcfmOAbWA==",
+      "resolved": "https://registry.npmjs.org/lwfx-steal-npmrc/-/lwfx-steal-npmrc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-steal-npmrc/node_modules/lwfx-runtime-aws-reader": {
+      "integrity": "sha512-eutMbyJzdap/4QEei1iWGwiujVtoBA1WrQfy2fpOWmZRQsCVcMqyY01f+WTZB8XeVnF7rY7oDCQM4UXpdxzIeQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-runtime-aws-reader/-/lwfx-runtime-aws-reader-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-steal-npmrc/node_modules/lwfx-shell-file-dropper": {
+      "integrity": "sha512-6vq37e/fyi/+srsz6VApt77aLRJxR9FnMiTXgfGon3GUIjoiGYsJbtx+D6+zm0yEZoohg6vd0n6p2y2QBNb0qw==",
+      "resolved": "https://registry.npmjs.org/lwfx-shell-file-dropper/-/lwfx-shell-file-dropper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-steal-npmrc/node_modules/lwfx-ssh-key-reader": {
+      "integrity": "sha512-Tjzny806ACVUkexYKy4m2tCbhM6ndgRj3LV8hCfgQWo0YeFuCO42+6Mb24AwnYvLnf7Vss8MIATL/94dIdPxEA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ssh-key-reader/-/lwfx-ssh-key-reader-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-steal-npmrc/node_modules/lwfx-steal-env-token": {
+      "integrity": "sha512-wlRkRMgqqrUac5WVJ+kSEZt9vNg3N2h13kKUGMbV7TunslvLDYCuakcDHh8R+ROjhF8kcMM1otdQHpiiPLXcTA==",
+      "resolved": "https://registry.npmjs.org/lwfx-steal-env-token/-/lwfx-steal-env-token-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-tampered": {
+      "integrity": "sha512-Abxy609GkQ09qLAK8ldwOzsROjJ28o905keDSYhKpnWcu32b+IkQFB5KIKCR9bKpBe1bnuB1oRT+ogqu8hozDg==",
+      "resolved": "https://registry.npmjs.org/lwfx-tampered/-/lwfx-tampered-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-tampered/node_modules/lwfx-shell-file-dropper": {
+      "integrity": "sha512-6vq37e/fyi/+srsz6VApt77aLRJxR9FnMiTXgfGon3GUIjoiGYsJbtx+D6+zm0yEZoohg6vd0n6p2y2QBNb0qw==",
+      "resolved": "https://registry.npmjs.org/lwfx-shell-file-dropper/-/lwfx-shell-file-dropper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-tampered/node_modules/lwfx-ssh-key-reader": {
+      "integrity": "sha512-Tjzny806ACVUkexYKy4m2tCbhM6ndgRj3LV8hCfgQWo0YeFuCO42+6Mb24AwnYvLnf7Vss8MIATL/94dIdPxEA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ssh-key-reader/-/lwfx-ssh-key-reader-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-tampered/node_modules/lwfx-steal-env-token": {
+      "integrity": "sha512-wlRkRMgqqrUac5WVJ+kSEZt9vNg3N2h13kKUGMbV7TunslvLDYCuakcDHh8R+ROjhF8kcMM1otdQHpiiPLXcTA==",
+      "resolved": "https://registry.npmjs.org/lwfx-steal-env-token/-/lwfx-steal-env-token-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-tampered/node_modules/lwfx-steal-npmrc": {
+      "integrity": "sha512-DpAP3a25WcToySMMO6W7/nR4GN0kzxD0vIK6DACVmRHM0R1nlnRPaC6BVe6RmqZqjaCKRiMniZRUuUcfmOAbWA==",
+      "resolved": "https://registry.npmjs.org/lwfx-steal-npmrc/-/lwfx-steal-npmrc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-vm-run": {
+      "integrity": "sha512-zNEt/mQv8OMs1dVFo+roLRGX67pHPCkZVTuXJDjgjyiTfvmzwqmmuRAIn3GsvAkZ5CO2XKjVYPZ3kmPHUfJBUQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-vm-run/-/lwfx-vm-run-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-vm-run/node_modules/lwfx-ssh-key-reader": {
+      "integrity": "sha512-Tjzny806ACVUkexYKy4m2tCbhM6ndgRj3LV8hCfgQWo0YeFuCO42+6Mb24AwnYvLnf7Vss8MIATL/94dIdPxEA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ssh-key-reader/-/lwfx-ssh-key-reader-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-vm-run/node_modules/lwfx-steal-env-token": {
+      "integrity": "sha512-wlRkRMgqqrUac5WVJ+kSEZt9vNg3N2h13kKUGMbV7TunslvLDYCuakcDHh8R+ROjhF8kcMM1otdQHpiiPLXcTA==",
+      "resolved": "https://registry.npmjs.org/lwfx-steal-env-token/-/lwfx-steal-env-token-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-vm-run/node_modules/lwfx-steal-npmrc": {
+      "integrity": "sha512-DpAP3a25WcToySMMO6W7/nR4GN0kzxD0vIK6DACVmRHM0R1nlnRPaC6BVe6RmqZqjaCKRiMniZRUuUcfmOAbWA==",
+      "resolved": "https://registry.npmjs.org/lwfx-steal-npmrc/-/lwfx-steal-npmrc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-vm-run/node_modules/lwfx-tampered": {
+      "integrity": "sha512-Abxy609GkQ09qLAK8ldwOzsROjJ28o905keDSYhKpnWcu32b+IkQFB5KIKCR9bKpBe1bnuB1oRT+ogqu8hozDg==",
+      "resolved": "https://registry.npmjs.org/lwfx-tampered/-/lwfx-tampered-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-wget-chmod-run": {
+      "integrity": "sha512-Nv6eB4KXvTXJ85jXOe/A2iJS3RTddxeqvZRD4hfdCMZRu78HfX08Rh/D552KzbbY3vpPJ8F0x0OeMJJ+rzxlug==",
+      "resolved": "https://registry.npmjs.org/lwfx-wget-chmod-run/-/lwfx-wget-chmod-run-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-wget-chmod-run/node_modules/lwfx-steal-env-token": {
+      "integrity": "sha512-wlRkRMgqqrUac5WVJ+kSEZt9vNg3N2h13kKUGMbV7TunslvLDYCuakcDHh8R+ROjhF8kcMM1otdQHpiiPLXcTA==",
+      "resolved": "https://registry.npmjs.org/lwfx-steal-env-token/-/lwfx-steal-env-token-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-wget-chmod-run/node_modules/lwfx-steal-npmrc": {
+      "integrity": "sha512-DpAP3a25WcToySMMO6W7/nR4GN0kzxD0vIK6DACVmRHM0R1nlnRPaC6BVe6RmqZqjaCKRiMniZRUuUcfmOAbWA==",
+      "resolved": "https://registry.npmjs.org/lwfx-steal-npmrc/-/lwfx-steal-npmrc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-wget-chmod-run/node_modules/lwfx-tampered": {
+      "integrity": "sha512-Abxy609GkQ09qLAK8ldwOzsROjJ28o905keDSYhKpnWcu32b+IkQFB5KIKCR9bKpBe1bnuB1oRT+ogqu8hozDg==",
+      "resolved": "https://registry.npmjs.org/lwfx-tampered/-/lwfx-tampered-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-wget-chmod-run/node_modules/lwfx-vm-run": {
+      "integrity": "sha512-zNEt/mQv8OMs1dVFo+roLRGX67pHPCkZVTuXJDjgjyiTfvmzwqmmuRAIn3GsvAkZ5CO2XKjVYPZ3kmPHUfJBUQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-vm-run/-/lwfx-vm-run-1.0.0.tgz",
+      "version": "1.0.0"
+    }
+  },
+  "requires": true,
+  "version": "1.0.0"
+}

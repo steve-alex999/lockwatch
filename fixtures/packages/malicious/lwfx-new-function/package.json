@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-new-function",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): Function constructor on decoded text",
+  "main": "lib/index.js"
+}

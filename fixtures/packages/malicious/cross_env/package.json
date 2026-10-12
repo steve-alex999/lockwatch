@@ -1,0 +1,6 @@
+{
+  "name": "cross_env",
+  "version": "1.0.0",
+  "description": "FIXTURE (typosquat): name imitates cross-env",
+  "main": "index.js"
+}

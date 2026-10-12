@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-obf-long-line",
+  "version": "1.0.0",
+  "description": "FIXTURE (tricky variant): one very long line hidden in a file not named .min.js",
+  "main": "lib/core.js"
+}

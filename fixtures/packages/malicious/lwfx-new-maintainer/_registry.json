@@ -1,0 +1,11 @@
+{
+  "comment": "Fixture registry metadata: 0.1.0-0.5.0 by alice/bob, 1.0.0 by mallory.",
+  "versions": [
+    { "version": "0.1.0", "publisher": "alice", "time": "2025-01-01T00:00:00Z" },
+    { "version": "0.2.0", "publisher": "alice", "time": "2025-02-01T00:00:00Z" },
+    { "version": "0.3.0", "publisher": "bob", "time": "2025-03-01T00:00:00Z" },
+    { "version": "0.4.0", "publisher": "alice", "time": "2025-04-01T00:00:00Z" },
+    { "version": "0.5.0", "publisher": "bob", "time": "2025-05-01T00:00:00Z" },
+    { "version": "1.0.0", "publisher": "mallory", "time": "2025-09-01T00:00:00Z" }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "expresss",
+  "version": "1.0.0",
+  "description": "FIXTURE (typosquat): name imitates express",
+  "main": "index.js"
+}

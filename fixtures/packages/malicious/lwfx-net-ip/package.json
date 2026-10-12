@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-net-ip",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): install script contacts a hard-coded IP",
+  "scripts": { "postinstall": "node install.js" }
+}

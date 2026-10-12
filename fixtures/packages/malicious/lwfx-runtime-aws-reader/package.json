@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-runtime-aws-reader",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): no install script; steals AWS credentials when required",
+  "main": "index.js"
+}

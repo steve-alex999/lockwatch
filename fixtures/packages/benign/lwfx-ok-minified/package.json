@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-ok-minified",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign): a minified bundle with a very long line in a .min.js file",
+  "main": "dist/app.min.js"
+}

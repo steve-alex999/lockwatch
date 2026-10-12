@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-net-dns-tunnel",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): data exfiltration through DNS lookups",
+  "scripts": { "postinstall": "node t.js" }
+}

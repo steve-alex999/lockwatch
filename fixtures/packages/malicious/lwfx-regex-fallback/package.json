@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-regex-fallback",
+  "version": "1.0.0",
+  "description": "FIXTURE (tricky variant): install file with a syntax error, so only the regex fallback can read it",
+  "scripts": { "postinstall": "node install.js" }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-macho-addon",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): ships a native addon but declares no native build",
+  "main": "index.js"
+}

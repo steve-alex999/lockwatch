@@ -1,0 +1,10 @@
+/target
+**/*.rs.bk
+*.pending-snap
+node_modules/
+api/dist/
+api/coverage/
+*.db
+*.db-journal
+.env
+eval/work*/

@@ -1,0 +1,98 @@
+{
+  "lockfileVersion": 3,
+  "name": "lockwatch-fixtures-benign",
+  "packages": {
+    "": {
+      "dependencies": {
+        "lwfx-ok-base64-asset": "1.0.0",
+        "lwfx-ok-cli-spawn": "1.0.0",
+        "lwfx-ok-docs-npmrc": "1.0.0",
+        "lwfx-ok-env-config": "1.0.0",
+        "lwfx-ok-esbuild-like": "1.0.0",
+        "lwfx-ok-http-client": "1.0.0",
+        "lwfx-ok-minified": "1.0.0",
+        "lwfx-ok-node-gyp": "1.0.0",
+        "lwfx-ok-platform-binary": "1.0.0",
+        "lwfx-ok-postinstall-message": "1.0.0",
+        "lwfx-ok-prebuild": "1.0.0",
+        "lwfx-ok-prepare-tsc": "1.0.0",
+        "lwfx-ok-sdk-api-key": "1.0.0",
+        "lwfx-ok-template-engine": "1.0.0"
+      },
+      "name": "lockwatch-fixtures-benign",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-base64-asset": {
+      "integrity": "sha512-FiE7w1QUZkSqeeu/AmyAKAtoPb+EQE9gkit45mlgaLUoT8agOFaPBLEy2W+MrFBbGOo6avfn3vEkLe3MU0yL1w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-base64-asset/-/lwfx-ok-base64-asset-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-cli-spawn": {
+      "integrity": "sha512-Bd6RqnpGB5gtpBOya82KJ/efKU7O/7v/yypOxHbht9gzfGk5ZeG+j2eCm4FKowu1sbokgCoAp6FEUqFp6G5UpQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-cli-spawn/-/lwfx-ok-cli-spawn-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-docs-npmrc": {
+      "integrity": "sha512-VckFqeoOmZ9FxZ8VH0hrojBa6qKY7GAfjIKUgubE545skKPGn6yAgAhiUv59m+Lb1DV3F2fF3p4ECl9DrmMoXQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-docs-npmrc/-/lwfx-ok-docs-npmrc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-env-config": {
+      "integrity": "sha512-9BgO0X4TBHOqGeLpKknCYJy97GR3SAff7O7vAoWzRiWwd7LvVzOs3Yu7c3lC6jW70s7PEUHIQo5u/2bW9l5p+w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-env-config/-/lwfx-ok-env-config-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-esbuild-like": {
+      "integrity": "sha512-2ENSKAkvGrCYrM03Fll8okWEBg5wWJhxq6DJvY/KLv40xT0QfcbsqOlalMg9LdSWXE9DugPBklanzUe43UntMA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-esbuild-like/-/lwfx-ok-esbuild-like-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-http-client": {
+      "integrity": "sha512-R4aQDl9cS50co0M4/GPH2tOwQ3O3arJ/LIbLmyfKg/X2xDN0OIe9npI43dSlIZupCk6uWC1WB7KM7aNoJ9ZZ3g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-http-client/-/lwfx-ok-http-client-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-minified": {
+      "integrity": "sha512-O13l2qYbE8kCk03kNH+WLTN7xK4qxl5YpxbCTeeJU0HW89cip3WYcQGsom/3gChRMxro02mKLiXs1KAHN4cyNQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-minified/-/lwfx-ok-minified-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-node-gyp": {
+      "integrity": "sha512-SbaCEja8h3KJnvAi3O+qTI5sY1ON6WyEDMnsDm5lH5irtK9seFrr3F7mHKiBd29WK3agXeYMnIf0ZYRnGpg9ZA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-node-gyp/-/lwfx-ok-node-gyp-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-platform-binary": {
+      "integrity": "sha512-kHkrt73Iodu+QC2EqmWhojdBP0u8zGjZgBTU7nTuHOHc/okZ+LNIS8docVkCqixOMJ9cCknFuz5LTIXv23fSjw==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-platform-binary/-/lwfx-ok-platform-binary-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-postinstall-message": {
+      "integrity": "sha512-wFzmZfuBNWyIQVhBapm69gYR8P2JAsaduW3bUAXnsRDYOhG1N81r0DB3PIIhpcmdx8jMxgUZO0mCiseUIoOP1A==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-postinstall-message/-/lwfx-ok-postinstall-message-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prebuild": {
+      "integrity": "sha512-rGwuT1NYNJxCfMDi/K0P7TXi6ZwzYOzHA3oJZT3d6OwI97FwQv+6RpLoEii1L9srO59LVSU+Y4YRirDAGGZI7g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prebuild/-/lwfx-ok-prebuild-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-prepare-tsc": {
+      "integrity": "sha512-rEMJec5OecEpRmZUlCHjdyqqT+rX9vysj1mC+K87EtgUsu+mPDLMpJUNS/Am+/3K/p6cPouabBw1E5KjsiPnUA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-prepare-tsc/-/lwfx-ok-prepare-tsc-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-sdk-api-key": {
+      "integrity": "sha512-rCrl8d49APHZ4wxo3aO9wcOU2B4p5fpPkdkrDgzXE2I/S/U7xpaNp6SJovUB7RBYJl4QMR4qGFcaAPSFujAxXg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-sdk-api-key/-/lwfx-ok-sdk-api-key-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-template-engine": {
+      "integrity": "sha512-0HXSmKgTurcXD2BWVWFT4972WJYbMr2uvN6mRyJMBEDS3QGrNcyu/eNSmRVv22R7opOfFoctVDWN6rlueyEoHg==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-template-engine/-/lwfx-ok-template-engine-1.0.0.tgz",
+      "version": "1.0.0"
+    }
+  },
+  "requires": true,
+  "version": "1.0.0"
+}

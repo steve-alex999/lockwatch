@@ -1,0 +1,13 @@
+rule,true_positives,false_negatives,false_positives_on_benign
+LW001,25,0,0
+LW002,8,0,0
+LW003,8,0,1
+LW004,9,0,1
+LW005,5,0,1
+LW006,5,0,1
+LW007,4,0,1
+LW008,4,0,0
+LW009,1,0,0
+LW010,1,0,0
+LW011,3,0,0
+LW012,1,0,0

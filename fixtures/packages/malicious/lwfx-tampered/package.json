@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-tampered",
+  "version": "1.0.0",
+  "description": "FIXTURE (integrity): the lockfile hash does not match this tarball",
+  "main": "index.js"
+}

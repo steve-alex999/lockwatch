@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-ok-env-config",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign): reads ordinary configuration from the environment",
+  "main": "index.js"
+}

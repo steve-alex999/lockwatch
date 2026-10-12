@@ -1,0 +1,102 @@
+{
+  "lockfileVersion": 3,
+  "name": "lockwatch-fixtures-mixed",
+  "packages": {
+    "": {
+      "dependencies": {
+        "expresss": "1.0.0",
+        "lwfx-cp-in-helper": "1.0.0",
+        "lwfx-curl-pipe-sh": "1.0.0",
+        "lwfx-fresh-release": "1.0.0",
+        "lwfx-hidden-elf": "1.0.0",
+        "lwfx-new-maintainer": "1.0.0",
+        "lwfx-obf-entropy": "1.0.0",
+        "lwfx-ok-env-config": "1.0.0",
+        "lwfx-ok-http-client": "1.0.0",
+        "lwfx-ok-node-gyp": "1.0.0",
+        "lwfx-steal-env-token": "1.0.0",
+        "lwfx-tampered": "1.0.0"
+      },
+      "name": "lockwatch-fixtures-mixed",
+      "version": "1.0.0"
+    },
+    "node_modules/expresss": {
+      "integrity": "sha512-xcsxLwxjfhezmG7A/09NpH+LRum+H1Qpn9Ujo2zLblob+4sa5WYXb0XWvHt0I/VJo8oFSzYz47413Q0d28YnrA==",
+      "resolved": "https://registry.npmjs.org/expresss/-/expresss-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/file-dep": {
+      "resolved": "file:../file-dep",
+      "version": "1.0.0"
+    },
+    "node_modules/git-dep": {
+      "resolved": "git+https://example.invalid/git-dep.git#0123abc",
+      "version": "1.0.0"
+    },
+    "node_modules/local-lib": {
+      "link": true,
+      "resolved": "packages/local-lib"
+    },
+    "node_modules/lwfx-cp-in-helper": {
+      "integrity": "sha512-954oykJq1EL3MdrOm08H7+LA3k0n8q34cerqubMLRP7I6C/YCIXfKjx+eqJ3T8H2aqan6rc69ypUnJ1p2wJ4XQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-cp-in-helper/-/lwfx-cp-in-helper-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-curl-pipe-sh": {
+      "integrity": "sha512-lD7KAQ/w3KdHU1mwl18TuW1bN2LpdtNhURqMDbklaDNtQnK4r02xu7yezcS7I0hs581wRMZHeCi9pEn4lU51XA==",
+      "resolved": "https://registry.npmjs.org/lwfx-curl-pipe-sh/-/lwfx-curl-pipe-sh-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-fresh-release": {
+      "integrity": "sha512-WX5HD7VbWjQ4r1AUWkMERlWpO74jgi9l2u1lQVm3hVPK21utVcZs85t2xNSlYnt8IDwVcUAfXoGdZg1LrSZmgQ==",
+      "resolved": "https://registry.npmjs.org/lwfx-fresh-release/-/lwfx-fresh-release-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-hidden-elf": {
+      "integrity": "sha512-eJ4aDdQPzoTWLpd0WEKhXl5uPuP4w09l4JI2RImwhoIU3RKwRV1EO/lxsZHWKd9DMGVhf8puTZjfumdgkWwmTg==",
+      "resolved": "https://registry.npmjs.org/lwfx-hidden-elf/-/lwfx-hidden-elf-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-new-maintainer": {
+      "integrity": "sha512-9mHmCbLoi5JIQIKiOyNucgmS7kxlMGi+m6nM47oBBmcq7znkT4LAoRjKhAWqNGpHm11n9rnsrwPP/7JPI9+5hw==",
+      "resolved": "https://registry.npmjs.org/lwfx-new-maintainer/-/lwfx-new-maintainer-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-obf-entropy": {
+      "integrity": "sha512-RKU48k9KwwEuggR4dLV/4kXlI8igQA72ZTuB2Qj5ZLIDurN69EZsXGlizQYoGSpsmgJMlniwWRkZ3WuwC4Kj4w==",
+      "resolved": "https://registry.npmjs.org/lwfx-obf-entropy/-/lwfx-obf-entropy-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-env-config": {
+      "integrity": "sha512-9BgO0X4TBHOqGeLpKknCYJy97GR3SAff7O7vAoWzRiWwd7LvVzOs3Yu7c3lC6jW70s7PEUHIQo5u/2bW9l5p+w==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-env-config/-/lwfx-ok-env-config-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-http-client": {
+      "integrity": "sha512-R4aQDl9cS50co0M4/GPH2tOwQ3O3arJ/LIbLmyfKg/X2xDN0OIe9npI43dSlIZupCk6uWC1WB7KM7aNoJ9ZZ3g==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-http-client/-/lwfx-ok-http-client-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-ok-node-gyp": {
+      "integrity": "sha512-SbaCEja8h3KJnvAi3O+qTI5sY1ON6WyEDMnsDm5lH5irtK9seFrr3F7mHKiBd29WK3agXeYMnIf0ZYRnGpg9ZA==",
+      "resolved": "https://registry.npmjs.org/lwfx-ok-node-gyp/-/lwfx-ok-node-gyp-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-steal-env-token": {
+      "integrity": "sha512-wlRkRMgqqrUac5WVJ+kSEZt9vNg3N2h13kKUGMbV7TunslvLDYCuakcDHh8R+ROjhF8kcMM1otdQHpiiPLXcTA==",
+      "resolved": "https://registry.npmjs.org/lwfx-steal-env-token/-/lwfx-steal-env-token-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "node_modules/lwfx-tampered": {
+      "integrity": "sha512-Abxy609GkQ09qLAK8ldwOzsROjJ28o905keDSYhKpnWcu32b+IkQFB5KIKCR9bKpBe1bnuB1oRT+ogqu8hozDg==",
+      "resolved": "https://registry.npmjs.org/lwfx-tampered/-/lwfx-tampered-1.0.0.tgz",
+      "version": "1.0.0"
+    },
+    "packages/local-lib": {
+      "name": "local-lib",
+      "version": "0.1.0"
+    }
+  },
+  "requires": true,
+  "version": "1.0.0"
+}

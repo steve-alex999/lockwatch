@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-cp-aliased-require",
+  "version": "1.0.0",
+  "description": "FIXTURE (tricky variant): require is aliased and the module name is split",
+  "scripts": { "postinstall": "node install.js" }
+}

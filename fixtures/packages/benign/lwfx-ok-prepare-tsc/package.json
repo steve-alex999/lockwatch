@@ -1,0 +1,7 @@
+{
+  "name": "lwfx-ok-prepare-tsc",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign): prepare script compiles TypeScript",
+  "main": "dist/index.js",
+  "scripts": { "prepare": "tsc -p ." }
+}

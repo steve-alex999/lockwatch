@@ -1,0 +1,8 @@
+{
+  "name": "lwfx-ok-prebuild",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign): downloads a prebuilt addon or falls back to node-gyp, ships a prebuilt binary",
+  "main": "index.js",
+  "scripts": { "install": "prebuild-install || node-gyp rebuild" },
+  "dependencies": { "prebuild-install": "^7.1.0", "bindings": "^1.5.0" }
+}

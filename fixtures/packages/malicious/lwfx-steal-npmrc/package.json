@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-steal-npmrc",
+  "version": "1.0.0",
+  "description": "FIXTURE (malicious pattern): reads ~/.npmrc and posts it at install time",
+  "scripts": { "postinstall": "node index.js" }
+}

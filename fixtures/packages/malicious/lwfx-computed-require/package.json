@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-computed-require",
+  "version": "1.0.0",
+  "description": "FIXTURE (tricky variant): module name computed at runtime from the environment",
+  "main": "index.js"
+}

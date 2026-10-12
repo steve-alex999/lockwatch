@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-ok-template-engine",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign, known false-positive class): compiles templates with new Function",
+  "main": "index.js"
+}

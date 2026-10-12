@@ -1,0 +1,6 @@
+{
+  "name": "lwfx-ok-docs-npmrc",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign): mentions .npmrc and tokens in help text only",
+  "bin": { "lwfx-login": "cli.js" }
+}

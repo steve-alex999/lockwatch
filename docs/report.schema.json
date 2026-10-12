@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/steve-alex999/lockwatch/docs/report.schema.json",
+  "title": "lockwatch report",
+  "description": "Output of `lockwatch scan --format json` and `lockwatch scan-package --format json`. Uses only these keywords, which the test-suite validator supports: type, properties, required, additionalProperties, items, enum, const, minimum, maximum, maxLength, $ref, $defs.",
+  "type": "object",
+  "required": ["tool", "version", "scanned_at", "lockfile", "summary", "packages", "skipped"],
+  "additionalProperties": false,
+  "properties": {
+    "tool": { "const": "lockwatch" },
+    "version": { "type": "string" },
+    "scanned_at": { "type": "string", "description": "RFC 3339 UTC timestamp, e.g. 2026-10-20T14:03:11Z" },
+    "lockfile": { "type": "string", "description": "Lockfile name, or name@version for scan-package" },
+    "summary": { "$ref": "#/$defs/summary" },
+    "packages": { "type": "array", "items": { "$ref": "#/$defs/package" } },
+    "skipped": { "type": "array", "items": { "$ref": "#/$defs/skipped" } }
+  },
+  "$defs": {
+    "count": { "type": "integer", "minimum": 0 },
+    "severity": { "enum": ["critical", "high", "medium", "low", "info"] },
+    "summary": {
+      "type": "object",
+      "required": ["packages_total", "packages_scanned", "packages_skipped", "findings", "duration_ms"],
+      "additionalProperties": false,
+      "properties": {
+        "packages_total": { "$ref": "#/$defs/count" },
+        "packages_scanned": { "$ref": "#/$defs/count" },
+        "packages_skipped": { "$ref": "#/$defs/count" },
+        "findings": {
+          "type": "object",
+          "required": ["critical", "high", "medium", "low", "info"],
+          "additionalProperties": false,
+          "properties": {
+            "critical": { "$ref": "#/$defs/count" },
+            "high": { "$ref": "#/$defs/count" },
+            "medium": { "$ref": "#/$defs/count" },
+            "low": { "$ref": "#/$defs/count" },
+            "info": { "$ref": "#/$defs/count" }
+          }
+        },
+        "duration_ms": { "$ref": "#/$defs/count" }
+      }
+    },
+    "package": {
+      "type": "object",
+      "required": ["name", "version", "risk_score", "risk_level", "findings", "warnings"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "risk_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "risk_level": { "enum": ["none", "low", "medium", "high", "critical"] },
+        "findings": { "type": "array", "items": { "$ref": "#/$defs/finding" } },
+        "warnings": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "required": ["rule_id", "severity", "package", "version", "file", "line", "evidence", "explanation"],
+      "additionalProperties": false,
+      "properties": {
+        "rule_id": {
+          "enum": ["LW001", "LW002", "LW003", "LW004", "LW005", "LW006", "LW007", "LW008", "LW009", "LW010", "LW011", "LW012"]
+        },
+        "severity": { "$ref": "#/$defs/severity" },
+        "package": { "type": "string" },
+        "version": { "type": "string" },
+        "file": { "type": ["string", "null"] },
+        "line": { "type": ["integer", "null"], "minimum": 1 },
+        "evidence": { "type": "string", "maxLength": 200 },
+        "explanation": { "type": "string" }
+      }
+    },
+    "skipped": {
+      "type": "object",
+      "required": ["name", "version", "reason", "error"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": ["string", "null"] },
+        "reason": { "type": "string" },
+        "error": { "type": "boolean", "description": "true if an error (not a policy) prevented the scan" }
+      }
+    }
+  }
+}

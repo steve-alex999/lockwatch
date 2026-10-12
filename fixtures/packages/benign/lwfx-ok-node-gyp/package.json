@@ -1,0 +1,8 @@
+{
+  "name": "lwfx-ok-node-gyp",
+  "version": "1.0.0",
+  "description": "FIXTURE (benign): native addon built with node-gyp",
+  "main": "index.js",
+  "gypfile": true,
+  "scripts": { "install": "node-gyp rebuild" }
+}
