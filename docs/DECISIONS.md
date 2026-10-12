@@ -277,3 +277,43 @@ DataDog's malicious-software-packages) would need a "scan a local tarball"
 command, and the spec's safety rules for handling live malware. Skipped for
 v1 and stated in the README; it is the most valuable next step for an honest
 detection rate.
+
+## Real-malware evaluation (follow-up to D40)
+
+**D41. `scan-tarball` command.** The dataset ships packages, not lockfiles,
+so lockwatch needed a way to scan a single tarball. Options: a hidden eval
+mode, or a real command. Chose a real command (`lockwatch scan-tarball
+<file|->`) because scanning a tarball you already have is useful on its own.
+It reuses the per-package analysis of the lockfile pipeline, reads name and
+version from `package.json` (overridable), checks `--integrity` if given, and
+only touches the registry with `--metadata`.
+
+**D42. `--packument FILE`.** Removed malicious packages are no longer on the
+registry, but each dataset sample carries the registry document saved when
+it was found. Passing it lets LW009 and LW010 run on real history instead of
+being skipped.
+
+**D43. Decrypt in memory, repack in memory.** The samples are zips of an
+unpacked package, encrypted with ZipCrypto. Options: unzip to disk then tar,
+or decrypt with Python's `zipfile` and build the `.tgz` in memory. Chose
+memory, so decrypted files never land on a persistent disk (lockwatch's own
+extraction directory is a tmpfs inside the container). This follows the
+spec's "keep the archives encrypted at rest".
+
+**D44. Random sample, fixed seed, pinned dataset commit.** The npm part has
+about 25,800 samples. Default: 2,000 `malicious_intent` and 600
+`compromised_lib`, chosen with seed 20261012 from commit `805fcd7`, so the
+run is reproducible and takes minutes. Both numbers are settings.
+
+**D45. Scan as of the discovery date.** `--now` is each sample's discovery
+date. Scanning malware today would make LW009 never fire (the versions are
+old), which would understate what lockwatch shows when a package is new.
+Because the choice inflates LW009, the summary also reports coverage without
+it.
+
+**Incident while setting this up (fixed).** While listing the dataset I first
+ran `git ls-tree -l` on the host. With a blobless clone, `-l` (sizes) makes
+git download every blob, so encrypted sample zips were briefly fetched to the
+host (never decrypted or opened) and filled the disk. They were deleted, and
+from then on the listing and every sample download run only inside the eval
+container, as the spec requires.

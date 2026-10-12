@@ -8,3 +8,4 @@ api/coverage/
 *.db-journal
 .env
 eval/work*/
+__pycache__/
